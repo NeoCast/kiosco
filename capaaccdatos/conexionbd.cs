@@ -9,9 +9,9 @@ using System.Data.SqlClient;
 
 namespace capaaccdatos
 {
-    class conexcionbd
+    class conexionbd
     {
-        private SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=Kiosco;Integrated Security=True");
+        private SqlConnection conexion = new SqlConnection("Data Source = DESKTOP - K3J4GCO; Initial Catalog = Kiosco; Integrated Security = false; database=Kiosco;uid=neocast;password=kakashiI1223");
         
         public SqlConnection abrircn()
         {
@@ -23,10 +23,7 @@ namespace capaaccdatos
             }
             else
             {
-
-
                 return conexion;
-
 
             }
         

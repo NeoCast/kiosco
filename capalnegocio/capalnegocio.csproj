@@ -44,5 +44,11 @@
     <Compile Include="lnproducto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\capaaccdatos\capaaccdatos.csproj">
+      <Project>{18f0e0d6-2895-4713-b0d4-e470782662ad}</Project>
+      <Name>capaaccdatos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
