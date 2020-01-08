@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtdescripcion = new System.Windows.Forms.TextBox();
             this.txtstock = new System.Windows.Forms.TextBox();
             this.txtmin = new System.Windows.Forms.TextBox();
             this.txtprecio = new System.Windows.Forms.TextBox();
-            this.txtentrada = new System.Windows.Forms.TextBox();
-            this.txtvencimiento = new System.Windows.Forms.TextBox();
             this.combotproducto = new System.Windows.Forms.ComboBox();
+            this.tipoProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kioscoDataSet = new capavista.KioscoDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,6 +47,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ultimoadd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoProductoTableAdapter = new capavista.KioscoDataSetTableAdapters.tipoProductoTableAdapter();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kioscoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,27 +83,26 @@
             this.txtprecio.Size = new System.Drawing.Size(126, 20);
             this.txtprecio.TabIndex = 3;
             // 
-            // txtentrada
-            // 
-            this.txtentrada.Location = new System.Drawing.Point(197, 352);
-            this.txtentrada.Name = "txtentrada";
-            this.txtentrada.Size = new System.Drawing.Size(126, 20);
-            this.txtentrada.TabIndex = 4;
-            // 
-            // txtvencimiento
-            // 
-            this.txtvencimiento.Location = new System.Drawing.Point(197, 404);
-            this.txtvencimiento.Name = "txtvencimiento";
-            this.txtvencimiento.Size = new System.Drawing.Size(126, 20);
-            this.txtvencimiento.TabIndex = 5;
-            // 
             // combotproducto
             // 
+            this.combotproducto.DataSource = this.tipoProductoBindingSource;
+            this.combotproducto.DisplayMember = "codTipop";
             this.combotproducto.FormattingEnabled = true;
             this.combotproducto.Location = new System.Drawing.Point(197, 83);
             this.combotproducto.Name = "combotproducto";
             this.combotproducto.Size = new System.Drawing.Size(126, 21);
             this.combotproducto.TabIndex = 6;
+            this.combotproducto.ValueMember = "codTipop";
+            // 
+            // tipoProductoBindingSource
+            // 
+            this.tipoProductoBindingSource.DataMember = "tipoProducto";
+            this.tipoProductoBindingSource.DataSource = this.kioscoDataSet;
+            // 
+            // kioscoDataSet
+            // 
+            this.kioscoDataSet.DataSetName = "KioscoDataSet";
+            this.kioscoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -199,11 +204,33 @@
             this.ultimoadd.ReadOnly = true;
             this.ultimoadd.Width = 200;
             // 
+            // tipoProductoTableAdapter
+            // 
+            this.tipoProductoTableAdapter.ClearBeforeFill = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(197, 349);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(126, 20);
+            this.dateTimePicker1.TabIndex = 17;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(197, 401);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(126, 20);
+            this.dateTimePicker2.TabIndex = 18;
+            // 
             // nuevoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(676, 522);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -215,8 +242,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.combotproducto);
-            this.Controls.Add(this.txtvencimiento);
-            this.Controls.Add(this.txtentrada);
             this.Controls.Add(this.txtprecio);
             this.Controls.Add(this.txtmin);
             this.Controls.Add(this.txtstock);
@@ -224,6 +249,8 @@
             this.Name = "nuevoProducto";
             this.Text = "nuevoProducto";
             this.Load += new System.EventHandler(this.NuevoProducto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kioscoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -236,8 +263,6 @@
         private System.Windows.Forms.TextBox txtstock;
         private System.Windows.Forms.TextBox txtmin;
         private System.Windows.Forms.TextBox txtprecio;
-        private System.Windows.Forms.TextBox txtentrada;
-        private System.Windows.Forms.TextBox txtvencimiento;
         private System.Windows.Forms.ComboBox combotproducto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -250,5 +275,10 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ultimoadd;
+        private KioscoDataSet kioscoDataSet;
+        private System.Windows.Forms.BindingSource tipoProductoBindingSource;
+        private KioscoDataSetTableAdapters.tipoProductoTableAdapter tipoProductoTableAdapter;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }

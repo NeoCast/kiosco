@@ -8,20 +8,21 @@ using System.Data.SqlClient;
 using System.Data;
 
 namespace capaaccdatos
-{
-    class acproducto
+{                  
+  public class acproducto
     {
 
+
+
         private conexionbd conexion = new conexionbd();
-
-
         public void nuevoproducto(String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin, DateTime inFecha, DateTime outFecha)
         {
-            
-            SqlConnection lo_conexion;
+              
+             
+           
             SqlCommand comando = new SqlCommand();
             DataTable tabla = new DataTable();
-            SqlDataReader reader;
+        
 
             try
             {
@@ -34,7 +35,7 @@ namespace capaaccdatos
                 comando.Parameters.AddWithValue("@stock", stock);
                 comando.Parameters.AddWithValue("@stockMin", stockMin);
                 comando.Parameters.AddWithValue("@inFecha", inFecha);
-                comando.Parameters.AddWithValue("@outFecha",outFecha);
+                comando.Parameters.AddWithValue("@outFecha", outFecha);
                 comando.ExecuteNonQuery();
 
             }
@@ -44,7 +45,46 @@ namespace capaaccdatos
                 throw ex;
 
             }
+            finally
+            {
+                comando.Connection = conexion.cerrarcn();
+                
+            }
            
+
+        }
+
+        public DataTable todosProductos()
+        {
+            SqlCommand comando = new SqlCommand();
+            DataTable tabla = new DataTable();
+            SqlDataReader reader;
+            
+            comando.Connection = conexion.abrircn();
+            comando.CommandText = "todosProductos";
+            comando.CommandType = CommandType.StoredProcedure;
+            reader = comando.ExecuteReader();
+            tabla.Load(reader);
+            conexion.cerrarcn();
+            return tabla;
+           
+
+        }
+
+        public DataTable ultimoProducto()
+        {
+
+            SqlCommand comando = new SqlCommand();
+            DataTable tabla = new DataTable();
+            SqlDataReader reader;
+
+            comando.Connection = conexion.abrircn();
+            comando.CommandText = "ultimoProducto";
+            comando.CommandType = CommandType.StoredProcedure;
+            reader = comando.ExecuteReader();
+            tabla.Load(reader);
+            conexion.cerrarcn();
+            return tabla;
 
         }
     }
