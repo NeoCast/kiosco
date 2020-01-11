@@ -166,7 +166,6 @@
             this.btnBuscarProd.TabIndex = 1;
             this.btnBuscarProd.Text = "Buscar";
             this.btnBuscarProd.UseVisualStyleBackColor = true;
-            this.btnBuscarProd.Click += new System.EventHandler(this.BtnBuscarProd_Click);
             // 
             // button4
             // 

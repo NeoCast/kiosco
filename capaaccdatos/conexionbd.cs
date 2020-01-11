@@ -12,7 +12,8 @@ namespace capaaccdatos
     class conexionbd
     {
         private SqlConnection conexion = new SqlConnection("Data Source=(local);Initial Catalog=Kiosco;Persist Security Info=True;User ID=neocast;Password=kakashiI1223");
-      
+        
+
         public SqlConnection abrircn()
         {
            

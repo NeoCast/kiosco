@@ -28,22 +28,11 @@ namespace capalnegocio
             {
 
                 throw ex;
-
             }
                
 
         }
 
-        public DataTable mostrarProductos(string descripcion)
-        {
-            DataTable tabla = new DataTable();
-            descripcion = Convert.ToString(descripcion);
-
-            tabla = producdatos.buscarProducto(descripcion);
-            return tabla;
-
-        }
-        
         public DataTable mostrarTodos()
         {
             DataTable tabla = new DataTable();
