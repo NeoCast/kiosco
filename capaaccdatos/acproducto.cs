@@ -59,14 +59,26 @@ namespace capaaccdatos
             SqlCommand comando = new SqlCommand();
             DataTable tabla = new DataTable();
             SqlDataReader reader;
-            
-            comando.Connection = conexion.abrircn();
-            comando.CommandText = "todosProductos";
-            comando.CommandType = CommandType.StoredProcedure;
-            reader = comando.ExecuteReader();
-            tabla.Load(reader);
-            conexion.cerrarcn();
-            return tabla;
+            try
+            {
+                comando.Connection = conexion.abrircn();
+                comando.CommandText = "todosProductos";
+                comando.CommandType = CommandType.StoredProcedure;
+                reader = comando.ExecuteReader();
+                tabla.Load(reader);
+                conexion.cerrarcn();
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarcn();
+            }
+
            
 
         }
@@ -86,6 +98,33 @@ namespace capaaccdatos
             conexion.cerrarcn();
             return tabla;
 
+        }
+
+        public DataTable buscarProducto(String descripcion)
+        {
+            SqlCommand comando = new SqlCommand();
+            DataTable tabla = new DataTable();
+            SqlDataReader reader;
+            try
+            {
+                comando.Connection = conexion.abrircn();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("descripcion", descripcion);
+                reader = comando.ExecuteReader();
+                tabla.Load(reader);
+                conexion.cerrarcn();
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarcn();
+            }
+ 
         }
     }
 }
