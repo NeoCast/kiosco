@@ -23,5 +23,11 @@ namespace capavista
             formNuevo.Show();
 
         }
+
+        private void BtnBuscarProd_Click(object sender, EventArgs e)
+        {
+            buscarProductos formNuevo = new buscarProductos();
+            formNuevo.Show();
+        }
     }
 }
