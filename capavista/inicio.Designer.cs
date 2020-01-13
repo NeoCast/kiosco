@@ -91,7 +91,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(200, 31);
             this.button5.TabIndex = 1;
-            this.button5.Text = "button5";
+            this.button5.Text = "Nuevo";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // panelDeposito
