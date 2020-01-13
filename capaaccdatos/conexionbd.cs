@@ -23,7 +23,7 @@ namespace capaaccdatos
             }
             else
             {
-                return conexion = null;
+                return conexion;
             }
       
         
@@ -31,7 +31,7 @@ namespace capaaccdatos
 
         public SqlConnection cerrarcn()
         {
-            if (conexion.State == ConnectionState.Closed)
+            if (conexion.State == ConnectionState.Open)
             {
                 conexion.Close();
                 return conexion;

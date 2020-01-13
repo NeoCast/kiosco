@@ -27,7 +27,7 @@ namespace capaaccdatos
             try
             {
                 comando.Connection = conexion.abrircn();
-                comando.CommandText = "altaProducto";
+                comando.CommandText = "altaProductos";
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@tipoProd", tproducto);
                 comando.Parameters.AddWithValue("@descripcion", descripcion);
@@ -100,6 +100,8 @@ namespace capaaccdatos
 
         }
 
+
+
         public DataTable buscarProducto(String descripcion)
         {
             SqlCommand comando = new SqlCommand();
@@ -109,10 +111,11 @@ namespace capaaccdatos
             {
                 comando.Connection = conexion.abrircn();
                 comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "buscarProducto";
                 comando.Parameters.AddWithValue("descripcion", descripcion);
                 reader = comando.ExecuteReader();
                 tabla.Load(reader);
-                conexion.cerrarcn();
+                comando.Connection = conexion.cerrarcn();
                 return tabla;
             }
             catch (Exception ex)

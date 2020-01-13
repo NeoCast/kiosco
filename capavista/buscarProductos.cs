@@ -42,7 +42,7 @@ namespace capavista
 
             if (textBox1.Text != "")
             {
-                productoln.mostrarProductos(textBox1.Text);
+               dataGridView1.DataSource = productoln.mostrarProductos(textBox1.Text);
             }
             else
             {

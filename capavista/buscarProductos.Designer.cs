@@ -99,7 +99,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "buscarProductos";
             this.Text = "buscarProductos";
             this.Load += new System.EventHandler(this.BuscarProductos_Load);
