@@ -1,5 +1,6 @@
 CREATE table productos(
 codProducto int identity(1,1),
+codPromo int,
 tipoProducto VARCHAR(30),
 descripcion varchar(100),
 stock int,
@@ -9,15 +10,29 @@ inFecha datetime,
 outFecha datetime,
 CONSTRAINT pk_producto PRIMARY KEY(codProducto)
 );
-drop TABLE producto;
+
+drop TABLE productos;
+
 
 CREATE table promocion(
-codPromo INT IDENTITY(1,1),
+codPromo INT,
 codProd INT,
-descrprod VARCHAR(100),
+descrprom VARCHAR(100),
 cantidad INT,
 valorUnit NUMERIC(18,2),
 total NUMERIC(18,2),
+activa BIT
+);
+
+
+
+CREATE TABLE detalle_promocion(
+codDetallePromo INT IDENTITY(1,1),
+codPromo INT,
+codProd INT,
+descrProd VARCHAR(100),
+totalProducto INT,
+cantidad INT
 );
 
 CREATE table stock(
@@ -50,22 +65,21 @@ CONSTRAINT pk_tipoP PRIMARY KEY(codTipop)
 );
 
 INSERT INTO tipoProducto(codTipop, descripTipo)
-VALUES('cig','cigarrillos');
+VALUES('CIG','cigarrillos');
 
 INSERT INTO tipoProducto(codTipop, descripTipo)
-VALUES('car','caramelos');
+VALUES('DUL','dulces');
 
 INSERT INTO tipoProducto(codTipop, descripTipo)
-VALUES('sna','snacks');
+VALUES('SNK','snacks');
 
 INSERT INTO tipoProducto(codTipop, descripTipo)
-VALUES('beb','bebidas');
-
+VALUES('BBD','bebidas');
 
 INSERT INTO tipoProducto(codTipop, descripTipo)
-VALUES('var','cosas varias');
+VALUES('VAR','cosas varias');
 
-DELETE from tipoProducto where codTipop= 'cca'
+TRUNCATE table tipoProducto;
 
 CREATE table ventas(
 idVenta int identity(1,1),

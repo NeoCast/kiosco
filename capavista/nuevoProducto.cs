@@ -13,6 +13,8 @@ namespace capavista
     public partial class nuevoProducto : Form
     {
         private lnproducto productoLN = new lnproducto();
+        private DataTable tabla = new DataTable();
+
 
         public nuevoProducto()
         {
@@ -41,7 +43,8 @@ namespace capavista
                    
                         productoLN.altaProducto(tproducto, descripcion, precio, stock, stockmin, dateTimePicker1.Value, dateTimePicker2.Value);
                         MessageBox.Show("Producto agregado correctamente");
-                        
+                        dataGridView1.Rows.Add(descripcion);
+                                        
                 }
 
 
