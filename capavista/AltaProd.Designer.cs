@@ -65,7 +65,7 @@
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(149, 166);
+            this.textBox1.Location = new System.Drawing.Point(156, 166);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(185, 20);
             this.textBox1.TabIndex = 1;
@@ -75,7 +75,7 @@
             // 
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(149, 124);
+            this.comboBox1.Location = new System.Drawing.Point(156, 124);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(185, 21);
             this.comboBox1.TabIndex = 2;
@@ -106,7 +106,7 @@
             // textBox2
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(149, 209);
+            this.textBox2.Location = new System.Drawing.Point(156, 209);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(185, 20);
             this.textBox2.TabIndex = 4;
@@ -116,7 +116,7 @@
             // 
             this.dateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(149, 376);
+            this.dateTimePicker2.Location = new System.Drawing.Point(156, 376);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(185, 20);
             this.dateTimePicker2.TabIndex = 18;
@@ -126,7 +126,7 @@
             // 
             this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(149, 333);
+            this.dateTimePicker1.Location = new System.Drawing.Point(156, 333);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(185, 20);
             this.dateTimePicker1.TabIndex = 19;
@@ -146,7 +146,7 @@
             // textBox3
             // 
             this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(149, 291);
+            this.textBox3.Location = new System.Drawing.Point(156, 291);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(185, 20);
             this.textBox3.TabIndex = 22;
@@ -166,7 +166,7 @@
             // textBox4
             // 
             this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(149, 248);
+            this.textBox4.Location = new System.Drawing.Point(156, 248);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(185, 20);
             this.textBox4.TabIndex = 20;
@@ -178,9 +178,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(34, 382);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.Size = new System.Drawing.Size(115, 13);
             this.label7.TabIndex = 25;
-            this.label7.Text = "Precio:";
+            this.label7.Text = "Fecha de vencimiento:";
             this.label7.Click += new System.EventHandler(this.label6_Click);
             // 
             // label6
@@ -189,9 +189,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(34, 339);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 13);
+            this.label6.Size = new System.Drawing.Size(94, 13);
             this.label6.TabIndex = 24;
-            this.label6.Text = "Stock Mínimo:";
+            this.label6.Text = "Fecha de entrada:";
             this.label6.Click += new System.EventHandler(this.label7_Click);
             // 
             // dataGridView1

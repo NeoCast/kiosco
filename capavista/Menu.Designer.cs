@@ -196,7 +196,7 @@
             this.panelSub.Controls.Add(this.btnAltaProd);
             this.panelSub.Location = new System.Drawing.Point(44, 410);
             this.panelSub.Name = "panelSub";
-            this.panelSub.Size = new System.Drawing.Size(176, 122);
+            this.panelSub.Size = new System.Drawing.Size(176, 116);
             this.panelSub.TabIndex = 13;
             this.panelSub.Visible = false;
             this.panelSub.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
@@ -232,7 +232,7 @@
             this.btnModElim.Name = "btnModElim";
             this.btnModElim.Size = new System.Drawing.Size(173, 33);
             this.btnModElim.TabIndex = 5;
-            this.btnModElim.Text = "Modificar o eliminar";
+            this.btnModElim.Text = "Consultas y modificación";
             this.btnModElim.UseVisualStyleBackColor = false;
             this.btnModElim.Click += new System.EventHandler(this.btnModElim_Click);
             // 
@@ -456,6 +456,7 @@
             this.Controls.Add(this.panelTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panelTitle.ResumeLayout(false);
