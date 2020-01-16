@@ -36,7 +36,6 @@
             this.btnMax = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panelBtn = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblFecha = new System.Windows.Forms.Label();
             this.panelSub = new System.Windows.Forms.Panel();
             this.panelStock = new System.Windows.Forms.Panel();
@@ -58,14 +57,15 @@
             this.lblHora = new System.Windows.Forms.Label();
             this.Horafecha = new System.Windows.Forms.Timer(this.components);
             this.panelCont = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBtn.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelSub.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitle
@@ -138,7 +138,7 @@
             // panelBtn
             // 
             this.panelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.panelBtn.Controls.Add(this.pictureBox1);
+            this.panelBtn.Controls.Add(this.pictureBox2);
             this.panelBtn.Controls.Add(this.lblFecha);
             this.panelBtn.Controls.Add(this.panelSub);
             this.panelBtn.Controls.Add(this.panel5);
@@ -158,20 +158,6 @@
             this.panelBtn.Size = new System.Drawing.Size(220, 612);
             this.panelBtn.TabIndex = 1;
             this.panelBtn.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBtn_Paint);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 554);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(220, 58);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lblFecha
             // 
@@ -232,7 +218,7 @@
             this.btnModElim.Name = "btnModElim";
             this.btnModElim.Size = new System.Drawing.Size(173, 33);
             this.btnModElim.TabIndex = 5;
-            this.btnModElim.Text = "Consultas y modificación";
+            this.btnModElim.Text = "Consultas";
             this.btnModElim.UseVisualStyleBackColor = false;
             this.btnModElim.Click += new System.EventHandler(this.btnModElim_Click);
             // 
@@ -331,7 +317,7 @@
             this.btnConfiguración.Name = "btnConfiguración";
             this.btnConfiguración.Size = new System.Drawing.Size(217, 41);
             this.btnConfiguración.TabIndex = 7;
-            this.btnConfiguración.Text = "Configuración";
+            this.btnConfiguración.Text = "Promociónes";
             this.btnConfiguración.UseVisualStyleBackColor = false;
             this.btnConfiguración.Click += new System.EventHandler(this.btnConfiguración_Click);
             // 
@@ -446,6 +432,18 @@
             this.panelCont.TabIndex = 2;
             this.panelCont.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint_1);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 554);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(221, 58);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -466,8 +464,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.panelBtn.ResumeLayout(false);
             this.panelBtn.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelSub.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -500,7 +498,7 @@
         private System.Windows.Forms.Panel panelStock;
         private System.Windows.Forms.Button btnStock;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelCont;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

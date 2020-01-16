@@ -89,6 +89,7 @@ namespace capavista
         private void btnModElim_Click(object sender, EventArgs e)
         {
             panelSub.Visible = false;
+            AbrirFormP(new Consultas());
         }
 
         private void btnStock_Click(object sender, EventArgs e)
@@ -156,5 +157,9 @@ namespace capavista
             fh.Show();
         }
 
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
