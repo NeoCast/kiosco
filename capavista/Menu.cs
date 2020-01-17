@@ -135,6 +135,7 @@ namespace capavista
         private void btnFacturacion_Click(object sender, EventArgs e)
         {
             panelSub.Visible = false;
+            AbrirFormP(new Facturacion());
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
@@ -158,6 +159,11 @@ namespace capavista
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelTitle_Paint(object sender, PaintEventArgs e)
         {
 
         }
