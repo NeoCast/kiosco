@@ -16,12 +16,10 @@ drop TABLE productos;
 
 CREATE table promocion(
 codPromo INT,
-codProd INT,
 descrprom VARCHAR(100),
-cantidad INT,
-valorUnit NUMERIC(18,2),
 total NUMERIC(18,2),
-activa BIT
+activa BIT,
+CONSTRAINT pk_promocion PRIMARY KEY (codPromo)
 );
 
 
@@ -32,7 +30,8 @@ codPromo INT,
 codProd INT,
 descrProd VARCHAR(100),
 totalProducto INT,
-cantidad INT
+cantidad INT,
+CONSTRAINT pk_detallePromo PRIMARY KEY (codDetallePromo,codPromo, codProd)
 );
 
 CREATE table stock(
@@ -99,5 +98,10 @@ ventaFecha datetime,
 CONSTRAINT pk_detalleVta PRIMARY KEY(codDetalleVta, idVenta, codProducto)
 );
 
-
+CREATE TABLE usuarios(
+idUsuario INT IDENTITY (1,1),
+usuario varchar(40),
+contrasena varchar(40),
+nombre varchar(60)
+);
 

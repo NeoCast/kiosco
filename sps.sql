@@ -146,3 +146,134 @@ EXEC altaProductos(@tipoProd,
 ---@stockMin INT
 
 GO
+
+
+CREATE PROCEDURE modificarPromocion
+@codPromo INT,
+@descrPromo varchar(100),
+@total NUMERIC(18,2),
+@activa BIT,
+@codProd INT,
+@cantidad INT,
+@totalProd NUMERIC (18,2),
+@descrProd VARCHAR(100)
+AS
+DECLARE @p_promo INT
+DECLARE @codError INT
+DECLARE @descrError VARCHAR(60)
+
+
+
+SELECT @p_promo = isnull(codPromo, 0)
+FROM codPromo 
+WHERE codPromo = @codPromo
+
+IF @p_promo <> 0
+        BEGIN
+        UPDATE promocion
+                SET
+                descrprom = @descrPromo,
+                total = @total,
+                activa = @activa
+                    WHERE codPromo = @p_promo
+        END
+ELSE
+        BEGIN 
+                SET @codError = 33
+                SET @descrError = 'ERROR' + CONVERT(VARCHAR,@codError) + ' ' +  'No se ingreso el codigo de promocion'
+        END
+
+        GRANT EXECUTE ON modificarPromocion TO Kiosco
+GO
+
+
+CREATE PROCEDURE sp_nuevoDetallePromo
+@codPromo INT,
+@codProd INT,
+@descrProd VARCHAR(100),
+@totalProd NUMERIC(18,2),
+@cantidad INT
+AS
+
+
+
+INSERT INTO detalle_promocion
+VALUES (@codPromo, @codProd, @descrProd, @totalProd, @cantidad)
+GO
+GRANT EXECUTE ON sp_nuevoDetallePromo TO Kiosco
+GO
+
+
+
+CREATE TRIGGER tri_nuevaPromo on promocion
+AFTER INSERT
+AS
+
+BEGIN
+/*DECLARACION DE VARIABLES*/
+DECLARE @tipoProducto VARCHAR(30)
+
+
+SET NOCOUNT ON;
+INSERT INTO productos(codPromo, tipoProducto, descripcion, ,precio)
+GO
+/*******FALTA TERMINAR********/
+
+
+
+
+CREATE PROCEDURE sp_nuevoUsuario
+@usuario varchar(40),
+@contrasena varchar(40),
+@nombre varchar(60)
+AS
+DECLARE @cod_error INT
+DECLARE @desc_error VARCHAR(60)
+DECLARE @p_usuario VARCHAR(40)
+DECLARE @existe BIT
+
+SET @cod_error = 0
+
+
+IF @cod_error = 0
+BEGIN
+        IF EXISTS(
+                SELECT 1  
+        FROM usuarios
+                WHERE usuario = @usuario
+        )
+        BEGIN
+        SET @existe = 1
+        END
+        ELSE
+        BEGIN
+        
+        SET @existe = 0
+
+        END
+END
+
+IF @existe = 0
+BEGIN
+INSERT INTO usuarios VALUES(@usuario, @contrasena, @nombre)
+END
+
+ELSE
+BEGIN
+SET @cod_error = 60
+SET @desc_error = 'El usuario: ' + @usuario + ' ya existe'
+END
+GRANT EXECUTE TO sp_nuevoDetallePromo to Kiosco
+GO
+
+CREATE PROCEDURE sp_eliminarUsuario
+@usuario VARCHAR(40)
+AS
+
+DELETE FROM usuarios 
+        WHERE usuario = @usuario
+
+GRANT EXECUTE TO sp_eliminarUsuario TO Kiosco
+
+
+
