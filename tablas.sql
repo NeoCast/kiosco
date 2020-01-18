@@ -42,6 +42,7 @@ inFecha datetime,
 outFecha datetime,
 CONSTRAINT pk_stock PRIMARY KEY(idStock)
 );
+
 DROP TABLE stock;
 
 CREATE table tieneStock(
@@ -87,6 +88,7 @@ ventaFecha datetime,
 CONSTRAINT pk_ventas PRIMARY KEY(idVenta)
 );
 
+
 CREATE table detalleVentas(
 codDetalleVta int,
 idVenta int,
@@ -100,8 +102,11 @@ CONSTRAINT pk_detalleVta PRIMARY KEY(codDetalleVta, idVenta, codProducto)
 
 CREATE TABLE usuarios(
 idUsuario INT IDENTITY (1,1),
+tipoUsuario VARCHAR(40),
 usuario varchar(40),
 contrasena varchar(40),
 nombre varchar(60)
 );
+
+DROP TABLE usuarios
 

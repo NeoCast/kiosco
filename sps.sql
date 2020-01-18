@@ -1,20 +1,28 @@
 CREATE PROCEDURE altaProductos
+@codPromo INT,
 @tipoProd VARCHAR(30),
-@descripcion varchar(80),
+@descripcion varchar(100),
 @precio NUMERIC(18,2),
 @outFecha DATETIME,
 @stock INT,
 @inFecha DATETIME,
 @stockMin INT
 AS
-insert into productos(tipoProducto,descripcion,precio, stock, stockMin ,inFecha, outFecha)
-values (@tipoProd, @descripcion ,@precio, @stock, @stockMin,@inFecha, @outFecha)
+
+DECLARE @p_codPromo INT
+
+select @p_codPromo = ISNULL(@codPromo, 0)
+
+insert into productos(codPromo,tipoProducto,descripcion,precio, stock, stockMin ,inFecha, outFecha)
+values (@codPromo,@tipoProd, @descripcion ,@precio, @stock, @stockMin,@inFecha, @outFecha)
 GO
+
+
 
 drop PROCEDURE altaProductos;
 
 GO
-drop PROCEDURE altaProducto
+
 go
 
 CREATE PROCEDURE nuevoStock
@@ -50,12 +58,14 @@ VALUES (@codProducto, @codStock, @cantidad, @valorStock,
 go
 
 
+
 CREATE PROCEDURE buscarProducto
 @descripcion varchar(100)
 AS
 Select descripcion FROM productos
 where descripcion LIKE '%@descripcion%'
 GO
+
 
 
 CREATE PROCEDURE todosProductos
@@ -65,12 +75,14 @@ select tipoProducto, descripcion, stock,
 GO
 
 
+
 CREATE PROCEDURE eliminarProducto
 @codProducto INT
 AS
 Delete productos where
 codProducto = @codProducto
 GO
+
 
 
 
@@ -96,19 +108,20 @@ outFecha = @outFecha
         codProducto = @codProducto
 GO
 
+/**PROCEDIMIENTO NUEVA PROMO**/
+USE Kiosco
+GO
 
-
-CREATE PROCEDURE nuevaPromo
+CREATE PROCEDURE nuevaPromo(
 @codProd INT, 
-@tipoProd VARCHAR(30),
 @descripcion VARCHAR(100),
-@cantidad INT,
-@valorUnit NUMERIC(18,2),
 @total NUMERIC(18,2),
 @activa BIT
+)
 AS
 
 DECLARE @codPromo INT
+
 
 SELECT TOP 1 @codPromo = isnull(codPromo, 0) FROM
 promocion ORDER BY codPromo DESC
@@ -119,34 +132,22 @@ promocion ORDER BY codPromo DESC
         END
         ELSE
         BEGIN
+
                 SET @codPromo = @codPromo + 1
 
         END
 
   INSERT INTO promocion 
-  VALUES(@codPromo, @codProd ,@descripcion,
-        @cantidad, @valorUnit, @total)
-
-
-EXEC altaProductos(@tipoProd, 
-                   @descripcion,
-                   @precio,
-                   @outFecha,
-                   @stock,
-                   @inFecha,
-                   @stockMin
-                   )
-----*----
----@tipoProd VARCHAR(30),
----@descripcion varchar(80),
----@precio NUMERIC(18,2),
----@outFecha DATETIME,
----@stock INT,
----@inFecha DATETIME,
----@stockMin INT
+  VALUES(@codPromo ,@descripcion,
+         @total, @activa)
 
 GO
 
+
+
+/***FIN PROCEDIMIENTO***/
+DROP PROCEDURE nuevaPromo
+/**PROCEDIMIENTO MODIFICAR PROMOCION**/
 
 CREATE PROCEDURE modificarPromocion
 @codPromo INT,
@@ -183,10 +184,10 @@ ELSE
                 SET @descrError = 'ERROR' + CONVERT(VARCHAR,@codError) + ' ' +  'No se ingreso el codigo de promocion'
         END
 
-        GRANT EXECUTE ON modificarPromocion TO Kiosco
 GO
+/**FIN PROCEDIMIENTO**/
 
-
+/**PROCEDIMIENTO NUEVO DETALLE**/
 CREATE PROCEDURE sp_nuevoDetallePromo
 @codPromo INT,
 @codProd INT,
@@ -202,8 +203,11 @@ VALUES (@codPromo, @codProd, @descrProd, @totalProd, @cantidad)
 GO
 GRANT EXECUTE ON sp_nuevoDetallePromo TO Kiosco
 GO
+/***FIN PROCEDIMIENTO***/
 
 
+
+/**TRIGGER PARA NUEVA PROMOCION**/
 
 CREATE TRIGGER tri_nuevaPromo on promocion
 AFTER INSERT
@@ -219,10 +223,13 @@ INSERT INTO productos(codPromo, tipoProducto, descripcion, ,precio)
 GO
 /*******FALTA TERMINAR********/
 
+/**FIN TRIGGER**/
 
 
+/**PROCEDIMIENTO NUEVO USER**/
 
 CREATE PROCEDURE sp_nuevoUsuario
+@tipoUsuario varchar(40),
 @usuario varchar(40),
 @contrasena varchar(40),
 @nombre varchar(60)
@@ -233,14 +240,12 @@ DECLARE @p_usuario VARCHAR(40)
 DECLARE @existe BIT
 
 SET @cod_error = 0
-
-
 IF @cod_error = 0
 BEGIN
         IF EXISTS(
                 SELECT 1  
-        FROM usuarios
-                WHERE usuario = @usuario
+                 FROM usuarios
+                    WHERE usuario = @usuario
         )
         BEGIN
         SET @existe = 1
@@ -255,7 +260,7 @@ END
 
 IF @existe = 0
 BEGIN
-INSERT INTO usuarios VALUES(@usuario, @contrasena, @nombre)
+INSERT INTO usuarios VALUES(@tipoUsuario ,@usuario, @contrasena, @nombre)
 END
 
 ELSE
@@ -263,9 +268,14 @@ BEGIN
 SET @cod_error = 60
 SET @desc_error = 'El usuario: ' + @usuario + ' ya existe'
 END
-GRANT EXECUTE TO sp_nuevoDetallePromo to Kiosco
+
+GRANT EXECUTE ON sp_nuevoUsuario to Kiosco
 GO
 
+/***FIN PROCEDIMIENTO***/
+
+
+/***PROCEDIMIENTO ELIMINAR USER***/
 CREATE PROCEDURE sp_eliminarUsuario
 @usuario VARCHAR(40)
 AS
@@ -273,7 +283,19 @@ AS
 DELETE FROM usuarios 
         WHERE usuario = @usuario
 
-GRANT EXECUTE TO sp_eliminarUsuario TO Kiosco
+GRANT EXECUTE ON sp_eliminarUsuario TO Kiosco
+
+GO
 
 
 
+
+/***FIN PROCEDIMIENTO***/
+
+/**PROCEDIMIENTO BUSCAR USUARIO**/
+CREATE PROCEDURE sp_logear
+@usuario varchar(40),
+@password varchar
+
+
+/**FIN PROCEDIMIENTO**/

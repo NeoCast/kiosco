@@ -25,6 +25,8 @@ namespace capavista
 
         private void Button1_Click(object sender, EventArgs e)
         {
+
+
             
             int stock, stockmin;
             String descripcion, tproducto;
@@ -35,6 +37,7 @@ namespace capavista
             descripcion = txtdescripcion.Text;
             tproducto = combotproducto.Text;
             
+
             
                 if ((txtdescripcion.Text != "" && precio > 0.00) && (stock > 0 && stockmin > 0))
                 {
