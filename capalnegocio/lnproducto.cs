@@ -53,11 +53,6 @@ namespace capalnegocio
             return tabla;
         }
 
-<<<<<<< HEAD
-
-
-
-=======
         public DataTable mostrarUltimo()
         {
              tabla = null;
@@ -68,6 +63,5 @@ namespace capalnegocio
 
         }
 
->>>>>>> vista
     }
 }
