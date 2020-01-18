@@ -121,5 +121,16 @@ namespace capavista
         {
 
         }
+      
+    
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+       
+        }
+
+        private void PanelP_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
