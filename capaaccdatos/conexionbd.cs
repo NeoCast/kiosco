@@ -23,7 +23,7 @@ namespace capaaccdatos
             }
             else
             {
-                return conexion = null;
+                return conexion;
             }
       
         

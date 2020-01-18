@@ -13,7 +13,7 @@ namespace capalnegocio
     public class lnproducto
     {
         private acproducto producdatos = new acproducto();
-
+        private DataTable tabla = new DataTable();
 
         public void altaProducto(String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin, DateTime inFecha, DateTime outFecha)
         {
@@ -36,7 +36,8 @@ namespace capalnegocio
 
         public DataTable mostrarProductos(string descripcion)
         {
-            DataTable tabla = new DataTable();
+            tabla = null;
+
             descripcion = Convert.ToString(descripcion);
 
             tabla = producdatos.buscarProducto(descripcion);
@@ -46,14 +47,27 @@ namespace capalnegocio
         
         public DataTable mostrarTodos()
         {
-            DataTable tabla = new DataTable();
+            tabla = null;
 
             tabla= producdatos.todosProductos();
             return tabla;
         }
 
+<<<<<<< HEAD
 
 
 
+=======
+        public DataTable mostrarUltimo()
+        {
+             tabla = null;
+            tabla = producdatos.ultimoProducto();
+            return tabla;
+
+
+
+        }
+
+>>>>>>> vista
     }
 }
