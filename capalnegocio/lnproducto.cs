@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using capaaccdatos;
+using System;
 using System.Data;
-using System.Data.SqlClient;
-using capaaccdatos;
 
 
 namespace capalnegocio
@@ -19,10 +14,11 @@ namespace capalnegocio
         {
             try
             {
+
                 tabla = null;
                 descripcion = tproducto + "-" + descripcion;
                 producdatos.nuevoproducto(tproducto, descripcion, precio, stock, stockMin, inFecha, outFecha);
-
+                
             }
             catch (Exception ex)
             {
@@ -30,7 +26,7 @@ namespace capalnegocio
                 throw ex;
 
             }
-               
+
 
         }
 
@@ -44,12 +40,12 @@ namespace capalnegocio
             return tabla;
 
         }
-        
+
         public DataTable mostrarTodos()
         {
-            
+
             tabla = null;
-            tabla= producdatos.todosProductos();
+            tabla = producdatos.todosProductos();
             return tabla;
 
         }
@@ -79,7 +75,7 @@ namespace capalnegocio
                 throw ex;
 
             }
-            
+
         }
 
         public void modificarProducto(Int32 codProd, string tipoProd, string descripcion, double precio, Int32 stock, Int32 stockMin, DateTime inFecha, DateTime outFecha)
@@ -95,7 +91,7 @@ namespace capalnegocio
                 throw ex;
 
             }
-         
+
 
         }
 

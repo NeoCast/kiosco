@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using capalnegocio;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using capalnegocio;
 namespace capavista
 {
     public partial class nuevoProducto : Form
@@ -27,7 +21,7 @@ namespace capavista
         {
 
 
-            
+
             int stock, stockmin;
             String descripcion, tproducto;
             Double precio;
@@ -36,22 +30,22 @@ namespace capavista
             precio = Convert.ToDouble(txtprecio.Text);
             descripcion = txtdescripcion.Text;
             tproducto = combotproducto.Text;
-            
-
-            
-                if ((txtdescripcion.Text != "" && precio > 0.00) && (stock > 0 && stockmin > 0))
-                {
-
-                   
-                   
-                        productoLN.altaProducto(tproducto, descripcion, precio, stock, stockmin, dateTimePicker1.Value, dateTimePicker2.Value);
-                        MessageBox.Show("Producto agregado correctamente");
-                        dataGridView1.Rows.Add(descripcion);
-                                        
-                }
 
 
-            
+
+            if ((txtdescripcion.Text != "" && precio > 0.00) && (stock > 0 && stockmin > 0))
+            {
+
+
+
+                productoLN.altaProducto(tproducto, descripcion, precio, stock, stockmin, dateTimePicker1.Value, dateTimePicker2.Value);
+                MessageBox.Show("Producto agregado correctamente");
+                dataGridView1.Rows.Add(descripcion);
+
+            }
+
+
+
         }
 
         private void NuevoProducto_Load(object sender, EventArgs e)

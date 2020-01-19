@@ -51,6 +51,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnElim = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -95,6 +96,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(209)))));
+            this.panel1.Controls.Add(this.btnElim);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.btnModificar);
             this.panel1.Controls.Add(this.label2);
@@ -141,9 +143,9 @@
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(48, 503);
+            this.btnModificar.Location = new System.Drawing.Point(38, 454);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(294, 56);
+            this.btnModificar.Size = new System.Drawing.Size(304, 56);
             this.btnModificar.TabIndex = 41;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -322,6 +324,21 @@
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
+            // btnElim
+            // 
+            this.btnElim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnElim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.btnElim.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
+            this.btnElim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnElim.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnElim.ForeColor = System.Drawing.Color.White;
+            this.btnElim.Location = new System.Drawing.Point(38, 528);
+            this.btnElim.Name = "btnElim";
+            this.btnElim.Size = new System.Drawing.Size(304, 54);
+            this.btnElim.TabIndex = 43;
+            this.btnElim.Text = "Eliminar";
+            this.btnElim.UseVisualStyleBackColor = false;
+            // 
             // Consultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -371,5 +388,6 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnElim;
     }
 }

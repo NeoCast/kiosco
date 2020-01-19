@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Sql;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace capaaccdatos
-{                  
-  public class acproducto
+{
+    public class acproducto
     {
 
 
@@ -17,15 +12,16 @@ namespace capaaccdatos
         private conexionbd conexion = new conexionbd();
         public void nuevoproducto(String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin, DateTime inFecha, DateTime outFecha)
         {
-              
-             
-           
+
+
+
             SqlCommand comando = new SqlCommand();
             DataTable tabla = new DataTable();
-        
+
 
             try
             {
+
                 comando.Connection = conexion.abrircn();
                 comando.CommandText = "altaProductos";
                 comando.CommandType = CommandType.StoredProcedure;
@@ -38,6 +34,7 @@ namespace capaaccdatos
                 comando.Parameters.AddWithValue("@outFecha", outFecha);
                 comando.ExecuteNonQuery();
 
+
             }
             catch (Exception ex)
             {
@@ -46,12 +43,12 @@ namespace capaaccdatos
 
             }
             finally
-            { 
-                
+            {
+
                 conexion.cerrarcn();
-                
+
             }
-           
+
 
         }
 
@@ -84,7 +81,7 @@ namespace capaaccdatos
 
             }
 
-           
+
 
         }
 
@@ -132,7 +129,7 @@ namespace capaaccdatos
             {
                 conexion.cerrarcn();
             }
- 
+
         }
 
         public void eliminarProducto(int idProducto)
@@ -156,12 +153,12 @@ namespace capaaccdatos
                 conexion.cerrarcn();
             }
 
-            
-            
+
+
 
         }
 
-        public void modificarProducto(Int32 codProducto ,String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin, DateTime inFecha, DateTime outFecha)
+        public void modificarProducto(Int32 codProducto, String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin, DateTime inFecha, DateTime outFecha)
         {
 
             SqlCommand comando = new SqlCommand();

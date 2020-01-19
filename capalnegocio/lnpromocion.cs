@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using capaaccdatos;
+using System;
 using System.Data;
-using System.Data.Sql;
-using System.Data.SqlClient;
-using capaaccdatos;
 
 
 namespace capalnegocio
@@ -30,7 +24,7 @@ namespace capalnegocio
                 throw ex;
             }
 
-            
+
         }
     }
 }

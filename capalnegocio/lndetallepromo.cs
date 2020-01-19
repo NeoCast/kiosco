@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using capaaccdatos;
+using System;
 using System.Data;
-using System.Data.Sql;
-using System.Data.SqlClient;
-using capaaccdatos;
 
 namespace capalnegocio
 {
@@ -18,7 +12,7 @@ namespace capalnegocio
         public void nuevoDetallePromo(Int32 codPromo, Int32 codProd, string descrProd, double totalProd, Int32 cantidad)
         {
             detalle.nuevoDetallePromo(codPromo, codProd, descrProd, totalProd, cantidad);
-        } 
+        }
 
 
     }

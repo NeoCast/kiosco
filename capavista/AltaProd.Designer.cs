@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtdescripcion = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtstock = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtprecio = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtminimo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -47,15 +48,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.PanelP = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnElim = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.kioscoDataSet = new capavista.KioscoDataSet();
+            this.tipoProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipoProductoTableAdapter = new capavista.KioscoDataSetTableAdapters.tipoProductoTableAdapter();
             this.panel1.SuspendLayout();
             this.PanelP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kioscoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -67,26 +70,26 @@
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo de producto";
-            
             // 
-            // textBox1
+            // txtdescripcion
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(156, 190);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(185, 20);
-            this.textBox1.TabIndex = 1;
-        
+            this.txtdescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtdescripcion.Location = new System.Drawing.Point(156, 190);
+            this.txtdescripcion.Name = "txtdescripcion";
+            this.txtdescripcion.Size = new System.Drawing.Size(185, 20);
+            this.txtdescripcion.TabIndex = 1;
             // 
             // comboBox1
             // 
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.DataSource = this.tipoProductoBindingSource;
+            this.comboBox1.DisplayMember = "descripTipo";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(156, 148);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(185, 21);
             this.comboBox1.TabIndex = 2;
-           
+            this.comboBox1.ValueMember = "codTipop";
             // 
             // label2
             // 
@@ -97,7 +100,6 @@
             this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Descripción:";
-            
             // 
             // label3
             // 
@@ -108,16 +110,14 @@
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Stock:";
-            
             // 
-            // textBox2
+            // txtstock
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(156, 233);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(185, 20);
-            this.textBox2.TabIndex = 4;
-           
+            this.txtstock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtstock.Location = new System.Drawing.Point(156, 233);
+            this.txtstock.Name = "txtstock";
+            this.txtstock.Size = new System.Drawing.Size(185, 20);
+            this.txtstock.TabIndex = 4;
             // 
             // dateTimePicker2
             // 
@@ -127,7 +127,6 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(185, 20);
             this.dateTimePicker2.TabIndex = 18;
-           
             // 
             // dateTimePicker1
             // 
@@ -137,7 +136,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(185, 20);
             this.dateTimePicker1.TabIndex = 19;
-           
             // 
             // label5
             // 
@@ -148,16 +146,14 @@
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 23;
             this.label5.Text = "Precio:";
-          
             // 
-            // textBox3
+            // txtprecio
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(156, 315);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(185, 20);
-            this.textBox3.TabIndex = 22;
-           
+            this.txtprecio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtprecio.Location = new System.Drawing.Point(156, 315);
+            this.txtprecio.Name = "txtprecio";
+            this.txtprecio.Size = new System.Drawing.Size(185, 20);
+            this.txtprecio.TabIndex = 22;
             // 
             // label4
             // 
@@ -168,16 +164,14 @@
             this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 21;
             this.label4.Text = "Stock Mínimo:";
-           
             // 
-            // textBox4
+            // txtminimo
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(156, 272);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(185, 20);
-            this.textBox4.TabIndex = 20;
-           
+            this.txtminimo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtminimo.Location = new System.Drawing.Point(156, 272);
+            this.txtminimo.Name = "txtminimo";
+            this.txtminimo.Size = new System.Drawing.Size(185, 20);
+            this.txtminimo.TabIndex = 20;
             // 
             // label7
             // 
@@ -188,7 +182,6 @@
             this.label7.Size = new System.Drawing.Size(115, 13);
             this.label7.TabIndex = 25;
             this.label7.Text = "Fecha de vencimiento:";
-           
             // 
             // label6
             // 
@@ -199,7 +192,6 @@
             this.label6.Size = new System.Drawing.Size(94, 13);
             this.label6.TabIndex = 24;
             this.label6.Text = "Fecha de entrada:";
-         
             // 
             // btnGuardar
             // 
@@ -216,7 +208,7 @@
             this.btnGuardar.TabIndex = 29;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
-         
+            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // label8
             // 
@@ -232,7 +224,6 @@
             this.label8.TabIndex = 30;
             this.label8.Text = "Ingresar producto al sistema";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-          
             // 
             // panel1
             // 
@@ -240,31 +231,29 @@
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtdescripcion);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtstock);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.txtprecio);
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.txtminimo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(700, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(380, 612);
             this.panel1.TabIndex = 31;
-         
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
             // PanelP
             // 
-            this.PanelP.Controls.Add(this.dataGridView1);
-            this.PanelP.Controls.Add(this.panel2);
             this.PanelP.Controls.Add(this.panel3);
             this.PanelP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelP.Location = new System.Drawing.Point(0, 0);
@@ -278,67 +267,49 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 47);
+            this.dataGridView1.Location = new System.Drawing.Point(23, 117);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(654, 365);
+            this.dataGridView1.Size = new System.Drawing.Size(654, 453);
             this.dataGridView1.TabIndex = 37;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(-4, 430);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(742, 3);
-            this.panel2.TabIndex = 38;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btnElim);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.textBox5);
+            this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1080, 612);
             this.panel3.TabIndex = 42;
-        
-            // 
-            // btnElim
-            // 
-            this.btnElim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnElim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.btnElim.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
-            this.btnElim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnElim.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnElim.ForeColor = System.Drawing.Color.White;
-            this.btnElim.Location = new System.Drawing.Point(483, 510);
-            this.btnElim.Name = "btnElim";
-            this.btnElim.Size = new System.Drawing.Size(162, 54);
-            this.btnElim.TabIndex = 41;
-            this.btnElim.Text = "Eliminar";
-            this.btnElim.UseVisualStyleBackColor = false;
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(28, 533);
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(209)))));
+            this.label9.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(467, 47);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(171, 13);
-            this.label9.TabIndex = 39;
-            this.label9.Text = "Eliminar productos por descripción:";
+            this.label9.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label9.Size = new System.Drawing.Size(210, 23);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Productos cargados";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox5
+            // kioscoDataSet
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(223, 526);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(223, 20);
-            this.textBox5.TabIndex = 40;
+            this.kioscoDataSet.DataSetName = "KioscoDataSet";
+            this.kioscoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tipoProductoBindingSource
+            // 
+            this.tipoProductoBindingSource.DataMember = "tipoProducto";
+            this.tipoProductoBindingSource.DataSource = this.kioscoDataSet;
+            // 
+            // tipoProductoTableAdapter
+            // 
+            this.tipoProductoTableAdapter.ClearBeforeFill = true;
             // 
             // AltaProd
             // 
@@ -358,6 +329,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kioscoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -365,28 +338,28 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtdescripcion;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtstock;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtprecio;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtminimo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel PanelP;
-        private System.Windows.Forms.Button btnElim;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label9;
+        private KioscoDataSet kioscoDataSet;
+        private System.Windows.Forms.BindingSource tipoProductoBindingSource;
+        private KioscoDataSetTableAdapters.tipoProductoTableAdapter tipoProductoTableAdapter;
     }
 }
