@@ -39,11 +39,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblFecha = new System.Windows.Forms.Label();
             this.panelSub = new System.Windows.Forms.Panel();
-            this.panelStock = new System.Windows.Forms.Panel();
             this.panelModElim = new System.Windows.Forms.Panel();
             this.btnModElim = new System.Windows.Forms.Button();
             this.panelAltaProd = new System.Windows.Forms.Panel();
-            this.btnStock = new System.Windows.Forms.Button();
             this.btnAltaProd = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnProductos = new System.Windows.Forms.Button();
@@ -188,32 +186,21 @@
             // panelSub
             // 
             this.panelSub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelSub.Controls.Add(this.panelStock);
             this.panelSub.Controls.Add(this.panelModElim);
             this.panelSub.Controls.Add(this.btnModElim);
             this.panelSub.Controls.Add(this.panelAltaProd);
-            this.panelSub.Controls.Add(this.btnStock);
             this.panelSub.Controls.Add(this.btnAltaProd);
-            this.panelSub.Location = new System.Drawing.Point(44, 410);
+            this.panelSub.Location = new System.Drawing.Point(44, 413);
             this.panelSub.Name = "panelSub";
             this.panelSub.Size = new System.Drawing.Size(176, 116);
             this.panelSub.TabIndex = 13;
             this.panelSub.Visible = false;
             this.panelSub.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
-            // panelStock
-            // 
-            this.panelStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.panelStock.Location = new System.Drawing.Point(0, 0);
-            this.panelStock.Name = "panelStock";
-            this.panelStock.Size = new System.Drawing.Size(5, 33);
-            this.panelStock.TabIndex = 4;
-            this.panelStock.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
-            // 
             // panelModElim
             // 
             this.panelModElim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.panelModElim.Location = new System.Drawing.Point(0, 78);
+            this.panelModElim.Location = new System.Drawing.Point(0, 44);
             this.panelModElim.Name = "panelModElim";
             this.panelModElim.Size = new System.Drawing.Size(5, 33);
             this.panelModElim.TabIndex = 6;
@@ -228,7 +215,7 @@
             this.btnModElim.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModElim.ForeColor = System.Drawing.Color.White;
             this.btnModElim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModElim.Location = new System.Drawing.Point(3, 78);
+            this.btnModElim.Location = new System.Drawing.Point(3, 44);
             this.btnModElim.Name = "btnModElim";
             this.btnModElim.Size = new System.Drawing.Size(173, 33);
             this.btnModElim.TabIndex = 5;
@@ -239,28 +226,11 @@
             // panelAltaProd
             // 
             this.panelAltaProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.panelAltaProd.Location = new System.Drawing.Point(0, 39);
+            this.panelAltaProd.Location = new System.Drawing.Point(0, 5);
             this.panelAltaProd.Name = "panelAltaProd";
             this.panelAltaProd.Size = new System.Drawing.Size(5, 33);
             this.panelAltaProd.TabIndex = 4;
             this.panelAltaProd.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
-            // 
-            // btnStock
-            // 
-            this.btnStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.btnStock.FlatAppearance.BorderSize = 0;
-            this.btnStock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.btnStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStock.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStock.ForeColor = System.Drawing.Color.White;
-            this.btnStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStock.Location = new System.Drawing.Point(4, 0);
-            this.btnStock.Name = "btnStock";
-            this.btnStock.Size = new System.Drawing.Size(173, 33);
-            this.btnStock.TabIndex = 3;
-            this.btnStock.Text = "Stock";
-            this.btnStock.UseVisualStyleBackColor = false;
-            this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
             // 
             // btnAltaProd
             // 
@@ -271,7 +241,7 @@
             this.btnAltaProd.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAltaProd.ForeColor = System.Drawing.Color.White;
             this.btnAltaProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAltaProd.Location = new System.Drawing.Point(3, 39);
+            this.btnAltaProd.Location = new System.Drawing.Point(3, 5);
             this.btnAltaProd.Name = "btnAltaProd";
             this.btnAltaProd.Size = new System.Drawing.Size(173, 33);
             this.btnAltaProd.TabIndex = 3;
@@ -497,8 +467,6 @@
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Panel panelModElim;
         private System.Windows.Forms.Button btnModElim;
-        private System.Windows.Forms.Panel panelStock;
-        private System.Windows.Forms.Button btnStock;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Panel panelCont;
         private System.Windows.Forms.PictureBox pictureBox2;
