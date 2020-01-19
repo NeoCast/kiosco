@@ -66,6 +66,12 @@
     <Compile Include="Consultas.Designer.cs">
       <DependentUpon>Consultas.cs</DependentUpon>
     </Compile>
+    <Compile Include="consultaspromocion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="consultaspromocion.Designer.cs">
+      <DependentUpon>consultaspromocion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Facturacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,12 @@
       <DependentUpon>nuevoProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="nuevapromocion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nuevapromocion.Designer.cs">
+      <DependentUpon>nuevapromocion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AltaProd.resx">
       <DependentUpon>AltaProd.cs</DependentUpon>
@@ -117,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas.resx">
       <DependentUpon>Consultas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="consultaspromocion.resx">
+      <DependentUpon>consultaspromocion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion.resx">
       <DependentUpon>Facturacion.cs</DependentUpon>
@@ -135,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="nuevoProducto.resx">
       <DependentUpon>nuevoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nuevapromocion.resx">
+      <DependentUpon>nuevapromocion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

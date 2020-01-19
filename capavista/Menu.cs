@@ -123,6 +123,7 @@ namespace capavista
         private void btnConfiguración_Click(object sender, EventArgs e)
         {
             panelSub.Visible = false;
+            AbrirFormP(new nuevapromocion());
         }
 
         private void btnFacturacion_Click(object sender, EventArgs e)

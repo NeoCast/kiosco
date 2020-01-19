@@ -192,7 +192,7 @@
             this.panelSub.Controls.Add(this.btnAltaProd);
             this.panelSub.Location = new System.Drawing.Point(44, 413);
             this.panelSub.Name = "panelSub";
-            this.panelSub.Size = new System.Drawing.Size(176, 116);
+            this.panelSub.Size = new System.Drawing.Size(176, 85);
             this.panelSub.TabIndex = 13;
             this.panelSub.Visible = false;
             this.panelSub.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
