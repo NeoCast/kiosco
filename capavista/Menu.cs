@@ -102,7 +102,7 @@ namespace capavista
 
         private void btnModElim_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnStock_Click(object sender, EventArgs e)
@@ -250,7 +250,7 @@ namespace capavista
 
         private void btnConsProd_Click_1(object sender, EventArgs e)
         {
-            AbrirFormP(new Consultas());
+            AbrirFormP(new consultaProducto());
         }
     }
 }

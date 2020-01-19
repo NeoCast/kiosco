@@ -60,11 +60,11 @@
     <Compile Include="buscarProductos.Designer.cs">
       <DependentUpon>buscarProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Consultas.cs">
+    <Compile Include="consultaProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultas.Designer.cs">
-      <DependentUpon>Consultas.cs</DependentUpon>
+    <Compile Include="consultaProducto.Designer.cs">
+      <DependentUpon>consultaProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="consultaspromocion.cs">
       <SubType>Form</SubType>
@@ -127,8 +127,8 @@
     <EmbeddedResource Include="buscarProductos.resx">
       <DependentUpon>buscarProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Consultas.resx">
-      <DependentUpon>Consultas.cs</DependentUpon>
+    <EmbeddedResource Include="consultaProducto.resx">
+      <DependentUpon>consultaProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="consultaspromocion.resx">
       <DependentUpon>consultaspromocion.cs</DependentUpon>

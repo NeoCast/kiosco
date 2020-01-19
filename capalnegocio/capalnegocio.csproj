@@ -44,6 +44,8 @@
     <Compile Include="lndetallepromo.cs" />
     <Compile Include="lnproducto.cs" />
     <Compile Include="lnpromocion.cs" />
+    <Compile Include="lnusuario.cs" />
+    <Compile Include="lnvalidacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

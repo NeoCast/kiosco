@@ -53,11 +53,11 @@
             this.lblStock.AutoSize = true;
             this.lblStock.Font = new System.Drawing.Font("Georgia", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStock.ForeColor = System.Drawing.Color.White;
-            this.lblStock.Location = new System.Drawing.Point(52, 9);
+            this.lblStock.Location = new System.Drawing.Point(-4, 9);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(110, 43);
+            this.lblStock.Size = new System.Drawing.Size(234, 43);
             this.lblStock.TabIndex = 2;
-            this.lblStock.Text = "Stock";
+            this.lblStock.Text = "Promociones";
             this.lblStock.Click += new System.EventHandler(this.lblStock_Click);
             // 
             // dataGridView1
