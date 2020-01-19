@@ -62,6 +62,7 @@ namespace capaaccdatos
             SqlDataReader reader;
             try
             {
+
                 comando.Connection = conexion.abrircn();
                 comando.CommandText = "todosProductos";
                 comando.CommandType = CommandType.StoredProcedure;
@@ -74,10 +75,13 @@ namespace capaaccdatos
             {
 
                 throw ex;
+
             }
             finally
             {
+
                 conexion.cerrarcn();
+
             }
 
            
@@ -166,6 +170,8 @@ namespace capaaccdatos
 
             try
             {
+
+
                 comando.Connection = conexion.abrircn();
                 comando.CommandText = "modificarProducto";
                 comando.CommandType = CommandType.StoredProcedure;
@@ -179,6 +185,7 @@ namespace capaaccdatos
                 comando.Parameters.AddWithValue("@outFecha", outFecha);
                 comando.ExecuteNonQuery();
 
+
             }
             catch (Exception ex)
             {
@@ -189,7 +196,9 @@ namespace capaaccdatos
             finally
             {
 
+
                 conexion.cerrarcn();
+
 
             }
         }

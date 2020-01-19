@@ -19,7 +19,7 @@ namespace capalnegocio
         {
             try
             {
-             
+                tabla = null;
                 descripcion = tproducto + "-" + descripcion;
                 producdatos.nuevoproducto(tproducto, descripcion, precio, stock, stockMin, inFecha, outFecha);
 
@@ -47,19 +47,55 @@ namespace capalnegocio
         
         public DataTable mostrarTodos()
         {
+            
             tabla = null;
-
             tabla= producdatos.todosProductos();
             return tabla;
+
         }
 
         public DataTable mostrarUltimo()
         {
-             tabla = null;
+
+            tabla = null;
             tabla = producdatos.ultimoProducto();
             return tabla;
 
 
+        }
+
+        public void eliminarProducto(Int32 codProd)
+        {
+            try
+            {
+
+                producdatos.eliminarProducto(codProd);
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+
+            }
+            
+        }
+
+        public void modificarProducto(Int32 codProd, string tipoProd, string descripcion, double precio, Int32 stock, Int32 stockMin, DateTime inFecha, DateTime outFecha)
+        {
+            try
+            {
+                producdatos.modificarProducto(codProd, tipoProd, descripcion, precio, stock, stockMin, inFecha, outFecha);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+
+            }
+         
 
         }
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using capalnegocio;
 
 namespace capavista
 {
@@ -17,9 +18,12 @@ namespace capavista
             InitializeComponent();
         }
 
+        private lnproducto productoln = new lnproducto();
+
+
         private void Consultas_Load(object sender, EventArgs e)
         {
-
+            dataGridView1.DataSource = productoln.mostrarTodos();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
