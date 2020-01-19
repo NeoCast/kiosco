@@ -36,24 +36,21 @@
             this.btnMax = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panelBtn = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.panelSub = new System.Windows.Forms.Panel();
-            this.panelModElim = new System.Windows.Forms.Panel();
-            this.btnModElim = new System.Windows.Forms.Button();
-            this.panelAltaProd = new System.Windows.Forms.Panel();
-            this.btnAltaProd = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnProductos = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnConfiguración = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnFacturacion = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnVentas = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnMenu = new System.Windows.Forms.Button();
             this.lblHora = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.panelsubm = new System.Windows.Forms.Panel();
+            this.panelProductos = new System.Windows.Forms.Panel();
+            this.btnConsProd = new System.Windows.Forms.Button();
+            this.btnAltaProd = new System.Windows.Forms.Button();
+            this.btnProd = new System.Windows.Forms.Button();
+            this.panelPromocion = new System.Windows.Forms.Panel();
+            this.btnCprom = new System.Windows.Forms.Button();
+            this.btnAltaProm = new System.Windows.Forms.Button();
+            this.btnpromocion = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnFacturacion = new System.Windows.Forms.Button();
+            this.btnVentas = new System.Windows.Forms.Button();
+            this.btnMenu = new System.Windows.Forms.Button();
             this.Horafecha = new System.Windows.Forms.Timer(this.components);
             this.panelCont = new System.Windows.Forms.Panel();
             this.panelTitle.SuspendLayout();
@@ -62,8 +59,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBtn.SuspendLayout();
+            this.panelsubm.SuspendLayout();
+            this.panelProductos.SuspendLayout();
+            this.panelPromocion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panelSub.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTitle
@@ -137,26 +136,176 @@
             // panelBtn
             // 
             this.panelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.panelBtn.Controls.Add(this.pictureBox2);
-            this.panelBtn.Controls.Add(this.lblFecha);
-            this.panelBtn.Controls.Add(this.panelSub);
-            this.panelBtn.Controls.Add(this.panel5);
-            this.panelBtn.Controls.Add(this.btnProductos);
-            this.panelBtn.Controls.Add(this.panel4);
-            this.panelBtn.Controls.Add(this.btnConfiguración);
-            this.panelBtn.Controls.Add(this.panel3);
-            this.panelBtn.Controls.Add(this.btnFacturacion);
-            this.panelBtn.Controls.Add(this.panel2);
-            this.panelBtn.Controls.Add(this.btnVentas);
-            this.panelBtn.Controls.Add(this.panel1);
-            this.panelBtn.Controls.Add(this.btnMenu);
             this.panelBtn.Controls.Add(this.lblHora);
+            this.panelBtn.Controls.Add(this.lblFecha);
+            this.panelBtn.Controls.Add(this.panelsubm);
+            this.panelBtn.Controls.Add(this.pictureBox2);
+            this.panelBtn.Controls.Add(this.btnFacturacion);
+            this.panelBtn.Controls.Add(this.btnVentas);
+            this.panelBtn.Controls.Add(this.btnMenu);
             this.panelBtn.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelBtn.Location = new System.Drawing.Point(0, 38);
             this.panelBtn.Name = "panelBtn";
             this.panelBtn.Size = new System.Drawing.Size(220, 612);
             this.panelBtn.TabIndex = 1;
             this.panelBtn.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBtn_Paint);
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblHora.Location = new System.Drawing.Point(12, 69);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(125, 54);
+            this.lblHora.TabIndex = 0;
+            this.lblHora.Text = "Hora";
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.ForeColor = System.Drawing.Color.LightGray;
+            this.lblFecha.Location = new System.Drawing.Point(73, 134);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(64, 24);
+            this.lblFecha.TabIndex = 2;
+            this.lblFecha.Text = "Fecha";
+            this.lblFecha.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // panelsubm
+            // 
+            this.panelsubm.Controls.Add(this.panelProductos);
+            this.panelsubm.Controls.Add(this.btnProd);
+            this.panelsubm.Controls.Add(this.panelPromocion);
+            this.panelsubm.Controls.Add(this.btnpromocion);
+            this.panelsubm.Location = new System.Drawing.Point(0, 359);
+            this.panelsubm.Name = "panelsubm";
+            this.panelsubm.Size = new System.Drawing.Size(220, 206);
+            this.panelsubm.TabIndex = 15;
+            // 
+            // panelProductos
+            // 
+            this.panelProductos.Controls.Add(this.btnConsProd);
+            this.panelProductos.Controls.Add(this.btnAltaProd);
+            this.panelProductos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelProductos.Location = new System.Drawing.Point(0, 144);
+            this.panelProductos.Name = "panelProductos";
+            this.panelProductos.Size = new System.Drawing.Size(220, 64);
+            this.panelProductos.TabIndex = 4;
+            // 
+            // btnConsProd
+            // 
+            this.btnConsProd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnConsProd.FlatAppearance.BorderSize = 0;
+            this.btnConsProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
+            this.btnConsProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsProd.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsProd.ForeColor = System.Drawing.Color.White;
+            this.btnConsProd.Location = new System.Drawing.Point(0, 30);
+            this.btnConsProd.Name = "btnConsProd";
+            this.btnConsProd.Size = new System.Drawing.Size(220, 30);
+            this.btnConsProd.TabIndex = 2;
+            this.btnConsProd.Text = "Consultas de productos";
+            this.btnConsProd.UseVisualStyleBackColor = true;
+            this.btnConsProd.Click += new System.EventHandler(this.btnConsProd_Click_1);
+            // 
+            // btnAltaProd
+            // 
+            this.btnAltaProd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAltaProd.FlatAppearance.BorderSize = 0;
+            this.btnAltaProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
+            this.btnAltaProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAltaProd.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAltaProd.ForeColor = System.Drawing.Color.White;
+            this.btnAltaProd.Location = new System.Drawing.Point(0, 0);
+            this.btnAltaProd.Name = "btnAltaProd";
+            this.btnAltaProd.Size = new System.Drawing.Size(220, 30);
+            this.btnAltaProd.TabIndex = 1;
+            this.btnAltaProd.Text = "Agregar productos";
+            this.btnAltaProd.UseVisualStyleBackColor = true;
+            this.btnAltaProd.Click += new System.EventHandler(this.btnAltaProd_Click_1);
+            // 
+            // btnProd
+            // 
+            this.btnProd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProd.FlatAppearance.BorderSize = 0;
+            this.btnProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
+            this.btnProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProd.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProd.ForeColor = System.Drawing.Color.White;
+            this.btnProd.Image = ((System.Drawing.Image)(resources.GetObject("btnProd.Image")));
+            this.btnProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProd.Location = new System.Drawing.Point(0, 103);
+            this.btnProd.Name = "btnProd";
+            this.btnProd.Size = new System.Drawing.Size(220, 41);
+            this.btnProd.TabIndex = 3;
+            this.btnProd.Text = "Productos";
+            this.btnProd.UseVisualStyleBackColor = true;
+            this.btnProd.Click += new System.EventHandler(this.btnProd_Click);
+            // 
+            // panelPromocion
+            // 
+            this.panelPromocion.Controls.Add(this.btnCprom);
+            this.panelPromocion.Controls.Add(this.btnAltaProm);
+            this.panelPromocion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelPromocion.Location = new System.Drawing.Point(0, 41);
+            this.panelPromocion.Name = "panelPromocion";
+            this.panelPromocion.Size = new System.Drawing.Size(220, 62);
+            this.panelPromocion.TabIndex = 1;
+            // 
+            // btnCprom
+            // 
+            this.btnCprom.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCprom.FlatAppearance.BorderSize = 0;
+            this.btnCprom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
+            this.btnCprom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCprom.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCprom.ForeColor = System.Drawing.Color.White;
+            this.btnCprom.Location = new System.Drawing.Point(0, 30);
+            this.btnCprom.Name = "btnCprom";
+            this.btnCprom.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnCprom.Size = new System.Drawing.Size(220, 30);
+            this.btnCprom.TabIndex = 2;
+            this.btnCprom.Text = "Consutar promocion";
+            this.btnCprom.UseVisualStyleBackColor = true;
+            this.btnCprom.Click += new System.EventHandler(this.btnCprom_Click);
+            // 
+            // btnAltaProm
+            // 
+            this.btnAltaProm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.btnAltaProm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAltaProm.FlatAppearance.BorderSize = 0;
+            this.btnAltaProm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
+            this.btnAltaProm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAltaProm.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAltaProm.ForeColor = System.Drawing.Color.White;
+            this.btnAltaProm.Location = new System.Drawing.Point(0, 0);
+            this.btnAltaProm.Name = "btnAltaProm";
+            this.btnAltaProm.Size = new System.Drawing.Size(220, 30);
+            this.btnAltaProm.TabIndex = 1;
+            this.btnAltaProm.Text = "Agregar promocion";
+            this.btnAltaProm.UseVisualStyleBackColor = false;
+            this.btnAltaProm.Click += new System.EventHandler(this.btnAltaProm_Click);
+            // 
+            // btnpromocion
+            // 
+            this.btnpromocion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.btnpromocion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnpromocion.FlatAppearance.BorderSize = 0;
+            this.btnpromocion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
+            this.btnpromocion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnpromocion.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnpromocion.ForeColor = System.Drawing.Color.White;
+            this.btnpromocion.Image = ((System.Drawing.Image)(resources.GetObject("btnpromocion.Image")));
+            this.btnpromocion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnpromocion.Location = new System.Drawing.Point(0, 0);
+            this.btnpromocion.Name = "btnpromocion";
+            this.btnpromocion.Size = new System.Drawing.Size(220, 41);
+            this.btnpromocion.TabIndex = 0;
+            this.btnpromocion.Text = "Promociónes";
+            this.btnpromocion.UseVisualStyleBackColor = false;
+            this.btnpromocion.Click += new System.EventHandler(this.btnpromocion_Click);
             // 
             // pictureBox2
             // 
@@ -171,152 +320,8 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // lblFecha
-            // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.ForeColor = System.Drawing.Color.LightGray;
-            this.lblFecha.Location = new System.Drawing.Point(64, 106);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(64, 24);
-            this.lblFecha.TabIndex = 2;
-            this.lblFecha.Text = "Fecha";
-            this.lblFecha.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // panelSub
-            // 
-            this.panelSub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelSub.Controls.Add(this.panelModElim);
-            this.panelSub.Controls.Add(this.btnModElim);
-            this.panelSub.Controls.Add(this.panelAltaProd);
-            this.panelSub.Controls.Add(this.btnAltaProd);
-            this.panelSub.Location = new System.Drawing.Point(44, 413);
-            this.panelSub.Name = "panelSub";
-            this.panelSub.Size = new System.Drawing.Size(176, 85);
-            this.panelSub.TabIndex = 13;
-            this.panelSub.Visible = false;
-            this.panelSub.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
-            // 
-            // panelModElim
-            // 
-            this.panelModElim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.panelModElim.Location = new System.Drawing.Point(0, 44);
-            this.panelModElim.Name = "panelModElim";
-            this.panelModElim.Size = new System.Drawing.Size(5, 33);
-            this.panelModElim.TabIndex = 6;
-            this.panelModElim.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
-            // 
-            // btnModElim
-            // 
-            this.btnModElim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.btnModElim.FlatAppearance.BorderSize = 0;
-            this.btnModElim.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.btnModElim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModElim.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModElim.ForeColor = System.Drawing.Color.White;
-            this.btnModElim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModElim.Location = new System.Drawing.Point(3, 44);
-            this.btnModElim.Name = "btnModElim";
-            this.btnModElim.Size = new System.Drawing.Size(173, 33);
-            this.btnModElim.TabIndex = 5;
-            this.btnModElim.Text = "Consultas";
-            this.btnModElim.UseVisualStyleBackColor = false;
-            this.btnModElim.Click += new System.EventHandler(this.btnModElim_Click);
-            // 
-            // panelAltaProd
-            // 
-            this.panelAltaProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.panelAltaProd.Location = new System.Drawing.Point(0, 5);
-            this.panelAltaProd.Name = "panelAltaProd";
-            this.panelAltaProd.Size = new System.Drawing.Size(5, 33);
-            this.panelAltaProd.TabIndex = 4;
-            this.panelAltaProd.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
-            // 
-            // btnAltaProd
-            // 
-            this.btnAltaProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.btnAltaProd.FlatAppearance.BorderSize = 0;
-            this.btnAltaProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.btnAltaProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAltaProd.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAltaProd.ForeColor = System.Drawing.Color.White;
-            this.btnAltaProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAltaProd.Location = new System.Drawing.Point(3, 5);
-            this.btnAltaProd.Name = "btnAltaProd";
-            this.btnAltaProd.Size = new System.Drawing.Size(173, 33);
-            this.btnAltaProd.TabIndex = 3;
-            this.btnAltaProd.Text = "Agregar productos";
-            this.btnAltaProd.UseVisualStyleBackColor = false;
-            this.btnAltaProd.Click += new System.EventHandler(this.btnAltaProd_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.panel5.Location = new System.Drawing.Point(0, 363);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(5, 41);
-            this.panel5.TabIndex = 10;
-            // 
-            // btnProductos
-            // 
-            this.btnProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.btnProductos.FlatAppearance.BorderSize = 0;
-            this.btnProductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProductos.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductos.ForeColor = System.Drawing.Color.White;
-            this.btnProductos.Image = ((System.Drawing.Image)(resources.GetObject("btnProductos.Image")));
-            this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProductos.Location = new System.Drawing.Point(3, 363);
-            this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(217, 41);
-            this.btnProductos.TabIndex = 9;
-            this.btnProductos.Text = "Productos";
-            this.btnProductos.UseVisualStyleBackColor = false;
-            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.panel4.Location = new System.Drawing.Point(0, 316);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 41);
-            this.panel4.TabIndex = 8;
-            // 
-            // btnConfiguración
-            // 
-            this.btnConfiguración.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConfiguración.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.btnConfiguración.FlatAppearance.BorderSize = 0;
-            this.btnConfiguración.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.btnConfiguración.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguración.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfiguración.ForeColor = System.Drawing.Color.White;
-            this.btnConfiguración.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguración.Image")));
-            this.btnConfiguración.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguración.Location = new System.Drawing.Point(3, 316);
-            this.btnConfiguración.Name = "btnConfiguración";
-            this.btnConfiguración.Size = new System.Drawing.Size(217, 41);
-            this.btnConfiguración.TabIndex = 7;
-            this.btnConfiguración.Text = "Promociónes";
-            this.btnConfiguración.UseVisualStyleBackColor = false;
-            this.btnConfiguración.Click += new System.EventHandler(this.btnConfiguración_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.panel3.Location = new System.Drawing.Point(0, 269);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 41);
-            this.panel3.TabIndex = 6;
-            // 
             // btnFacturacion
             // 
-            this.btnFacturacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFacturacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.btnFacturacion.FlatAppearance.BorderSize = 0;
             this.btnFacturacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
@@ -325,26 +330,16 @@
             this.btnFacturacion.ForeColor = System.Drawing.Color.White;
             this.btnFacturacion.Image = ((System.Drawing.Image)(resources.GetObject("btnFacturacion.Image")));
             this.btnFacturacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFacturacion.Location = new System.Drawing.Point(3, 269);
+            this.btnFacturacion.Location = new System.Drawing.Point(0, 318);
             this.btnFacturacion.Name = "btnFacturacion";
-            this.btnFacturacion.Size = new System.Drawing.Size(217, 41);
+            this.btnFacturacion.Size = new System.Drawing.Size(221, 41);
             this.btnFacturacion.TabIndex = 5;
             this.btnFacturacion.Text = "Facturación";
             this.btnFacturacion.UseVisualStyleBackColor = false;
             this.btnFacturacion.Click += new System.EventHandler(this.btnFacturacion_Click);
             // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.panel2.Location = new System.Drawing.Point(0, 222);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 41);
-            this.panel2.TabIndex = 4;
-            // 
             // btnVentas
             // 
-            this.btnVentas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.btnVentas.FlatAppearance.BorderSize = 0;
             this.btnVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
@@ -353,26 +348,16 @@
             this.btnVentas.ForeColor = System.Drawing.Color.White;
             this.btnVentas.Image = ((System.Drawing.Image)(resources.GetObject("btnVentas.Image")));
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(3, 222);
+            this.btnVentas.Location = new System.Drawing.Point(0, 277);
             this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(217, 41);
+            this.btnVentas.Size = new System.Drawing.Size(221, 41);
             this.btnVentas.TabIndex = 3;
             this.btnVentas.Text = "Ventas";
             this.btnVentas.UseVisualStyleBackColor = false;
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.panel1.Location = new System.Drawing.Point(0, 175);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 41);
-            this.panel1.TabIndex = 2;
-            // 
             // btnMenu
             // 
-            this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.btnMenu.FlatAppearance.BorderSize = 0;
             this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
@@ -381,24 +366,13 @@
             this.btnMenu.ForeColor = System.Drawing.Color.White;
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
             this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenu.Location = new System.Drawing.Point(3, 175);
+            this.btnMenu.Location = new System.Drawing.Point(0, 236);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(217, 41);
+            this.btnMenu.Size = new System.Drawing.Size(220, 41);
             this.btnMenu.TabIndex = 1;
             this.btnMenu.Text = "Menú";
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // lblHora
-            // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblHora.Location = new System.Drawing.Point(3, 41);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(125, 54);
-            this.lblHora.TabIndex = 0;
-            this.lblHora.Text = "Hora";
             // 
             // Horafecha
             // 
@@ -436,8 +410,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.panelBtn.ResumeLayout(false);
             this.panelBtn.PerformLayout();
+            this.panelsubm.ResumeLayout(false);
+            this.panelProductos.ResumeLayout(false);
+            this.panelPromocion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panelSub.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -453,22 +429,19 @@
         private System.Windows.Forms.Timer Horafecha;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Button btnMenu;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panelSub;
-        private System.Windows.Forms.Panel panelAltaProd;
-        private System.Windows.Forms.Button btnAltaProd;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnProductos;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btnConfiguración;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnFacturacion;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnVentas;
-        private System.Windows.Forms.Panel panelModElim;
-        private System.Windows.Forms.Button btnModElim;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Panel panelCont;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panelsubm;
+        private System.Windows.Forms.Panel panelProductos;
+        private System.Windows.Forms.Button btnConsProd;
+        private System.Windows.Forms.Button btnAltaProd;
+        private System.Windows.Forms.Button btnProd;
+        private System.Windows.Forms.Panel panelPromocion;
+        private System.Windows.Forms.Button btnCprom;
+        private System.Windows.Forms.Button btnAltaProm;
+        private System.Windows.Forms.Button btnpromocion;
     }
 }

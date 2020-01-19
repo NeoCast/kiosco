@@ -9,7 +9,33 @@ namespace capavista
         public Menu()
         {
             InitializeComponent();
+            Customizar();
         }
+        private void Customizar()
+        {
+            panelPromocion.Visible = false;
+            panelProductos.Visible = false;
+
+        }
+        private void hideSubMenu()
+        {
+            if (panelPromocion.Visible == true)
+                panelPromocion.Visible = false;
+            if (panelProductos.Visible == true)
+                panelProductos.Visible = false;
+        }
+
+        private void showSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                hideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+                subMenu.Visible = false;
+        }
+
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -44,7 +70,7 @@ namespace capavista
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            panelSub.Visible = false;
+            hideSubMenu();
             AbrirFormP(new Menu2());
         }
 
@@ -60,19 +86,14 @@ namespace capavista
 
         private void btnAltaProd_Click(object sender, EventArgs e)
         {
-            panelSub.Visible = false;
-            AbrirFormP(new AltaProd());
+       
         }
 
-        private void panel7_Paint(object sender, PaintEventArgs e)
+        private void panelBtn_Paint (object sender, PaintEventArgs e)
         {
 
         }
 
-        private void panelBtn_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
@@ -81,13 +102,12 @@ namespace capavista
 
         private void btnModElim_Click(object sender, EventArgs e)
         {
-            panelSub.Visible = false;
-            AbrirFormP(new Consultas());
+           
         }
 
         private void btnStock_Click(object sender, EventArgs e)
         {
-            panelSub.Visible = false;
+        
         }
 
         private void panel9_Paint(object sender, PaintEventArgs e)
@@ -97,7 +117,7 @@ namespace capavista
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            panelSub.Visible = true;
+         
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -122,19 +142,18 @@ namespace capavista
 
         private void btnConfiguración_Click(object sender, EventArgs e)
         {
-            panelSub.Visible = false;
-            AbrirFormP(new nuevapromocion());
+           
         }
 
         private void btnFacturacion_Click(object sender, EventArgs e)
         {
-            panelSub.Visible = false;
+            hideSubMenu();
             AbrirFormP(new Facturacion());
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            panelSub.Visible = false;
+            hideSubMenu();
         }
 
         private void panel6_Paint_1(object sender, PaintEventArgs e)
@@ -165,6 +184,73 @@ namespace capavista
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel9_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+        }
+
+        private void panel8_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+        }
+
+        private void btnpromocion_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelPromocion);
+        }
+
+        private void btnAltaProm_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            AbrirFormP(new nuevapromocion());
+        }
+
+        private void btnCprom_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+        }
+
+        private void btnProd_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelProductos);
+        }
+
+        private void btnAltaProd_Click_1(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            AbrirFormP(new AltaProd());
+        }
+
+        private void btnConsProd_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+        }
+
+        private void btnConsProd_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormP(new Consultas());
         }
     }
 }
