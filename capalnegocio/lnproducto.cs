@@ -18,7 +18,7 @@ namespace capalnegocio
                 tabla = null;
                 descripcion = tproducto + "-" + descripcion;
                 producdatos.nuevoproducto(tproducto, descripcion, precio, stock, stockMin, inFecha, outFecha);
-                
+
             }
             catch (Exception ex)
             {
@@ -78,11 +78,11 @@ namespace capalnegocio
 
         }
 
-        public void modificarProducto(Int32 codProd, string tipoProd, string descripcion, double precio, Int32 stock, Int32 stockMin, DateTime inFecha, DateTime outFecha)
+        public void modificarProducto(Int32 codProd, string tipoProd, string descripcion, double precio, Int32 stock, Int32 stockMin)
         {
             try
             {
-                producdatos.modificarProducto(codProd, tipoProd, descripcion, precio, stock, stockMin, inFecha, outFecha);
+                producdatos.modificarProducto(codProd, tipoProd, descripcion, precio, stock, stockMin);
 
             }
             catch (Exception ex)

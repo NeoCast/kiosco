@@ -25,6 +25,8 @@ namespace capavista
             this.tipoProductoTableAdapter.Fill(this.kioscoDataSet.tipoProducto);
             dateTimePicker1.Value = System.DateTime.Now;
             dateTimePicker2.Value = System.DateTime.Now;
+            dataGridView1.DataSource = productoLN.mostrarTodos();
+
 
         }
 
@@ -32,8 +34,10 @@ namespace capavista
         {
             if (txtdescripcion.Text != " " )
             {
-                productoLN.altaProducto(comboBox1.ValueMember, txtdescripcion.Text, Convert.ToDouble(txtprecio.Text), Convert.ToInt32(txtstock.Text), Convert.ToInt32(txtminimo.Text), dateTimePicker1.Value, dateTimePicker2.Value);
+                productoLN.altaProducto(comboBox1.SelectedItem.ToString(), txtdescripcion.Text, Convert.ToDouble(txtprecio.Text), Convert.ToInt32(txtstock.Text), Convert.ToInt32(txtminimo.Text), dateTimePicker1.Value, dateTimePicker2.Value);
                 MessageBox.Show("Producto guardado de manera exitosa");
+                dataGridView1.DataSource = productoLN.mostrarTodos();
+
             }
             else
             {
@@ -44,6 +48,11 @@ namespace capavista
         }
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }

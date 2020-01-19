@@ -82,7 +82,7 @@ namespace capavista
         private void btnModElim_Click(object sender, EventArgs e)
         {
             panelSub.Visible = false;
-            AbrirFormP(new Consultas());
+            AbrirFormP(new consultaProducto());
         }
 
         private void btnStock_Click(object sender, EventArgs e)

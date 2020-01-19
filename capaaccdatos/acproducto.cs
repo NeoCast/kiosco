@@ -140,7 +140,7 @@ namespace capaaccdatos
                 comando.Connection = conexion.abrircn();
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandText = "eliminarProducto";
-                comando.Parameters.AddWithValue("idProducto", idProducto);
+                comando.Parameters.AddWithValue("codProducto", idProducto);
                 comando.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -158,11 +158,10 @@ namespace capaaccdatos
 
         }
 
-        public void modificarProducto(Int32 codProducto, String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin, DateTime inFecha, DateTime outFecha)
+        public void modificarProducto(Int32 codProducto, String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin)
         {
 
             SqlCommand comando = new SqlCommand();
-            DataTable tabla = new DataTable();
 
 
             try
@@ -173,13 +172,12 @@ namespace capaaccdatos
                 comando.CommandText = "modificarProducto";
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@codProducto", codProducto);
-                comando.Parameters.AddWithValue("@tipoProd", tproducto);
+                comando.Parameters.AddWithValue("@tipoProducto", tproducto);
                 comando.Parameters.AddWithValue("@descripcion", descripcion);
                 comando.Parameters.AddWithValue("@precio", precio);
                 comando.Parameters.AddWithValue("@stock", stock);
                 comando.Parameters.AddWithValue("@stockMin", stockMin);
-                comando.Parameters.AddWithValue("@inFecha", inFecha);
-                comando.Parameters.AddWithValue("@outFecha", outFecha);
+
                 comando.ExecuteNonQuery();
 
 
