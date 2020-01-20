@@ -5,7 +5,7 @@ namespace capaaccdatos
 {
     class conexionbd
     {
-        private SqlConnection conexion = new SqlConnection("Data Source=(local);Initial Catalog=Kiosco;Integrated Security=True");
+        private SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=Kiosco;Integrated Security=True");
 
         public SqlConnection abrircn()
         {
