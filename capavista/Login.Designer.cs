@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -42,14 +43,14 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.txbCont = new System.Windows.Forms.TextBox();
+            this.txtCont = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txbUsu = new System.Windows.Forms.TextBox();
+            this.txtUsu = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnMin = new System.Windows.Forms.PictureBox();
             this.panelTitle = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -57,7 +58,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             this.panelTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,16 +72,23 @@
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txbCont);
+            this.panel1.Controls.Add(this.txtCont);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txbUsu);
+            this.panel1.Controls.Add(this.txtUsu);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Papyrus", 8.25F);
             this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(320, 375);
             this.panel1.TabIndex = 4;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(130, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(82, 60);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
             // 
             // panel10
             // 
@@ -189,6 +196,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Iniciar sesión";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -202,17 +210,16 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Usuario";
             // 
-            // txbCont
+            // txtCont
             // 
-            this.txbCont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.txbCont.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbCont.ForeColor = System.Drawing.Color.Black;
-            this.txbCont.Location = new System.Drawing.Point(36, 203);
-            this.txbCont.Multiline = true;
-            this.txbCont.Name = "txbCont";
-            this.txbCont.Size = new System.Drawing.Size(256, 20);
-            this.txbCont.TabIndex = 5;
-            this.txbCont.TextChanged += new System.EventHandler(this.txbUsu_TextChanged);
+            this.txtCont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.txtCont.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCont.ForeColor = System.Drawing.Color.Black;
+            this.txtCont.Location = new System.Drawing.Point(36, 203);
+            this.txtCont.Multiline = true;
+            this.txtCont.Name = "txtCont";
+            this.txtCont.Size = new System.Drawing.Size(256, 20);
+            this.txtCont.TabIndex = 5;
             // 
             // label1
             // 
@@ -226,16 +233,16 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Contraseña:";
             // 
-            // txbUsu
+            // txtUsu
             // 
-            this.txbUsu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.txbUsu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txbUsu.ForeColor = System.Drawing.Color.Black;
-            this.txbUsu.Location = new System.Drawing.Point(36, 142);
-            this.txbUsu.Multiline = true;
-            this.txbUsu.Name = "txbUsu";
-            this.txbUsu.Size = new System.Drawing.Size(256, 20);
-            this.txbUsu.TabIndex = 3;
+            this.txtUsu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.txtUsu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsu.ForeColor = System.Drawing.Color.Black;
+            this.txtUsu.Location = new System.Drawing.Point(36, 142);
+            this.txtUsu.Multiline = true;
+            this.txtUsu.Name = "txtUsu";
+            this.txtUsu.Size = new System.Drawing.Size(256, 20);
+            this.txtUsu.TabIndex = 3;
             // 
             // btnCerrar
             // 
@@ -273,15 +280,6 @@
             this.panelTitle.Name = "panelTitle";
             this.panelTitle.Size = new System.Drawing.Size(320, 25);
             this.panelTitle.TabIndex = 1;
-            this.panelTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseDown);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(130, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(82, 60);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
             // 
             // Login
             // 
@@ -298,6 +296,7 @@
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -305,17 +304,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();
             this.panelTitle.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txbUsu;
+        private System.Windows.Forms.TextBox txtUsu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txbCont;
+        private System.Windows.Forms.TextBox txtCont;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox btnMin;
