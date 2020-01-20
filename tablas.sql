@@ -11,9 +11,6 @@ outFecha datetime,
 CONSTRAINT pk_producto PRIMARY KEY(codProducto)
 );
 
-drop TABLE productos;
-
-
 CREATE table promocion(
 codPromo INT,
 descrprom VARCHAR(100),
@@ -21,8 +18,6 @@ total NUMERIC(18,2),
 activa BIT,
 CONSTRAINT pk_promocion PRIMARY KEY (codPromo)
 );
-
-
 
 CREATE TABLE detalle_promocion(
 codDetallePromo INT IDENTITY(1,1),
@@ -43,8 +38,6 @@ outFecha datetime,
 CONSTRAINT pk_stock PRIMARY KEY(idStock)
 );
 
-DROP TABLE stock;
-
 CREATE table tieneStock(
 codProducto int,
 codStock int identity(1,1),
@@ -56,7 +49,6 @@ fechaIn DATETIME,
 fechaOut DATETIME,
 CONSTRAINT pk_tieneStock PRIMARY KEY(codProducto, codStock)
 );
-drop TABLE tieneStock;
 
 CREATE table tipoProducto(
 codTipop varchar(30),
@@ -64,30 +56,12 @@ descripTipo varchar(80),
 CONSTRAINT pk_tipoP PRIMARY KEY(codTipop)
 );
 
-INSERT INTO tipoProducto(codTipop, descripTipo)
-VALUES('CIG','cigarrillos');
-
-INSERT INTO tipoProducto(codTipop, descripTipo)
-VALUES('DUL','dulces');
-
-INSERT INTO tipoProducto(codTipop, descripTipo)
-VALUES('SNK','snacks');
-
-INSERT INTO tipoProducto(codTipop, descripTipo)
-VALUES('BBD','bebidas');
-
-INSERT INTO tipoProducto(codTipop, descripTipo)
-VALUES('VAR','cosas varias');
-
-TRUNCATE table tipoProducto;
-
 CREATE table ventas(
 idVenta int identity(1,1),
 total NUMERIC(18,2),
 ventaFecha datetime,
 CONSTRAINT pk_ventas PRIMARY KEY(idVenta)
 );
-
 
 CREATE table detalleVentas(
 codDetalleVta int,
@@ -107,6 +81,4 @@ usuario varchar(40),
 contrasena varchar(40),
 nombre varchar(60)
 );
-
-DROP TABLE usuarios
 

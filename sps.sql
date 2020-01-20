@@ -1,3 +1,4 @@
+/***PROCEDIMIENTO ALTA PRODUCTO***/
 CREATE PROCEDURE altaProductos
 @codPromo INT,
 @tipoProd VARCHAR(30),
@@ -8,23 +9,14 @@ CREATE PROCEDURE altaProductos
 @inFecha DATETIME,
 @stockMin INT
 AS
-
 DECLARE @p_codPromo INT
-
 select @p_codPromo = ISNULL(@codPromo, 0)
-
 insert into productos(codPromo,tipoProducto,descripcion,precio, stock, stockMin ,inFecha, outFecha)
 values (@codPromo,@tipoProd, @descripcion ,@precio, @stock, @stockMin,@inFecha, @outFecha)
 GO
+/***FIN DEL PROCEDIMIENTO***/
 
-
-
-drop PROCEDURE altaProductos;
-
-GO
-
-go
-
+/***PROCEDIMIENTO NUEVO STOCK***/
 CREATE PROCEDURE nuevoStock
 @descripcion varchar(80),
 @inFecha DATETIME,
@@ -34,13 +26,17 @@ INSERT into stock( descripcionStock,
 inFecha, outFecha) 
 VALUES (@descripcion, @inFecha, @outFecha)
 GO
+/***FIN DEL PROCEDIMIENTO***/
 
+/***PROCEDIMIENTO ULTIMO GUARDADO***/
 CREATE PROCEDURE ultimoguardado
 AS 
 select top 1 descripcion from productos
 order by 1 desc
 GO
+/***FIN PROCEDIMIENTO***/
 
+/***PROCEDIMIENTO NUEVO PRODUCTO STOCK***/
 CREATE PROCEDURE nuevoProducStock
 @codProducto int,
 @codStock INT,
@@ -56,36 +52,35 @@ cantidad, valorStock,descripcionStock, observacion, fechaIn, fechaOut)
 VALUES (@codProducto, @codStock, @cantidad, @valorStock,
 @descripcion, @observacion, @fechaIn,  @fechaOut)
 go
+/***FIN PROCEDIMIENTO***/
 
-
-
+/***PROCEDIMIENTO BUSCAR PRODUCTO***/
 CREATE PROCEDURE buscarProducto
 @descripcion varchar(100)
 AS
 Select descripcion FROM productos
 where descripcion LIKE '%@descripcion%'
 GO
+/***FIN DEL PROCEDIMIENTO***/
 
-
-
+/***PROCEDIMIENTO TODOS PRODUCTOS***/
 CREATE PROCEDURE todosProductos
 AS
 select tipoProducto, descripcion, stock,
  stockMin, precio, outFecha from productos
 GO
+/***FIN DEL PROCEDIMIENTO***/
 
-
-
+/***PROCEDIMIENTO ELIMINAR PRODUCTO***/
 CREATE PROCEDURE eliminarProducto
 @codProducto INT
 AS
 Delete productos where
 codProducto = @codProducto
 GO
+/***FIN PROCEDIMIENTO***/
 
-
-
-
+/***PROCEDIMIENTO MODIFICAR PRODUCTO***/
 CREATE PROCEDURE modificarProducto
 @codProducto INT,
 @tipoProducto VARCHAR(30),
@@ -107,11 +102,9 @@ outFecha = @outFecha
      WHERE
         codProducto = @codProducto
 GO
+/***FIN PROCEDIMIENTO***/
 
 /**PROCEDIMIENTO NUEVA PROMO**/
-USE Kiosco
-GO
-
 CREATE PROCEDURE nuevaPromo(
 @codProd INT, 
 @descripcion VARCHAR(100),
@@ -119,10 +112,7 @@ CREATE PROCEDURE nuevaPromo(
 @activa BIT
 )
 AS
-
 DECLARE @codPromo INT
-
-
 SELECT TOP 1 @codPromo = isnull(codPromo, 0) FROM
 promocion ORDER BY codPromo DESC
 
@@ -132,23 +122,16 @@ promocion ORDER BY codPromo DESC
         END
         ELSE
         BEGIN
-
                 SET @codPromo = @codPromo + 1
-
         END
 
   INSERT INTO promocion 
   VALUES(@codPromo ,@descripcion,
          @total, @activa)
-
 GO
-
-
-
 /***FIN PROCEDIMIENTO***/
-DROP PROCEDURE nuevaPromo
-/**PROCEDIMIENTO MODIFICAR PROMOCION**/
 
+/**PROCEDIMIENTO MODIFICAR PROMOCION**/
 CREATE PROCEDURE modificarPromocion
 @codPromo INT,
 @descrPromo varchar(100),
@@ -162,8 +145,6 @@ AS
 DECLARE @p_promo INT
 DECLARE @codError INT
 DECLARE @descrError VARCHAR(60)
-
-
 
 SELECT @p_promo = isnull(codPromo, 0)
 FROM codPromo 
@@ -195,9 +176,6 @@ CREATE PROCEDURE sp_nuevoDetallePromo
 @totalProd NUMERIC(18,2),
 @cantidad INT
 AS
-
-
-
 INSERT INTO detalle_promocion
 VALUES (@codPromo, @codProd, @descrProd, @totalProd, @cantidad)
 GO
@@ -205,10 +183,7 @@ GRANT EXECUTE ON sp_nuevoDetallePromo TO Kiosco
 GO
 /***FIN PROCEDIMIENTO***/
 
-
-
 /**TRIGGER PARA NUEVA PROMOCION**/
-
 CREATE TRIGGER tri_nuevaPromo on promocion
 AFTER INSERT
 AS
@@ -216,18 +191,13 @@ AS
 BEGIN
 /*DECLARACION DE VARIABLES*/
 DECLARE @tipoProducto VARCHAR(30)
-
-
 SET NOCOUNT ON;
 INSERT INTO productos(codPromo, tipoProducto, descripcion, ,precio)
 GO
 /*******FALTA TERMINAR********/
-
 /**FIN TRIGGER**/
 
-
 /**PROCEDIMIENTO NUEVO USER**/
-
 CREATE PROCEDURE sp_nuevoUsuario
 @tipoUsuario varchar(40),
 @usuario varchar(40),
@@ -238,7 +208,6 @@ DECLARE @cod_error INT
 DECLARE @desc_error VARCHAR(60)
 DECLARE @p_usuario VARCHAR(40)
 DECLARE @existe BIT
-
 SET @cod_error = 0
 IF @cod_error = 0
 BEGIN
@@ -271,9 +240,7 @@ END
 
 GRANT EXECUTE ON sp_nuevoUsuario to Kiosco
 GO
-
 /***FIN PROCEDIMIENTO***/
-
 
 /***PROCEDIMIENTO ELIMINAR USER***/
 CREATE PROCEDURE sp_eliminarUsuario
@@ -286,16 +253,10 @@ DELETE FROM usuarios
 GRANT EXECUTE ON sp_eliminarUsuario TO Kiosco
 
 GO
-
-
-
-
 /***FIN PROCEDIMIENTO***/
 
 /**PROCEDIMIENTO BUSCAR USUARIO**/
 CREATE PROCEDURE sp_logear
 @usuario varchar(40),
 @password varchar
-
-
 /**FIN PROCEDIMIENTO**/
