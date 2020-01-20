@@ -5,12 +5,12 @@ using System.Data;
 
 namespace capalnegocio
 {
-    class lnpromocion
+    public class lnpromocion
     {
         private acpromocion promocion = new acpromocion();
         private DataTable tabla = new DataTable();
 
-        public void nuevaPromo(string descripcion, double total, bool activa)
+        public void nuevaPromo(string descripcion, double total, int activa)
         {
             try
             {
@@ -25,6 +25,22 @@ namespace capalnegocio
             }
 
 
+        }
+
+        public DataTable buscarPromos()
+        {
+            try
+            {
+                tabla = null;
+                tabla = promocion.buscarPromos();
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+           
         }
     }
 }

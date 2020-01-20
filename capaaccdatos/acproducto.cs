@@ -65,7 +65,7 @@ namespace capaaccdatos
                 comando.CommandType = CommandType.StoredProcedure;
                 reader = comando.ExecuteReader();
                 tabla.Load(reader);
-                conexion.cerrarcn();
+               
                 return tabla;
             }
             catch (Exception ex)

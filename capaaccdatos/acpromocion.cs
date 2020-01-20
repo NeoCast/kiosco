@@ -8,7 +8,7 @@ namespace capaaccdatos
     {
         private conexionbd conexion = new conexionbd();
 
-        public void nuevaPromo(string descripcion, double total, bool activa)
+        public void nuevaPromo(string descripcion, double total, int activa)
         {
 
 
@@ -41,6 +41,37 @@ namespace capaaccdatos
 
             }
 
+        }
+
+        public DataTable buscarPromos()
+        {
+
+            SqlCommand comando = new SqlCommand();
+            DataTable tabla = new DataTable();
+            SqlDataReader reader;
+
+            try
+            {
+                comando.Connection = conexion.abrircn();
+                comando.CommandText = "buscarPromos";
+                comando.CommandType = CommandType.StoredProcedure;
+                reader = comando.ExecuteReader();
+                tabla.Load(reader);
+                return tabla;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+
+            }
+            finally
+            {
+
+                conexion.cerrarcn();
+
+            }
         }
 
     }

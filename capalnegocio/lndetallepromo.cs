@@ -4,14 +4,14 @@ using System.Data;
 
 namespace capalnegocio
 {
-    class lndetallepromo
+    public class lndetallepromo
     {
         private acdetallePromo detalle = new acdetallePromo();
         private DataTable tabla = new DataTable();
 
-        public void nuevoDetallePromo(Int32 codPromo, Int32 codProd, string descrProd, double totalProd, Int32 cantidad)
+        public void nuevoDetallePromo(Int32 codProd, string descrProd,Int32 cantidad)
         {
-            detalle.nuevoDetallePromo(codPromo, codProd, descrProd, totalProd, cantidad);
+            detalle.nuevoDetallePromo(codProd, descrProd, cantidad);
         }
 
 

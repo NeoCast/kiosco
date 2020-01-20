@@ -46,7 +46,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(220, 612);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblStock
             // 
@@ -58,7 +57,6 @@
             this.lblStock.Size = new System.Drawing.Size(234, 43);
             this.lblStock.TabIndex = 2;
             this.lblStock.Text = "Promociones";
-            this.lblStock.Click += new System.EventHandler(this.lblStock_Click);
             // 
             // dataGridView1
             // 
@@ -69,7 +67,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(220, 549);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panelCont2
             // 
@@ -79,7 +76,6 @@
             this.panelCont2.Name = "panelCont2";
             this.panelCont2.Size = new System.Drawing.Size(860, 612);
             this.panelCont2.TabIndex = 1;
-            this.panelCont2.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCont2_Paint);
             // 
             // Menu2
             // 
@@ -91,6 +87,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu2";
             this.Text = "Menu2";
+            this.Load += new System.EventHandler(this.Menu2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

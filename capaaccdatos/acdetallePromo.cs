@@ -8,7 +8,7 @@ namespace capaaccdatos
     {
         private conexionbd conexion = new conexionbd();
 
-        public void nuevoDetallePromo(Int32 codPromo, Int32 codProd, string descrProd, double totalProd, Int32 cantidad)
+        public void nuevoDetallePromo( Int32 codProd, string descrProd, Int32 cantidad)
         {
             SqlCommand comando = new SqlCommand();
             DataTable tabla = new DataTable();
@@ -16,13 +16,12 @@ namespace capaaccdatos
 
             try
             {
+
                 comando.Connection = conexion.abrircn();
-                comando.CommandText = "nuevaPromo";
+                comando.CommandText = "sp_nuevoDetallePromo";
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@codPromo", codPromo);
                 comando.Parameters.AddWithValue("@codProd", codProd);
-                comando.Parameters.AddWithValue("@descripcion", descrProd);
-                comando.Parameters.AddWithValue("@totalProd", totalProd);
+                comando.Parameters.AddWithValue("@descrProd", descrProd);
                 comando.Parameters.AddWithValue("@cantidad", cantidad);
                 comando.ExecuteNonQuery();
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using capalnegocio;
 
 namespace capavista
 {
@@ -10,24 +11,11 @@ namespace capavista
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private lnpromocion promocion = new lnpromocion();
+
+        private void Menu2_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void lblStock_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelCont2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            dataGridView1.DataSource= promocion.buscarPromos();
         }
     }
 }
