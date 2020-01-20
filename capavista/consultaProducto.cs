@@ -71,14 +71,14 @@ namespace capavista
 
         private void BtnElim_Click(object sender, EventArgs e)
         {
-            if (txtidproducto.Text != " ")
+            if (txtidproducto.Text != "")
             {
 
                 int idProd = Convert.ToInt32(txtidproducto.Text);
 
                 productoln.eliminarProducto(idProd);
                 MessageBox.Show("Se ha eliminado con exito");
-                productoln.mostrarTodos();
+                dataGridView1.DataSource= productoln.mostrarTodos();
 
             }
             else

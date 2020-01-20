@@ -22,10 +22,26 @@ namespace capavista
 
         private void promociones_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'kioscoDataSet.productos' Puede moverla o quitarla según sea necesario.
+            this.productosTableAdapter.Fill(this.kioscoDataSet.productos);
 
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+      
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+
+            dataGridView1.Rows.Add();
+
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnAgProm_Click(object sender, EventArgs e)
         {
 
         }
