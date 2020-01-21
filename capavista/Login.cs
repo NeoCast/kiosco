@@ -132,11 +132,13 @@ namespace capavista
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (compruebaSerial() == false )
+            if (!(compruebaSerial()) == false )
             {
                 if (txtUsu.Text == "admin" && txtCont.Text == "987456")
                 {
-                  //  Menu.
+                    Menu form = new Menu();
+                    form.Show();
+                    this.Hide();
                 }
             }
     //        If compruebaSerial() = False Then
