@@ -152,5 +152,51 @@ namespace capavista
 
     //    End If
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked==true)
+            {
+                if (txtCont.PasswordChar=='*')
+                {
+                    txtCont.PasswordChar = '\0';
+                }
+            }
+            else
+            { txtCont.PasswordChar = '*'; }
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtCont_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+
+                if (!(compruebaSerial()) == false)
+                {
+                    if (txtUsu.Text == "admin" && txtCont.Text == "987456")
+                    {
+                        Menu form = new Menu();
+                        form.Show();
+                        this.Hide();
+                    }
+                }
+                //        If compruebaSerial() = False Then
+                //Else
+                //        If txtUsuario.Text = "admin" And txtClave.Text = "123" Then
+                //            Form1.Show()
+                //            Me.Hide()
+                //        Else
+                //            MsgBox("Usuario o Clave incorrecta")
+                //        End If
+
+                //    End If
+            }
+ 
+        }
     }
 }

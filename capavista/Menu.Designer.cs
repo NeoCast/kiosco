@@ -44,7 +44,6 @@
             this.btnAltaProd = new System.Windows.Forms.Button();
             this.btnProd = new System.Windows.Forms.Button();
             this.panelPromocion = new System.Windows.Forms.Panel();
-            this.btnCprom = new System.Windows.Forms.Button();
             this.btnAltaProm = new System.Windows.Forms.Button();
             this.btnpromocion = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -189,7 +188,7 @@
             this.panelProductos.Controls.Add(this.btnConsProd);
             this.panelProductos.Controls.Add(this.btnAltaProd);
             this.panelProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelProductos.Location = new System.Drawing.Point(0, 144);
+            this.panelProductos.Location = new System.Drawing.Point(0, 120);
             this.panelProductos.Name = "panelProductos";
             this.panelProductos.Size = new System.Drawing.Size(220, 64);
             this.panelProductos.TabIndex = 4;
@@ -236,7 +235,7 @@
             this.btnProd.ForeColor = System.Drawing.Color.White;
             this.btnProd.Image = ((System.Drawing.Image)(resources.GetObject("btnProd.Image")));
             this.btnProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProd.Location = new System.Drawing.Point(0, 103);
+            this.btnProd.Location = new System.Drawing.Point(0, 79);
             this.btnProd.Name = "btnProd";
             this.btnProd.Size = new System.Drawing.Size(220, 41);
             this.btnProd.TabIndex = 3;
@@ -246,30 +245,12 @@
             // 
             // panelPromocion
             // 
-            this.panelPromocion.Controls.Add(this.btnCprom);
             this.panelPromocion.Controls.Add(this.btnAltaProm);
             this.panelPromocion.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPromocion.Location = new System.Drawing.Point(0, 41);
             this.panelPromocion.Name = "panelPromocion";
-            this.panelPromocion.Size = new System.Drawing.Size(220, 62);
+            this.panelPromocion.Size = new System.Drawing.Size(220, 38);
             this.panelPromocion.TabIndex = 1;
-            // 
-            // btnCprom
-            // 
-            this.btnCprom.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCprom.FlatAppearance.BorderSize = 0;
-            this.btnCprom.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.btnCprom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCprom.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCprom.ForeColor = System.Drawing.Color.White;
-            this.btnCprom.Location = new System.Drawing.Point(0, 30);
-            this.btnCprom.Name = "btnCprom";
-            this.btnCprom.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnCprom.Size = new System.Drawing.Size(220, 30);
-            this.btnCprom.TabIndex = 2;
-            this.btnCprom.Text = "Consutar promocion";
-            this.btnCprom.UseVisualStyleBackColor = true;
-            this.btnCprom.Click += new System.EventHandler(this.btnCprom_Click);
             // 
             // btnAltaProm
             // 
@@ -440,7 +421,6 @@
         private System.Windows.Forms.Button btnAltaProd;
         private System.Windows.Forms.Button btnProd;
         private System.Windows.Forms.Panel panelPromocion;
-        private System.Windows.Forms.Button btnCprom;
         private System.Windows.Forms.Button btnAltaProm;
         private System.Windows.Forms.Button btnpromocion;
     }
