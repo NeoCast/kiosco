@@ -41,6 +41,9 @@ namespace capavista
             if(this.Opacity==0)
             { timer2.Stop();
                 this.Close();
+                Menu form = new Menu();
+                form.Show();
+               
             }
         }
 

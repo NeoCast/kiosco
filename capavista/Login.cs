@@ -136,8 +136,8 @@ namespace capavista
             {
                 if (txtUsu.Text == "admin" && txtCont.Text == "987456")
                 {
-                    Menu form = new Menu();
-                    form.Show();
+                    Bienvenida login = new Bienvenida();
+                    login.Show();
                     this.Hide();
                 }
             }
@@ -180,8 +180,8 @@ namespace capavista
                 {
                     if (txtUsu.Text == "admin" && txtCont.Text == "987456")
                     {
-                        Menu form = new Menu();
-                        form.Show();
+                        Bienvenida login = new Bienvenida();
+                        login.Show();
                         this.Hide();
                     }
                 }
