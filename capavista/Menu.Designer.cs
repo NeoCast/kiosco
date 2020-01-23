@@ -180,7 +180,7 @@
             this.panelsubm.Controls.Add(this.btnpromocion);
             this.panelsubm.Location = new System.Drawing.Point(0, 359);
             this.panelsubm.Name = "panelsubm";
-            this.panelsubm.Size = new System.Drawing.Size(220, 206);
+            this.panelsubm.Size = new System.Drawing.Size(220, 186);
             this.panelsubm.TabIndex = 15;
             // 
             // panelProductos
@@ -293,9 +293,9 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 554);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 551);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(221, 58);
+            this.pictureBox2.Size = new System.Drawing.Size(221, 61);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;

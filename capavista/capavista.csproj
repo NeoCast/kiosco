@@ -22,7 +22,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -82,6 +82,12 @@
     </Compile>
     <Compile Include="AltaProd.Designer.cs">
       <DependentUpon>AltaProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bienvenida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bienvenida.Designer.cs">
+      <DependentUpon>Bienvenida.cs</DependentUpon>
     </Compile>
     <Compile Include="buscarProductos.cs">
       <SubType>Form</SubType>
@@ -150,8 +156,17 @@
       <DependentUpon>nuevapromocion.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ventas.Designer.cs">
+      <DependentUpon>ventas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AltaProd.resx">
       <DependentUpon>AltaProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bienvenida.resx">
+      <DependentUpon>Bienvenida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="buscarProductos.resx">
       <DependentUpon>buscarProductos.cs</DependentUpon>
@@ -192,6 +207,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ventas.resx">
+      <DependentUpon>ventas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="capavista_TemporaryKey.pfx" />
     <None Include="KioscoDataSet.xsc">
       <DependentUpon>KioscoDataSet.xsd</DependentUpon>

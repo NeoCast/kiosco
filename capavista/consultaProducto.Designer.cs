@@ -42,6 +42,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tipoProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kioscoDataSet = new capavista.KioscoDataSet();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,14 +53,12 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.btnbuscar = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.kioscoDataSet = new capavista.KioscoDataSet();
-            this.tipoProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tipoProductoTableAdapter = new capavista.KioscoDataSetTableAdapters.tipoProductoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnbuscar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kioscoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kioscoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnbuscar)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -218,6 +218,16 @@
             this.comboBox1.TabIndex = 28;
             this.comboBox1.ValueMember = "codTipop";
             // 
+            // tipoProductoBindingSource
+            // 
+            this.tipoProductoBindingSource.DataMember = "tipoProducto";
+            this.tipoProductoBindingSource.DataSource = this.kioscoDataSet;
+            // 
+            // kioscoDataSet
+            // 
+            this.kioscoDataSet.DataSetName = "KioscoDataSet";
+            this.kioscoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -311,16 +321,6 @@
             this.label10.Text = "Busqueda";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // kioscoDataSet
-            // 
-            this.kioscoDataSet.DataSetName = "KioscoDataSet";
-            this.kioscoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tipoProductoBindingSource
-            // 
-            this.tipoProductoBindingSource.DataMember = "tipoProducto";
-            this.tipoProductoBindingSource.DataSource = this.kioscoDataSet;
-            // 
             // tipoProductoTableAdapter
             // 
             this.tipoProductoTableAdapter.ClearBeforeFill = true;
@@ -344,9 +344,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnbuscar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kioscoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kioscoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnbuscar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

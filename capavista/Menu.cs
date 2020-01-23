@@ -154,6 +154,7 @@ namespace capavista
         private void btnVentas_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            AbrirFormP(new ventas());
         }
 
         private void panel6_Paint_1(object sender, PaintEventArgs e)
