@@ -62,11 +62,11 @@ namespace capavista
 
 
             txtidproducto.Text = fila.Cells[0].Value.ToString();
-            comboBox1.Text = fila.Cells[2].Value.ToString();
-            textBox2.Text = fila.Cells[3].Value.ToString();
-            textBox3.Text = fila.Cells[4].Value.ToString();
-            textBox5.Text = fila.Cells[5].Value.ToString();
-            textBox4.Text = fila.Cells[6].Value.ToString();
+                comboBox1.SelectedItem = fila.Cells[2].Value.ToString().Trim();
+                 textBox2.Text = fila.Cells[3].Value.ToString();
+                 textBox3.Text = fila.Cells[4].Value.ToString();
+                 textBox5.Text = fila.Cells[5].Value.ToString();
+                 textBox4.Text = fila.Cells[6].Value.ToString();
         }
 
         private void BtnElim_Click(object sender, EventArgs e)
