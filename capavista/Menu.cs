@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using capasoporte.Cache;
 
 namespace capavista
 {
@@ -39,6 +40,8 @@ namespace capavista
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("¿Seguro que quieres salir?", "Warning",
+               MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             Application.Exit();
         }
 
@@ -77,6 +80,16 @@ namespace capavista
         private void Menu_Load(object sender, EventArgs e)
         {
             btnMenu_Click(null, e);
+           
+            if (uCache.cargo == cargos.empleado)
+            {
+                btnFacturacion.Enabled = false;
+                btnConfig.Enabled = false; 
+            }
+            if (uCache.cargo == cargos.administrador)
+            {
+                //codigo
+            }
         }
 
         private void panel8_Paint(object sender, PaintEventArgs e)
@@ -184,7 +197,15 @@ namespace capavista
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("¿Quieres cerrar sesión?", "Warning",
+               MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Hide();
+                Login login = new Login();
+                login.Show();
+            }
+              
+               
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
@@ -252,6 +273,13 @@ namespace capavista
         private void btnConsProd_Click_1(object sender, EventArgs e)
         {
             AbrirFormP(new consultaProducto());
+        }
+
+    
+        private void btnConfig_Click_1(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            AbrirFormP(new Configuracion());
         }
     }
 }

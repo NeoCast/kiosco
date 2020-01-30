@@ -36,6 +36,7 @@
             this.btnMax = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panelBtn = new System.Windows.Forms.Panel();
+            this.btnConfig = new System.Windows.Forms.Button();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.panelsubm = new System.Windows.Forms.Panel();
@@ -135,6 +136,7 @@
             // panelBtn
             // 
             this.panelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.panelBtn.Controls.Add(this.btnConfig);
             this.panelBtn.Controls.Add(this.lblHora);
             this.panelBtn.Controls.Add(this.lblFecha);
             this.panelBtn.Controls.Add(this.panelsubm);
@@ -149,12 +151,30 @@
             this.panelBtn.TabIndex = 1;
             this.panelBtn.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBtn_Paint);
             // 
+            // btnConfig
+            // 
+            this.btnConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.btnConfig.FlatAppearance.BorderSize = 0;
+            this.btnConfig.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
+            this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfig.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfig.ForeColor = System.Drawing.Color.White;
+            this.btnConfig.Image = ((System.Drawing.Image)(resources.GetObject("btnConfig.Image")));
+            this.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfig.Location = new System.Drawing.Point(0, 319);
+            this.btnConfig.Name = "btnConfig";
+            this.btnConfig.Size = new System.Drawing.Size(221, 41);
+            this.btnConfig.TabIndex = 16;
+            this.btnConfig.Text = "Configuración";
+            this.btnConfig.UseVisualStyleBackColor = false;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click_1);
+            // 
             // lblHora
             // 
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblHora.Location = new System.Drawing.Point(12, 69);
+            this.lblHora.Location = new System.Drawing.Point(12, 58);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(125, 54);
             this.lblHora.TabIndex = 0;
@@ -165,7 +185,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.LightGray;
-            this.lblFecha.Location = new System.Drawing.Point(73, 134);
+            this.lblFecha.Location = new System.Drawing.Point(73, 123);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(64, 24);
             this.lblFecha.TabIndex = 2;
@@ -178,9 +198,9 @@
             this.panelsubm.Controls.Add(this.btnProd);
             this.panelsubm.Controls.Add(this.panelPromocion);
             this.panelsubm.Controls.Add(this.btnpromocion);
-            this.panelsubm.Location = new System.Drawing.Point(0, 359);
+            this.panelsubm.Location = new System.Drawing.Point(1, 360);
             this.panelsubm.Name = "panelsubm";
-            this.panelsubm.Size = new System.Drawing.Size(220, 186);
+            this.panelsubm.Size = new System.Drawing.Size(220, 176);
             this.panelsubm.TabIndex = 15;
             // 
             // panelProductos
@@ -190,7 +210,7 @@
             this.panelProductos.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelProductos.Location = new System.Drawing.Point(0, 120);
             this.panelProductos.Name = "panelProductos";
-            this.panelProductos.Size = new System.Drawing.Size(220, 64);
+            this.panelProductos.Size = new System.Drawing.Size(220, 97);
             this.panelProductos.TabIndex = 4;
             // 
             // btnConsProd
@@ -311,7 +331,7 @@
             this.btnFacturacion.ForeColor = System.Drawing.Color.White;
             this.btnFacturacion.Image = ((System.Drawing.Image)(resources.GetObject("btnFacturacion.Image")));
             this.btnFacturacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFacturacion.Location = new System.Drawing.Point(0, 318);
+            this.btnFacturacion.Location = new System.Drawing.Point(0, 278);
             this.btnFacturacion.Name = "btnFacturacion";
             this.btnFacturacion.Size = new System.Drawing.Size(221, 41);
             this.btnFacturacion.TabIndex = 5;
@@ -329,7 +349,7 @@
             this.btnVentas.ForeColor = System.Drawing.Color.White;
             this.btnVentas.Image = ((System.Drawing.Image)(resources.GetObject("btnVentas.Image")));
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(0, 277);
+            this.btnVentas.Location = new System.Drawing.Point(0, 237);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(221, 41);
             this.btnVentas.TabIndex = 3;
@@ -347,7 +367,7 @@
             this.btnMenu.ForeColor = System.Drawing.Color.White;
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
             this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenu.Location = new System.Drawing.Point(0, 236);
+            this.btnMenu.Location = new System.Drawing.Point(0, 196);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(220, 41);
             this.btnMenu.TabIndex = 1;
@@ -423,5 +443,6 @@
         private System.Windows.Forms.Panel panelPromocion;
         private System.Windows.Forms.Button btnAltaProm;
         private System.Windows.Forms.Button btnpromocion;
+        private System.Windows.Forms.Button btnConfig;
     }
 }

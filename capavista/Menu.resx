@@ -503,6 +503,28 @@
         SmD/8QAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btnConfig.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAcCAYAAAB2+A+pAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADukAAA7pAQ4zQhwAAAOrSURBVEhLlddpqFVVHIZxy8oI
+        y8IsbdKsFKWR5szI0NDSIhIDAy9adMlmCinDiMLA6EsYhfophQIzSMIK+hBBGVJBBDZQWllQRtgcmdbt
+        efbd72Hd5bH0hR937f9eZ897rX0H9fX17YtRWIZt2Fvmw74n4cC2vVddi4Vz8TmSjViC63Flaw5WYBzO
+        wO84Gv5+OO7BtHa5Y8BC5SWY73AduvWpHQEP1vZp+BXJ0+j07TQKJyA/8My69XEHx+BYDMMBqPt8gK/a
+        9lSYK9CsLzvqVJgdOBz1ei1AnbtR9/sS77Tt02E8gGZ92fFImC0o65Nxc9s+GJthpuBC/IGvkQPtgZc5
+        J1HG56DZbjYuL81fcOOpXYDEjZt/cD/S5w7sgkkfk508iRuxFZ+1tc6Ob4Hx7FK73AJ5Fj65bjxn3s1c
+        /I15eArmEmT9WRbIInR2vBuvt20dBPMNUttfH8F4C1Nba4EMdsFXxZyPdNB9MDNR1tWLDXgVd6EeMC6D
+        eRRlfTxMjwv+2Nen7CB/ZI5Dal6u3E9flS/6m00uRvrlQfWSpxbfYqMNL/PzbVHu6DaYR5D6iRbI+/BW
+        pK43YDyj1B6wQO6FY0PqjnJNw3i5suIFC8QRawxSXw+T5drPeLNYdoDxSTbl8+OY3jTMDciKT1FuILwd
+        q6pa6Qn4qtX1l/F9sXwVmobZlx3/Bi9TXY/HYer6f+74TmTFOgvEweB4pP4KHGCyXPsBzl5ZPgqfwJSX
+        2ve8aXh5nmvbOhlOfca/qTsMmnIj8SLM2Ugtr+NSOHymvhxN4zX80rZLTvxmBFK7yEIbx+wP+5tNOjMP
+        DrNAViK18Eq+Z2M2THm0WghzLcr6IViMt+Hs4yvnjso+TiDGV6qsezVNbwpebgeSLDtRGKe21PZXrob3
+        OrU1FsihKdzeLPZPc6lNskCewQxshxNB1te8Mj69DsGPwTgrZf1EC+QhDJgWP4ZnOB0Pt7UJSPw4MDvh
+        VJjf3QS/s0z6GF+b9JEH7qDULJcrRsPhs8xYOAw67NnHz5x8/F2Kc+DA4pmOhH08qGvadrwF4z1uauVK
+        P9JMPk98bXw3yz66FXXKD4Na7rUfFZ162cH7a3K0m+CjX/aRU6ATySktB5nBqPv5UZGciQHrByzAT9Ay
+        edi8DUPb9v85DznLdzEEe/TbowA/0h9EpjLP0AHmavhB5xPrVXEw8cD8WHcadUhNfoLbqbfd0bXYRT7S
+        ZyHx6f6zv9nkR6yG/03Uv6/0DfoX0c7gE/GOd3QAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnProd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAcCAYAAAB2+A+pAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
@@ -827,5 +849,8 @@
   </data>
   <metadata name="Horafecha.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>36</value>
   </metadata>
 </root>

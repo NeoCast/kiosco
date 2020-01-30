@@ -132,25 +132,49 @@ namespace capavista
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (!(compruebaSerial()) == false )
+            if (!(compruebaSerial()) == false)
             {
-                if (txtUsu.Text == "admin" && txtCont.Text == "987456")
+                if (txtUsu.Text != "")
                 {
-                    Bienvenida login = new Bienvenida();
-                    login.Show();
-                    this.Hide();
-                }
-            }
-    //        If compruebaSerial() = False Then
-    //Else
-    //        If txtUsuario.Text = "admin" And txtClave.Text = "123" Then
-    //            Form1.Show()
-    //            Me.Hide()
-    //        Else
-    //            MsgBox("Usuario o Clave incorrecta")
-    //        End If
+                    if (txtCont.Text != "")
+                    {
+                        lnusuario lusuario = new lnusuario();
+                        var loginvalido = lusuario.loginuser(txtUsu.Text, txtCont.Text);
+                        if(loginvalido==true)
+                        {
+                            Bienvenida bienvenida = new Bienvenida();
+                            bienvenida.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            msgError("Los valores ingresados son incorrectos");
+                            txtUsu.Clear();
+                            txtCont.Clear();
+                            txtUsu.Focus();
+                        }
 
-    //    End If
+                    }
+                    else msgError("Por favor ingrese su contraseña");
+                }
+                else msgError("Por favor ingrese su nombre de usuario");
+
+            }
+            //        If compruebaSerial() = False Then
+            //Else
+            //        If txtUsuario.Text = "admin" And txtClave.Text = "123" Then
+            //            Form1.Show()
+            //            Me.Hide()
+            //        Else
+            //            MsgBox("Usuario o Clave incorrecta")
+            //        End If
+
+            //    End If
+        }
+        private void msgError(string msg)
+        {
+            lblerror.Text = "" + msg;
+            lblerror.Visible = true;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -178,12 +202,30 @@ namespace capavista
 
                 if (!(compruebaSerial()) == false)
                 {
-                    if (txtUsu.Text == "admin" && txtCont.Text == "987456")
+                    if (txtUsu.Text != "")
                     {
-                        Bienvenida login = new Bienvenida();
-                        login.Show();
-                        this.Hide();
+                        if (txtCont.Text != "")
+                        {
+                            lnusuario lusuario = new lnusuario();
+                            var loginvalido = lusuario.loginuser(txtUsu.Text, txtCont.Text);
+                            if (loginvalido == true)
+                            {
+                                Bienvenida bienvenida = new Bienvenida();
+                                bienvenida.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                msgError("Los valores ingresados son incorrectos");
+                                txtCont.Clear();
+                                txtUsu.Focus();
+                            }
+
+                        }
+                        else msgError("Por favor ingrese su contraseña");
                     }
+                    else msgError("Por favor ingrese su nombre de usuario");
+
                 }
                 //        If compruebaSerial() = False Then
                 //Else
@@ -196,7 +238,14 @@ namespace capavista
 
                 //    End If
             }
+
+        }
+
+        private void txtUsu_TextChanged(object sender, EventArgs e)
+        {
  
         }
+       
+
     }
 }

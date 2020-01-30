@@ -95,6 +95,12 @@
     <Compile Include="buscarProductos.Designer.cs">
       <DependentUpon>buscarProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configuracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion.Designer.cs">
+      <DependentUpon>Configuracion.cs</DependentUpon>
+    </Compile>
     <Compile Include="consultaProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     <EmbeddedResource Include="buscarProductos.resx">
       <DependentUpon>buscarProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion.resx">
+      <DependentUpon>Configuracion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="consultaProducto.resx">
       <DependentUpon>consultaProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +248,10 @@
     <ProjectReference Include="..\capalnegocio\capalnegocio.csproj">
       <Project>{0eef7b4a-34c2-4ee0-8a9d-f24fdcee4b52}</Project>
       <Name>capalnegocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\capasoporte\capasoporte.csproj">
+      <Project>{9c7528e6-b802-4e05-bd8e-e6f473b5f992}</Project>
+      <Name>capasoporte</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

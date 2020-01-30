@@ -49,6 +49,7 @@
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnMin = new System.Windows.Forms.PictureBox();
             this.panelTitle = new System.Windows.Forms.Panel();
+            this.lblerror = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel8.SuspendLayout();
@@ -63,6 +64,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.panel1.Controls.Add(this.lblerror);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel10);
@@ -87,7 +89,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Century Schoolbook", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(40, 242);
+            this.checkBox1.Location = new System.Drawing.Point(39, 263);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(109, 19);
             this.checkBox1.TabIndex = 15;
@@ -98,7 +100,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(120, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(118, 27);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(82, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -156,7 +158,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.panel5);
-            this.panel4.Location = new System.Drawing.Point(36, 219);
+            this.panel4.Location = new System.Drawing.Point(35, 240);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(256, 2);
             this.panel4.TabIndex = 10;
@@ -174,7 +176,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(36, 160);
+            this.panel2.Location = new System.Drawing.Point(35, 181);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(256, 2);
             this.panel2.TabIndex = 9;
@@ -194,7 +196,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(40, 282);
+            this.button1.Location = new System.Drawing.Point(39, 305);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(236, 47);
             this.button1.TabIndex = 7;
@@ -208,7 +210,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(34, 120);
+            this.label2.Location = new System.Drawing.Point(33, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 20);
             this.label2.TabIndex = 6;
@@ -220,7 +222,7 @@
             this.txtCont.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCont.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCont.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtCont.Location = new System.Drawing.Point(36, 203);
+            this.txtCont.Location = new System.Drawing.Point(35, 224);
             this.txtCont.Multiline = true;
             this.txtCont.Name = "txtCont";
             this.txtCont.PasswordChar = '*';
@@ -234,7 +236,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(34, 177);
+            this.label1.Location = new System.Drawing.Point(33, 198);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 20);
             this.label1.TabIndex = 4;
@@ -246,11 +248,12 @@
             this.txtUsu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsu.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtUsu.Location = new System.Drawing.Point(36, 142);
+            this.txtUsu.Location = new System.Drawing.Point(35, 163);
             this.txtUsu.Multiline = true;
             this.txtUsu.Name = "txtUsu";
             this.txtUsu.Size = new System.Drawing.Size(256, 20);
             this.txtUsu.TabIndex = 3;
+            this.txtUsu.TextChanged += new System.EventHandler(this.txtUsu_TextChanged);
             // 
             // btnCerrar
             // 
@@ -288,7 +291,17 @@
             this.panelTitle.Name = "panelTitle";
             this.panelTitle.Size = new System.Drawing.Size(320, 25);
             this.panelTitle.TabIndex = 1;
-        
+            // 
+            // lblerror
+            // 
+            this.lblerror.AutoSize = true;
+            this.lblerror.BackColor = System.Drawing.Color.Transparent;
+            this.lblerror.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblerror.ForeColor = System.Drawing.Color.White;
+            this.lblerror.Location = new System.Drawing.Point(36, 105);
+            this.lblerror.Name = "lblerror";
+            this.lblerror.Size = new System.Drawing.Size(0, 16);
+            this.lblerror.TabIndex = 16;
             // 
             // Login
             // 
@@ -338,5 +351,6 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label lblerror;
     }
 }

@@ -56,6 +56,10 @@
       <Project>{18f0e0d6-2895-4713-b0d4-e470782662ad}</Project>
       <Name>capaaccdatos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\capasoporte\capasoporte.csproj">
+      <Project>{9c7528e6-b802-4e05-bd8e-e6f473b5f992}</Project>
+      <Name>capasoporte</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
