@@ -140,6 +140,10 @@ namespace capavista
                     login.Show();
                     this.Hide();
                 }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos");
+                }
             }
     //        If compruebaSerial() = False Then
     //Else

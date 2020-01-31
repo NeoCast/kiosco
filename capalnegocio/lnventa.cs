@@ -11,9 +11,9 @@ namespace capalnegocio
     {
 
         private acventa ventaAC = new acventa();
-        public void LNdetalleVenta(int codProd, int cantidad, string descripcion, double total, DateTime fecha)
+        public void LNdetalleVenta(int codProd, string tipoProd, int codPromo,int cantidad, string descripcion, double total, DateTime fecha)
         {
-            ventaAC.detalleVenta(codProd, cantidad, descripcion, total, fecha);
+            ventaAC.detalleVenta(codProd, tipoProd, codPromo, cantidad, descripcion, total, fecha);
         }
 
 

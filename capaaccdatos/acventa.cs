@@ -45,7 +45,7 @@ namespace capaaccdatos
             }
         }
 
-        public void detalleVenta(int codProd, int cantidad, string descripcion, double total, DateTime fecha)
+        public void detalleVenta(int codProd, string tipoProd, int codPromo,int cantidad, string descripcion, double total, DateTime fecha)
         {
 
             SqlCommand comando = new SqlCommand();
@@ -57,6 +57,8 @@ namespace capaaccdatos
                 comando.CommandText = "nuevoDetalleVentas";
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@codProd", codProd);
+                comando.Parameters.AddWithValue("@tipoProd", tipoProd);
+                comando.Parameters.AddWithValue("@codPromo", codPromo);
                 comando.Parameters.AddWithValue("@cantidad", cantidad);
                 comando.Parameters.AddWithValue("@descrip", descripcion);
                 comando.Parameters.AddWithValue("@totalProd", total);

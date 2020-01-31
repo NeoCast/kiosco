@@ -31,12 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ventas));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gridDetalles = new System.Windows.Forms.DataGridView();
-            this.codProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnbuscar = new System.Windows.Forms.PictureBox();
             this.txbBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,6 +38,13 @@
             this.btnVender = new System.Windows.Forms.Button();
             this.ventaTot = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.codProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codPromo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDetalles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnbuscar)).BeginInit();
@@ -56,6 +57,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(48, 177);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(508, 163);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -68,6 +70,7 @@
             this.gridDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridDetalles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codProd,
+            this.codPromo,
             this.tProducto,
             this.descripcion,
             this.cantidad,
@@ -77,41 +80,6 @@
             this.gridDetalles.Name = "gridDetalles";
             this.gridDetalles.Size = new System.Drawing.Size(437, 420);
             this.gridDetalles.TabIndex = 1;
-            // 
-            // codProd
-            // 
-            this.codProd.HeaderText = "Codigo";
-            this.codProd.Name = "codProd";
-            this.codProd.ReadOnly = true;
-            // 
-            // tProducto
-            // 
-            this.tProducto.HeaderText = "T-Producto";
-            this.tProducto.Name = "tProducto";
-            this.tProducto.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // valor
-            // 
-            this.valor.HeaderText = "Valor";
-            this.valor.Name = "valor";
-            this.valor.ReadOnly = true;
-            // 
-            // valorTotal
-            // 
-            this.valorTotal.HeaderText = "Valor Total";
-            this.valorTotal.Name = "valorTotal";
             // 
             // btnbuscar
             // 
@@ -192,6 +160,47 @@
             this.label3.TabIndex = 32;
             this.label3.Text = "label3";
             // 
+            // codProd
+            // 
+            this.codProd.HeaderText = "Codigo";
+            this.codProd.Name = "codProd";
+            this.codProd.ReadOnly = true;
+            // 
+            // codPromo
+            // 
+            this.codPromo.HeaderText = "Cod Promo";
+            this.codPromo.Name = "codPromo";
+            this.codPromo.ReadOnly = true;
+            // 
+            // tProducto
+            // 
+            this.tProducto.HeaderText = "T-Producto";
+            this.tProducto.Name = "tProducto";
+            this.tProducto.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // valor
+            // 
+            this.valor.HeaderText = "Valor";
+            this.valor.Name = "valor";
+            this.valor.ReadOnly = true;
+            // 
+            // valorTotal
+            // 
+            this.valorTotal.HeaderText = "Valor Total";
+            this.valorTotal.Name = "valorTotal";
+            // 
             // ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,6 +240,7 @@
         private System.Windows.Forms.Label ventaTot;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn codProd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codPromo;
         private System.Windows.Forms.DataGridViewTextBoxColumn tProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
