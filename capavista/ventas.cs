@@ -45,16 +45,17 @@ namespace capavista
                 int cantfila = dataGridView1.Rows.Count;
                 if (cantfila > 0)
                 {
-                    ventaLN.LNnuevaVenta(total, System.DateTime.Now);
 
+                    ventaLN.LNnuevaVenta(total, System.DateTime.Now);
+                    //fila = null
                     foreach (DataGridViewRow fila in gridDetalles.Rows)
                     {
 
                         if (fila != null)
                         {
-                            if (fila.Index < cantfila - 1)
+                            if (fila.Index < cantfila - 1 && cantfila != 4)
                             {
-                                if (fila.Cells[1].Value.ToString() == "")
+                                if (fila.Cells[1].Value.ToString() == "" || fila.Cells[1].Value == null)
                                 {
                                     codPromo = 0;
                                 }
@@ -64,7 +65,6 @@ namespace capavista
                                 }
 
                                 codProd = Convert.ToInt32(fila.Cells[0].Value.ToString());
-                                
                                 tipoProd = Convert.ToString(fila.Cells[2].Value.ToString());
                                 descripcion = Convert.ToString(fila.Cells[3].Value.ToString());
                                 cantidad = Convert.ToInt32(fila.Cells[4].Value.ToString());
@@ -72,7 +72,7 @@ namespace capavista
                                 double totalProd = Convert.ToDouble(fila.Cells[6].Value.ToString());
 
 
-                                ventaLN.LNdetalleVenta(codProd, tipoProd, codPromo,cantidad, descripcion, );
+                                ventaLN.LNdetalleVenta(codProd, tipoProd, codPromo,cantidad, descripcion, totalProd, System.DateTime.Now);
 
                             }
                         }
@@ -124,14 +124,14 @@ namespace capavista
             DataGridViewRow fila = new DataGridViewRow();
             fila = dataGridView1.CurrentRow;
             
-        cantidad = Convert.ToInt32(Microsoft.VisualBasic.Interaction.InputBox("ingrese la cantidad: ").ToString());
+            cantidad = Convert.ToInt32(Microsoft.VisualBasic.Interaction.InputBox("ingrese la cantidad: ").ToString());
        
                 try
                 {
                 //fila.DataGridView.SelectedRows[] = dataGridView1.SelectedRows[e.RowIndex];
                 precio = Convert.ToDouble(fila.Cells[6].Value.ToString());
                 totalProd = precio * cantidad;
-              
+                
                 fila2.CreateCells(gridDetalles);
                 
                 fila2.Cells[0].Value = fila.Cells[0].Value.ToString();

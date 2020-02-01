@@ -78,6 +78,7 @@
             this.valorTotal});
             this.gridDetalles.Location = new System.Drawing.Point(620, 12);
             this.gridDetalles.Name = "gridDetalles";
+            this.gridDetalles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridDetalles.Size = new System.Drawing.Size(437, 420);
             this.gridDetalles.TabIndex = 1;
             // 

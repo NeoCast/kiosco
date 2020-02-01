@@ -60,8 +60,8 @@ namespace capaaccdatos
                 comando.Parameters.AddWithValue("@tipoProd", tipoProd);
                 comando.Parameters.AddWithValue("@codPromo", codPromo);
                 comando.Parameters.AddWithValue("@cantidad", cantidad);
-                comando.Parameters.AddWithValue("@descrip", descripcion);
                 comando.Parameters.AddWithValue("@totalProd", total);
+                comando.Parameters.AddWithValue("@descrip", descripcion);
                 comando.Parameters.AddWithValue("@ventaFecha", fecha);
                 comando.ExecuteNonQuery();
 
