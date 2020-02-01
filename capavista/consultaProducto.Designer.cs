@@ -54,6 +54,8 @@
             this.btnbuscar = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tipoProductoTableAdapter = new capavista.KioscoDataSetTableAdapters.tipoProductoTableAdapter();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).BeginInit();
@@ -100,6 +102,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(209)))));
+            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtidproducto);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.btnElim);
@@ -128,7 +132,7 @@
             this.txtidproducto.Location = new System.Drawing.Point(157, 148);
             this.txtidproducto.Name = "txtidproducto";
             this.txtidproducto.Size = new System.Drawing.Size(185, 20);
-            this.txtidproducto.TabIndex = 45;
+            this.txtidproducto.TabIndex = 2;
             // 
             // label11
             // 
@@ -151,7 +155,7 @@
             this.btnElim.Location = new System.Drawing.Point(38, 528);
             this.btnElim.Name = "btnElim";
             this.btnElim.Size = new System.Drawing.Size(304, 54);
-            this.btnElim.TabIndex = 43;
+            this.btnElim.TabIndex = 10;
             this.btnElim.Text = "Eliminar";
             this.btnElim.UseVisualStyleBackColor = false;
             this.btnElim.Click += new System.EventHandler(this.BtnElim_Click);
@@ -183,7 +187,7 @@
             this.btnModificar.Location = new System.Drawing.Point(38, 454);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(304, 56);
-            this.btnModificar.TabIndex = 41;
+            this.btnModificar.TabIndex = 9;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -204,7 +208,7 @@
             this.textBox2.Location = new System.Drawing.Point(157, 236);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(185, 20);
-            this.textBox2.TabIndex = 27;
+            this.textBox2.TabIndex = 4;
             // 
             // comboBox1
             // 
@@ -215,7 +219,7 @@
             this.comboBox1.Location = new System.Drawing.Point(157, 194);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(185, 21);
-            this.comboBox1.TabIndex = 28;
+            this.comboBox1.TabIndex = 3;
             this.comboBox1.ValueMember = "codTipop";
             // 
             // tipoProductoBindingSource
@@ -244,7 +248,7 @@
             this.textBox3.Location = new System.Drawing.Point(157, 279);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(185, 20);
-            this.textBox3.TabIndex = 30;
+            this.textBox3.TabIndex = 5;
             // 
             // label5
             // 
@@ -269,10 +273,10 @@
             // textBox4
             // 
             this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(157, 361);
+            this.textBox4.Location = new System.Drawing.Point(157, 357);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(185, 20);
-            this.textBox4.TabIndex = 36;
+            this.textBox4.TabIndex = 7;
             // 
             // label8
             // 
@@ -290,7 +294,7 @@
             this.textBox5.Location = new System.Drawing.Point(157, 318);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(185, 20);
-            this.textBox5.TabIndex = 34;
+            this.textBox5.TabIndex = 6;
             // 
             // btnbuscar
             // 
@@ -324,6 +328,22 @@
             // tipoProductoTableAdapter
             // 
             this.tipoProductoTableAdapter.ClearBeforeFill = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(38, 397);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.TabIndex = 46;
+            this.label6.Text = "Costos";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(157, 390);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(185, 20);
+            this.textBox6.TabIndex = 8;
             // 
             // consultaProducto
             // 
@@ -378,5 +398,7 @@
         private KioscoDataSet kioscoDataSet;
         private System.Windows.Forms.BindingSource tipoProductoBindingSource;
         private KioscoDataSetTableAdapters.tipoProductoTableAdapter tipoProductoTableAdapter;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label6;
     }
 }

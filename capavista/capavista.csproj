@@ -119,12 +119,6 @@
     <Compile Include="Facturacion.Designer.cs">
       <DependentUpon>Facturacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="inicio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="inicio.Designer.cs">
-      <DependentUpon>inicio.cs</DependentUpon>
-    </Compile>
     <Compile Include="KioscoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -147,12 +141,6 @@
     </Compile>
     <Compile Include="Menu2.Designer.cs">
       <DependentUpon>Menu2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="nuevoProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="nuevoProducto.Designer.cs">
-      <DependentUpon>nuevoProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="nuevapromocion.cs">
@@ -189,9 +177,6 @@
     <EmbeddedResource Include="Facturacion.resx">
       <DependentUpon>Facturacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="inicio.resx">
-      <DependentUpon>inicio.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,9 +185,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menu2.resx">
       <DependentUpon>Menu2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="nuevoProducto.resx">
-      <DependentUpon>nuevoProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="nuevapromocion.resx">
       <DependentUpon>nuevapromocion.cs</DependentUpon>

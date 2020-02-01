@@ -20,7 +20,7 @@ namespace capavista
             this.tipoProductoTableAdapter.Fill(this.kioscoDataSet.tipoProducto);
 
             dataGridView1.DataSource = productoln.mostrarTodos();
-
+            textBox1.Focus();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -32,7 +32,7 @@ namespace capavista
         {
             int idProd, stock, stockmin;
             string tproducto, descripcion;
-            double precio;
+            double precio,costos;
 
             idProd = Convert.ToInt32(txtidproducto.Text);
             stock = Convert.ToInt32(textBox3.Text);
@@ -40,10 +40,20 @@ namespace capavista
             tproducto = Convert.ToString(comboBox1.SelectedValue);
             descripcion = Convert.ToString(textBox2.Text);
             precio = Convert.ToDouble(textBox4.Text);
+            costos = Convert.ToDouble(textBox6.Text);
 
-            productoln.modificarProducto(idProd, tproducto, descripcion, precio, stock, stockmin);
+            productoln.modificarProducto(idProd, tproducto, descripcion, precio, stock, stockmin,costos);
             MessageBox.Show("se ha modificado con exito");
-            productoln.mostrarTodos();
+            dataGridView1.DataSource = productoln.mostrarTodos();
+            txtidproducto.Clear();
+            comboBox1.Text = "";
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            textBox6.Clear();
+            textBox1.Clear();
+            textBox1.Focus();
         }
 
 
@@ -60,13 +70,13 @@ namespace capavista
             //fecha2.ToString(format);
 
 
-
             txtidproducto.Text = fila.Cells[0].Value.ToString();
             comboBox1.Text = fila.Cells[2].Value.ToString();
             textBox2.Text = fila.Cells[3].Value.ToString();
             textBox3.Text = fila.Cells[4].Value.ToString();
             textBox5.Text = fila.Cells[5].Value.ToString();
             textBox4.Text = fila.Cells[6].Value.ToString();
+            textBox6.Text = fila.Cells[9].Value.ToString();
         }
 
         private void BtnElim_Click(object sender, EventArgs e)
@@ -79,7 +89,15 @@ namespace capavista
                 productoln.eliminarProducto(idProd);
                 MessageBox.Show("Se ha eliminado con exito");
                 dataGridView1.DataSource= productoln.mostrarTodos();
-
+                txtidproducto.Clear();
+                comboBox1.Text = "";
+                textBox2.Clear();
+                textBox3.Clear();
+                textBox4.Clear();
+                textBox5.Clear();
+                textBox6.Clear();
+                textBox1.Clear();
+                textBox1.Focus();
             }
             else
             {

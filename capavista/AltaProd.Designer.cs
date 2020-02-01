@@ -53,6 +53,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tipoProductoTableAdapter = new capavista.KioscoDataSetTableAdapters.tipoProductoTableAdapter();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtCostos = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kioscoDataSet)).BeginInit();
             this.panel1.SuspendLayout();
@@ -88,7 +90,7 @@
             this.comboBox1.Location = new System.Drawing.Point(156, 148);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(185, 21);
-            this.comboBox1.TabIndex = 2;
+            this.comboBox1.TabIndex = 0;
             this.comboBox1.ValueMember = "codTipop";
             // 
             // tipoProductoBindingSource
@@ -127,7 +129,7 @@
             this.txtstock.Location = new System.Drawing.Point(156, 233);
             this.txtstock.Name = "txtstock";
             this.txtstock.Size = new System.Drawing.Size(185, 20);
-            this.txtstock.TabIndex = 4;
+            this.txtstock.TabIndex = 2;
             // 
             // dateTimePicker2
             // 
@@ -136,7 +138,7 @@
             this.dateTimePicker2.Location = new System.Drawing.Point(156, 400);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(185, 20);
-            this.dateTimePicker2.TabIndex = 18;
+            this.dateTimePicker2.TabIndex = 6;
             // 
             // dateTimePicker1
             // 
@@ -145,7 +147,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(156, 357);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(185, 20);
-            this.dateTimePicker1.TabIndex = 19;
+            this.dateTimePicker1.TabIndex = 5;
             // 
             // label5
             // 
@@ -163,7 +165,7 @@
             this.txtprecio.Location = new System.Drawing.Point(156, 315);
             this.txtprecio.Name = "txtprecio";
             this.txtprecio.Size = new System.Drawing.Size(185, 20);
-            this.txtprecio.TabIndex = 22;
+            this.txtprecio.TabIndex = 4;
             // 
             // label4
             // 
@@ -181,7 +183,7 @@
             this.txtminimo.Location = new System.Drawing.Point(156, 272);
             this.txtminimo.Name = "txtminimo";
             this.txtminimo.Size = new System.Drawing.Size(185, 20);
-            this.txtminimo.TabIndex = 20;
+            this.txtminimo.TabIndex = 3;
             // 
             // label7
             // 
@@ -215,7 +217,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(53, 505);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(294, 65);
-            this.btnGuardar.TabIndex = 29;
+            this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
@@ -238,6 +240,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(209)))));
+            this.panel1.Controls.Add(this.txtCostos);
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label1);
@@ -311,6 +315,22 @@
             // 
             this.tipoProductoTableAdapter.ClearBeforeFill = true;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(34, 449);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(42, 13);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Costos:";
+            // 
+            // txtCostos
+            // 
+            this.txtCostos.Location = new System.Drawing.Point(156, 442);
+            this.txtCostos.Name = "txtCostos";
+            this.txtCostos.Size = new System.Drawing.Size(185, 20);
+            this.txtCostos.TabIndex = 7;
+            // 
             // AltaProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,5 +381,7 @@
         private KioscoDataSet kioscoDataSet;
         private System.Windows.Forms.BindingSource tipoProductoBindingSource;
         private KioscoDataSetTableAdapters.tipoProductoTableAdapter tipoProductoTableAdapter;
+        private System.Windows.Forms.TextBox txtCostos;
+        private System.Windows.Forms.Label label10;
     }
 }

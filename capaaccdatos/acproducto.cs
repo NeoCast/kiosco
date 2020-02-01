@@ -10,18 +10,13 @@ namespace capaaccdatos
 
 
         private conexionbd conexion = new conexionbd();
-        public void nuevoproducto(String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin, DateTime inFecha, DateTime outFecha)
+        public void nuevoproducto(String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin, DateTime inFecha, DateTime outFecha,Double costos)
         {
-
-
 
             SqlCommand comando = new SqlCommand();
             DataTable tabla = new DataTable();
-
-
             try
             {
-
                 comando.Connection = conexion.abrircn();
                 comando.CommandText = "altaProductos";
                 comando.CommandType = CommandType.StoredProcedure;
@@ -32,7 +27,10 @@ namespace capaaccdatos
                 comando.Parameters.AddWithValue("@stockMin", stockMin);
                 comando.Parameters.AddWithValue("@inFecha", inFecha);
                 comando.Parameters.AddWithValue("@outFecha", outFecha);
+                comando.Parameters.AddWithValue("@costos", costos);
                 comando.ExecuteNonQuery();
+
+
 
 
             }
@@ -158,7 +156,7 @@ namespace capaaccdatos
 
         }
 
-        public void modificarProducto(Int32 codProducto, String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin)
+        public void modificarProducto(Int32 codProducto, String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin,Double costos)
         {
 
             SqlCommand comando = new SqlCommand();
@@ -177,6 +175,7 @@ namespace capaaccdatos
                 comando.Parameters.AddWithValue("@precio", precio);
                 comando.Parameters.AddWithValue("@stock", stock);
                 comando.Parameters.AddWithValue("@stockMin", stockMin);
+                comando.Parameters.AddWithValue("@costos", costos);
 
                 comando.ExecuteNonQuery();
 

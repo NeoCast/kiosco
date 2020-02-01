@@ -44,10 +44,11 @@ namespace capavista
                         }
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Por favor, complete todas las casillas");
-                }
+              
+            }
+            else
+            {
+                MessageBox.Show("Por favor, complete todas las casillas");
             }
         }
 

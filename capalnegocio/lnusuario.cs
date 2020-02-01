@@ -37,12 +37,11 @@ namespace capalnegocio
         {
             try
             {
-                datausu.nuevoUsu(usuario, contrasena, nombre, cargo);
+                datausu.nuevoUsu(usuario, contrasena, nombre, cargo);              
 
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }

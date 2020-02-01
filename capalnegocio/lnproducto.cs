@@ -10,14 +10,14 @@ namespace capalnegocio
         private acproducto producdatos = new acproducto();
         private DataTable tabla = new DataTable();
 
-        public void altaProducto(String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin, DateTime inFecha, DateTime outFecha)
+        public void altaProducto(String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin, DateTime inFecha, DateTime outFecha,Double costos)
         {
             try
             {
 
                 tabla = null;
                 descripcion = tproducto + "-" + descripcion;
-                producdatos.nuevoproducto(tproducto, descripcion, precio, stock, stockMin, inFecha, outFecha);
+                producdatos.nuevoproducto(tproducto, descripcion, precio, stock, stockMin, inFecha, outFecha,costos);
 
             }
             catch (Exception ex)
@@ -78,11 +78,11 @@ namespace capalnegocio
 
         }
 
-        public void modificarProducto(Int32 codProd, string tipoProd, string descripcion, double precio, Int32 stock, Int32 stockMin)
+        public void modificarProducto(Int32 codProd, string tipoProd, string descripcion, double precio, Int32 stock, Int32 stockMin,double costos)
         {
             try
             {
-                producdatos.modificarProducto(codProd, tipoProd, descripcion, precio, stock, stockMin);
+                producdatos.modificarProducto(codProd, tipoProd, descripcion, precio, stock, stockMin,costos);
 
             }
             catch (Exception ex)
