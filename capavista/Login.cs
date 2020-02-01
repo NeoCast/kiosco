@@ -157,19 +157,11 @@ namespace capavista
                     }
                     else msgError("Por favor ingrese su contraseña");
                 }
+
                 else msgError("Por favor ingrese su nombre de usuario");
 
             }
-            //        If compruebaSerial() = False Then
-            //Else
-            //        If txtUsuario.Text = "admin" And txtClave.Text = "123" Then
-            //            Form1.Show()
-            //            Me.Hide()
-            //        Else
-            //            MsgBox("Usuario o Clave incorrecta")
-            //        End If
-
-            //    End If
+          
         }
         private void msgError(string msg)
         {

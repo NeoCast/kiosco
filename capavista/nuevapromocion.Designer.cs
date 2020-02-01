@@ -33,35 +33,62 @@
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label label3;
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.descripcionTextBox = new System.Windows.Forms.TextBox();
+            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kioscoDataSet = new capavista.KioscoDataSet();
+            this.codProductoComboBox = new System.Windows.Forms.ComboBox();
+            this.productosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.txtDescr = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnAgProm = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kioscoDataSet = new capavista.KioscoDataSet();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.productosTableAdapter = new capavista.KioscoDataSetTableAdapters.productosTableAdapter();
-            this.tableAdapterManager = new capavista.KioscoDataSetTableAdapters.TableAdapterManager();
-            this.codProductoComboBox = new System.Windows.Forms.ComboBox();
-            this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.codProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descrProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.productosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.productosTableAdapter = new capavista.KioscoDataSetTableAdapters.productosTableAdapter();
+            this.tableAdapterManager = new capavista.KioscoDataSetTableAdapters.TableAdapterManager();
             codProductoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kioscoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // codProductoLabel
+            // 
+            codProductoLabel.AutoSize = true;
+            codProductoLabel.Location = new System.Drawing.Point(26, 340);
+            codProductoLabel.Name = "codProductoLabel";
+            codProductoLabel.Size = new System.Drawing.Size(75, 13);
+            codProductoLabel.TabIndex = 70;
+            codProductoLabel.Text = "Cod Producto:";
+            // 
+            // descripcionLabel
+            // 
+            descripcionLabel.AutoSize = true;
+            descripcionLabel.Location = new System.Drawing.Point(26, 394);
+            descripcionLabel.Name = "descripcionLabel";
+            descripcionLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionLabel.TabIndex = 71;
+            descripcionLabel.Text = "Descripcion:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(26, 447);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(67, 13);
+            label3.TabIndex = 73;
+            label3.Text = "Cantidad art:";
             // 
             // panel1
             // 
@@ -86,6 +113,48 @@
             this.panel1.Size = new System.Drawing.Size(1080, 612);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(124, 440);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(251, 20);
+            this.textBox1.TabIndex = 72;
+            // 
+            // descripcionTextBox
+            // 
+            this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "descripcion", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.descripcionTextBox.Location = new System.Drawing.Point(124, 387);
+            this.descripcionTextBox.Name = "descripcionTextBox";
+            this.descripcionTextBox.Size = new System.Drawing.Size(251, 20);
+            this.descripcionTextBox.TabIndex = 5;
+            // 
+            // productosBindingSource
+            // 
+            this.productosBindingSource.DataMember = "productos";
+            this.productosBindingSource.DataSource = this.kioscoDataSet;
+            // 
+            // kioscoDataSet
+            // 
+            this.kioscoDataSet.DataSetName = "KioscoDataSet";
+            this.kioscoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // codProductoComboBox
+            // 
+            this.codProductoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "codProducto", true));
+            this.codProductoComboBox.DataSource = this.productosBindingSource1;
+            this.codProductoComboBox.DisplayMember = "codProducto";
+            this.codProductoComboBox.FormattingEnabled = true;
+            this.codProductoComboBox.Location = new System.Drawing.Point(124, 332);
+            this.codProductoComboBox.Name = "codProductoComboBox";
+            this.codProductoComboBox.Size = new System.Drawing.Size(251, 21);
+            this.codProductoComboBox.TabIndex = 4;
+            this.codProductoComboBox.ValueMember = "codProducto";
+            // 
+            // productosBindingSource1
+            // 
+            this.productosBindingSource1.DataMember = "productos";
+            this.productosBindingSource1.DataSource = this.kioscoDataSet;
             // 
             // txtDescr
             // 
@@ -137,16 +206,6 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
-            // 
-            // productosBindingSource
-            // 
-            this.productosBindingSource.DataMember = "productos";
-            this.productosBindingSource.DataSource = this.kioscoDataSet;
-            // 
-            // kioscoDataSet
-            // 
-            this.kioscoDataSet.DataSetName = "KioscoDataSet";
-            this.kioscoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnAgregar
             // 
@@ -209,59 +268,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(433, 612);
             this.dataGridView1.TabIndex = 0;
             // 
-            // productosTableAdapter
-            // 
-            this.productosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.detalleVentasTableAdapter = null;
-            this.tableAdapterManager.productosTableAdapter = this.productosTableAdapter;
-            this.tableAdapterManager.stockTableAdapter = null;
-            this.tableAdapterManager.tieneStockTableAdapter = null;
-            this.tableAdapterManager.tipoProductoTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = capavista.KioscoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.ventasTableAdapter = null;
-            // 
-            // codProductoLabel
-            // 
-            codProductoLabel.AutoSize = true;
-            codProductoLabel.Location = new System.Drawing.Point(26, 340);
-            codProductoLabel.Name = "codProductoLabel";
-            codProductoLabel.Size = new System.Drawing.Size(75, 13);
-            codProductoLabel.TabIndex = 70;
-            codProductoLabel.Text = "Cod Producto:";
-            // 
-            // codProductoComboBox
-            // 
-            this.codProductoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "codProducto", true));
-            this.codProductoComboBox.DataSource = this.productosBindingSource1;
-            this.codProductoComboBox.DisplayMember = "codProducto";
-            this.codProductoComboBox.FormattingEnabled = true;
-            this.codProductoComboBox.Location = new System.Drawing.Point(124, 332);
-            this.codProductoComboBox.Name = "codProductoComboBox";
-            this.codProductoComboBox.Size = new System.Drawing.Size(251, 21);
-            this.codProductoComboBox.TabIndex = 4;
-            this.codProductoComboBox.ValueMember = "codProducto";
-            // 
-            // descripcionLabel
-            // 
-            descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(26, 394);
-            descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionLabel.TabIndex = 71;
-            descripcionLabel.Text = "Descripcion:";
-            // 
-            // descripcionTextBox
-            // 
-            this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "descripcion", true));
-            this.descripcionTextBox.Location = new System.Drawing.Point(124, 387);
-            this.descripcionTextBox.Name = "descripcionTextBox";
-            this.descripcionTextBox.Size = new System.Drawing.Size(251, 20);
-            this.descripcionTextBox.TabIndex = 5;
-            // 
             // codProducto
             // 
             this.codProducto.HeaderText = "Codigo";
@@ -278,26 +284,20 @@
             this.cantidadProd.HeaderText = "cantidad";
             this.cantidadProd.Name = "cantidadProd";
             // 
-            // label3
+            // productosTableAdapter
             // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(26, 447);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(67, 13);
-            label3.TabIndex = 73;
-            label3.Text = "Cantidad art:";
+            this.productosTableAdapter.ClearBeforeFill = true;
             // 
-            // textBox1
+            // tableAdapterManager
             // 
-            this.textBox1.Location = new System.Drawing.Point(124, 440);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(251, 20);
-            this.textBox1.TabIndex = 72;
-            // 
-            // productosBindingSource1
-            // 
-            this.productosBindingSource1.DataMember = "productos";
-            this.productosBindingSource1.DataSource = this.kioscoDataSet;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.detalleVentasTableAdapter = null;
+            this.tableAdapterManager.productosTableAdapter = this.productosTableAdapter;
+            this.tableAdapterManager.stockTableAdapter = null;
+            this.tableAdapterManager.tieneStockTableAdapter = null;
+            this.tableAdapterManager.tipoProductoTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = capavista.KioscoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ventasTableAdapter = null;
             // 
             // nuevapromocion
             // 
@@ -313,8 +313,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kioscoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

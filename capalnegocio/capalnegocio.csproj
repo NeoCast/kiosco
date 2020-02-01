@@ -49,6 +49,7 @@
     <Compile Include="lnSerial.cs" />
     <Compile Include="lnusuario.cs" />
     <Compile Include="lnvalidacion.cs" />
+    <Compile Include="lnventa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

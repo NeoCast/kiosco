@@ -17,6 +17,7 @@ namespace capalnegocio
         private acusuarios datausu = new acusuarios();
         private DataTable tabla = new DataTable();
 
+
         public bool loginuser(string usuario, string contrasena)
         {
             return datausu.login(usuario,contrasena);

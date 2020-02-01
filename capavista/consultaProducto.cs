@@ -32,7 +32,7 @@ namespace capavista
         {
             int idProd, stock, stockmin;
             string tproducto, descripcion;
-            double precio,costos;
+            double precio, costos;
 
             idProd = Convert.ToInt32(txtidproducto.Text);
             stock = Convert.ToInt32(textBox3.Text);
@@ -42,7 +42,7 @@ namespace capavista
             precio = Convert.ToDouble(textBox4.Text);
             costos = Convert.ToDouble(textBox6.Text);
 
-            productoln.modificarProducto(idProd, tproducto, descripcion, precio, stock, stockmin,costos);
+            productoln.modificarProducto(idProd, tproducto, descripcion, precio, stock, stockmin, costos);
             MessageBox.Show("se ha modificado con exito");
             dataGridView1.DataSource = productoln.mostrarTodos();
             txtidproducto.Clear();
@@ -55,30 +55,6 @@ namespace capavista
             textBox1.Clear();
             textBox1.Focus();
         }
-
-
-        private void DataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            DataGridViewRow fila = dataGridView1.Rows[e.RowIndex];
-
-
-            //string format = string.Format("dd-MM-yyyy HH:mm:ss");
-            //DateTime fecha = DateTime.Parse(dataGridView1.CurrentRow.Cells[6].Value.ToString());
-            //DateTime fecha2 = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[7].Value.ToString());
-
-            //fecha.ToString(format);
-            //fecha2.ToString(format);
-
-
-            txtidproducto.Text = fila.Cells[0].Value.ToString();
-            comboBox1.Text = fila.Cells[2].Value.ToString();
-            textBox2.Text = fila.Cells[3].Value.ToString();
-            textBox3.Text = fila.Cells[4].Value.ToString();
-            textBox5.Text = fila.Cells[5].Value.ToString();
-            textBox4.Text = fila.Cells[6].Value.ToString();
-            textBox6.Text = fila.Cells[9].Value.ToString();
-        }
-
         private void BtnElim_Click(object sender, EventArgs e)
         {
             if (txtidproducto.Text != "")
@@ -88,7 +64,7 @@ namespace capavista
 
                 productoln.eliminarProducto(idProd);
                 MessageBox.Show("Se ha eliminado con exito");
-                dataGridView1.DataSource= productoln.mostrarTodos();
+                dataGridView1.DataSource = productoln.mostrarTodos();
                 txtidproducto.Clear();
                 comboBox1.Text = "";
                 textBox2.Clear();
@@ -104,7 +80,6 @@ namespace capavista
                 MessageBox.Show("Por favor seleccione un articulo");
             }
         }
-
         private void PictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -113,7 +88,35 @@ namespace capavista
         private void Btnbuscar_Click(object sender, EventArgs e)
         {
             string descripcion = Convert.ToString(textBox1.Text);
-            dataGridView1.DataSource=  productoln.mostrarProductos(descripcion);
+            dataGridView1.DataSource = productoln.mostrarProductos(descripcion);
+        }
+
+        private void DataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow fila = dataGridView1.Rows[e.RowIndex];
+
+
+            //string format = string.Format("dd-MM-yyyy HH:mm:ss");
+            //DateTime fecha = DateTime.Parse(dataGridView1.CurrentRow.Cells[6].Value.ToString());
+            //DateTime fecha2 = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[7].Value.ToString());
+
+            //fecha.ToString(format);
+            //fecha2.ToString(format);
+
+
+            txtidproducto.Text = fila.Cells[0].Value.ToString();
+            comboBox1.SelectedItem = fila.Cells[2].Value.ToString().Trim();
+            textBox2.Text = fila.Cells[3].Value.ToString();
+            textBox3.Text = fila.Cells[4].Value.ToString();
+            textBox5.Text = fila.Cells[5].Value.ToString();
+            textBox4.Text = fila.Cells[6].Value.ToString();
+            textBox6.Text = fila.Cells[9].Value.ToString();
+
+
+          
+         
+
+          
         }
     }
 }
