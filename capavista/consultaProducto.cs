@@ -30,40 +30,23 @@ namespace capavista
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            int idProd, stock, stockmin;
-            string tproducto, descripcion;
-            double precio, costos;
 
-            idProd = Convert.ToInt32(txtidproducto.Text);
-            stock = Convert.ToInt32(textBox3.Text);
-            stockmin = Convert.ToInt32(textBox5.Text);
-            tproducto = Convert.ToString(comboBox1.SelectedValue);
-            descripcion = Convert.ToString(textBox2.Text);
-            precio = Convert.ToDouble(textBox4.Text);
-            costos = Convert.ToDouble(textBox6.Text);
-
-            productoln.modificarProducto(idProd, tproducto, descripcion, precio, stock, stockmin, costos);
-            MessageBox.Show("se ha modificado con exito");
-            dataGridView1.DataSource = productoln.mostrarTodos();
-            txtidproducto.Clear();
-            comboBox1.Text = "";
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
-            textBox5.Clear();
-            textBox6.Clear();
-            textBox1.Clear();
-            textBox1.Focus();
-        }
-        private void BtnElim_Click(object sender, EventArgs e)
-        {
-            if (txtidproducto.Text != "")
+            try
             {
+                int idProd, stock, stockmin;
+                string tproducto, descripcion;
+                double precio, costos;
 
-                int idProd = Convert.ToInt32(txtidproducto.Text);
+                idProd = Convert.ToInt32(txtidproducto.Text);
+                stock = Convert.ToInt32(textBox3.Text);
+                stockmin = Convert.ToInt32(textBox5.Text);
+                tproducto = Convert.ToString(comboBox1.SelectedValue);
+                descripcion = Convert.ToString(textBox2.Text);
+                precio = Convert.ToDouble(textBox4.Text);
+                costos = Convert.ToDouble(textBox6.Text);
 
-                productoln.eliminarProducto(idProd);
-                MessageBox.Show("Se ha eliminado con exito");
+                productoln.modificarProducto(idProd, tproducto, descripcion, precio, stock, stockmin, costos);
+                MessageBox.Show("se ha modificado con exito");
                 dataGridView1.DataSource = productoln.mostrarTodos();
                 txtidproducto.Clear();
                 comboBox1.Text = "";
@@ -74,6 +57,43 @@ namespace capavista
                 textBox6.Clear();
                 textBox1.Clear();
                 textBox1.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se ha podido realizar la accion. Error: " + ex.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+                throw ex;
+            }
+            
+        }
+        private void BtnElim_Click(object sender, EventArgs e)
+        {
+            if (txtidproducto.Text != "")
+            {
+                try
+                {
+                    int idProd = Convert.ToInt32(txtidproducto.Text);
+
+                    productoln.eliminarProducto(idProd);
+                    MessageBox.Show("Se ha eliminado con exito");
+                    dataGridView1.DataSource = productoln.mostrarTodos();
+                    txtidproducto.Clear();
+                    comboBox1.Text = "";
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    textBox4.Clear();
+                    textBox5.Clear();
+                    textBox6.Clear();
+                    textBox1.Clear();
+                    textBox1.Focus();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se ha podido realizar la accion. Error: " + ex.ToString(), "Warning" , MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                    throw;
+                }
+               
             }
             else
             {
@@ -117,6 +137,11 @@ namespace capavista
          
 
           
+        }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

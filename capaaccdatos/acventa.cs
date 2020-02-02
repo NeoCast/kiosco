@@ -81,5 +81,99 @@ namespace capaaccdatos
 
         }
 
+        public DataTable buscarDetalleVta(DateTime fechaInicio, DateTime fechaFin)
+        {
+            SqlCommand comando = new SqlCommand();
+            DataTable tabla = new DataTable();
+            SqlDataReader reader;
+            try
+            {
+
+                comando.Connection = conexion.abrircn();
+                comando.CommandText = "buscarDetalleVta";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@fechaInicio", fechaInicio);
+                comando.Parameters.AddWithValue("@fechaFin", fechaFin);
+                reader = comando.ExecuteReader();
+                tabla.Load(reader);
+
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+
+            }
+            finally
+            {
+
+                conexion.cerrarcn();
+
+            }
+
+        }
+
+        public DataTable todoDetalleVta()
+        {
+            SqlCommand comando = new SqlCommand();
+            DataTable tabla = new DataTable();
+            SqlDataReader reader;
+
+            try
+            {
+                comando.Connection = conexion.abrircn();
+                comando.CommandText = "todosDetallesVta";
+                comando.CommandType = CommandType.StoredProcedure;
+                reader = comando.ExecuteReader();
+                tabla.Load(reader);
+
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+
+            }
+            finally
+            {
+
+                conexion.cerrarcn();
+
+            }
+        }
+
+        public DataTable buscarPorTipoProducto(string tProducto)
+        {
+            SqlCommand comando = new SqlCommand();
+            DataTable tabla = new DataTable();
+            SqlDataReader reader;
+
+            try
+            {
+                //
+                comando.Connection = conexion.abrircn();
+                comando.CommandText = "buscarDetallePorTprod";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@tProducto", tProducto);
+                reader = comando.ExecuteReader();
+                tabla.Load(reader);
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+
+            }
+            finally
+            {
+
+                conexion.cerrarcn();
+
+            }
+        }
+
     }
 }

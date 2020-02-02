@@ -33,29 +33,21 @@ namespace capavista
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-           
-            if (txtdescripcion.Text != "" )
-            {
-              if (txtstock.Text != "") {
-                    if (txtminimo.Text !="") {
-                        if(txtprecio.Text != ""){
-                            if (txtCostos.Text != "")
-                            {
-                                productoLN.altaProducto(comboBox1.Text, txtdescripcion.Text, Convert.ToDouble(txtprecio.Text), Convert.ToInt32(txtstock.Text), Convert.ToInt32(txtminimo.Text), dateTimePicker1.Value, dateTimePicker2.Value, Convert.ToDouble(txtCostos.Text));
-                                MessageBox.Show("Producto guardado de manera exitosa");
-                                dataGridView1.DataSource = productoLN.mostrarTodos();
-                                txtdescripcion.Clear();
-                                txtstock.Clear();
-                                txtprecio.Clear();
-                                txtminimo.Clear();
-                                txtCostos.Clear();
-                                txtdescripcion.Clear();
-                            }
 
-                                }
-                    }
-                }
+           
+            if (txtstock.Text != "" && txtprecio.Text != "" && txtminimo.Text != "" && txtCostos.Text != "" && txtdescripcion.Text != "")
+            {
+                  productoLN.altaProducto(comboBox1.Text, txtdescripcion.Text, Convert.ToDouble(txtprecio.Text), Convert.ToInt32(txtstock.Text), Convert.ToInt32(txtminimo.Text), dateTimePicker1.Value, dateTimePicker2.Value, Convert.ToDouble(txtCostos.Text));
+                  MessageBox.Show("Producto guardado de manera exitosa");
+                  dataGridView1.DataSource = productoLN.mostrarTodos();
+                  txtdescripcion.Clear();
+                  txtstock.Clear();
+                  txtprecio.Clear();
+                  txtminimo.Clear();
+                  txtCostos.Clear();
+                  txtdescripcion.Clear();
             }
+            
             else
             {
                 MessageBox.Show("Por favor, complete todas las casillas");
