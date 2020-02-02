@@ -95,5 +95,12 @@ namespace capalnegocio
 
         }
 
+        public DataTable buscarPorTproducto(string tipoProd)
+        {
+            tabla = null;
+            tabla =  producdatos.buscarPorTproducto(tipoProd);
+            return tabla;
+        }
+
     }
 }

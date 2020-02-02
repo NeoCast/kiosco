@@ -34,7 +34,10 @@ namespace capavista
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
 
-           
+            try
+            {
+
+         
             if (txtstock.Text != "" && txtprecio.Text != "" && txtminimo.Text != "" && txtCostos.Text != "" && txtdescripcion.Text != "")
             {
                   productoLN.altaProducto(comboBox1.Text, txtdescripcion.Text, Convert.ToDouble(txtprecio.Text), Convert.ToInt32(txtstock.Text), Convert.ToInt32(txtminimo.Text), dateTimePicker1.Value, dateTimePicker2.Value, Convert.ToDouble(txtCostos.Text));
@@ -52,8 +55,14 @@ namespace capavista
             {
                 MessageBox.Show("Por favor, complete todas las casillas");
             }
-            
-            
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se ha podido realizar la accion. Error: " + ex.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+                throw ex;
+            }
+
         }
 
         private void Panel1_Paint(object sender, PaintEventArgs e)

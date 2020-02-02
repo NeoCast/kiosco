@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(buscarArtPromo));
             this.panelTitle = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.addProd = new System.Windows.Forms.TextBox();
+            this.addDesc = new System.Windows.Forms.TextBox();
+            this.addCant = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -44,9 +45,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.kioscoDataSet = new capavista.KioscoDataSet();
+            this.tipoProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipoProductoTableAdapter = new capavista.KioscoDataSetTableAdapters.tipoProductoTableAdapter();
             this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kioscoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitle
@@ -99,34 +105,38 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Cantidad:";
             // 
-            // textBox1
+            // addProd
             // 
-            this.textBox1.Location = new System.Drawing.Point(120, 171);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(169, 20);
-            this.textBox1.TabIndex = 5;
+            this.addProd.Location = new System.Drawing.Point(120, 171);
+            this.addProd.Name = "addProd";
+            this.addProd.Size = new System.Drawing.Size(169, 20);
+            this.addProd.TabIndex = 5;
             // 
-            // textBox2
+            // addDesc
             // 
-            this.textBox2.Location = new System.Drawing.Point(120, 210);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(169, 20);
-            this.textBox2.TabIndex = 6;
+            this.addDesc.Location = new System.Drawing.Point(120, 210);
+            this.addDesc.Name = "addDesc";
+            this.addDesc.Size = new System.Drawing.Size(169, 20);
+            this.addDesc.TabIndex = 6;
             // 
-            // textBox3
+            // addCant
             // 
-            this.textBox3.Location = new System.Drawing.Point(120, 253);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(169, 20);
-            this.textBox3.TabIndex = 7;
+            this.addCant.Location = new System.Drawing.Point(120, 253);
+            this.addCant.Name = "addCant";
+            this.addCant.Size = new System.Drawing.Size(169, 20);
+            this.addCant.TabIndex = 7;
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.tipoProductoBindingSource;
+            this.comboBox1.DisplayMember = "codTipop";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(406, 70);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(305, 21);
             this.comboBox1.TabIndex = 8;
+            this.comboBox1.ValueMember = "codTipop";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
@@ -145,12 +155,13 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(73, 328);
+            this.btnAgregar.Location = new System.Drawing.Point(26, 328);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(202, 62);
+            this.btnAgregar.Size = new System.Drawing.Size(263, 62);
             this.btnAgregar.TabIndex = 10;
-            this.btnAgregar.Text = "Buscar";
+            this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // label8
             // 
@@ -194,6 +205,20 @@
             this.panel3.Size = new System.Drawing.Size(790, 5);
             this.panel3.TabIndex = 59;
             // 
+            // kioscoDataSet
+            // 
+            this.kioscoDataSet.DataSetName = "KioscoDataSet";
+            this.kioscoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tipoProductoBindingSource
+            // 
+            this.tipoProductoBindingSource.DataMember = "tipoProducto";
+            this.tipoProductoBindingSource.DataSource = this.kioscoDataSet;
+            // 
+            // tipoProductoTableAdapter
+            // 
+            this.tipoProductoTableAdapter.ClearBeforeFill = true;
+            // 
             // buscarArtPromo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,9 +232,9 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.addCant);
+            this.Controls.Add(this.addDesc);
+            this.Controls.Add(this.addProd);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -222,6 +247,8 @@
             this.panelTitle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kioscoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,9 +261,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox addProd;
+        private System.Windows.Forms.TextBox addDesc;
+        private System.Windows.Forms.TextBox addCant;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnAgregar;
@@ -244,5 +271,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private KioscoDataSet kioscoDataSet;
+        private System.Windows.Forms.BindingSource tipoProductoBindingSource;
+        private KioscoDataSetTableAdapters.tipoProductoTableAdapter tipoProductoTableAdapter;
     }
 }
