@@ -89,6 +89,12 @@
     <Compile Include="Bienvenida.Designer.cs">
       <DependentUpon>Bienvenida.cs</DependentUpon>
     </Compile>
+    <Compile Include="buscarArtPromo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="buscarArtPromo.Designer.cs">
+      <DependentUpon>buscarArtPromo.cs</DependentUpon>
+    </Compile>
     <Compile Include="buscarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Bienvenida.resx">
       <DependentUpon>Bienvenida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="buscarArtPromo.resx">
+      <DependentUpon>buscarArtPromo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="buscarProductos.resx">
       <DependentUpon>buscarProductos.cs</DependentUpon>

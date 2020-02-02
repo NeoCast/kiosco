@@ -32,6 +32,10 @@
             System.Windows.Forms.Label codProductoLabel;
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label label3;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
@@ -53,6 +57,7 @@
             this.cantidadProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productosTableAdapter = new capavista.KioscoDataSetTableAdapters.productosTableAdapter();
             this.tableAdapterManager = new capavista.KioscoDataSetTableAdapters.TableAdapterManager();
+            this.btnBuscar = new System.Windows.Forms.Button();
             codProductoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -92,6 +97,8 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(label3);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(descripcionLabel);
@@ -119,7 +126,7 @@
             this.textBox1.Location = new System.Drawing.Point(124, 440);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(251, 20);
-            this.textBox1.TabIndex = 72;
+            this.textBox1.TabIndex = 5;
             // 
             // descripcionTextBox
             // 
@@ -127,7 +134,7 @@
             this.descripcionTextBox.Location = new System.Drawing.Point(124, 387);
             this.descripcionTextBox.Name = "descripcionTextBox";
             this.descripcionTextBox.Size = new System.Drawing.Size(251, 20);
-            this.descripcionTextBox.TabIndex = 5;
+            this.descripcionTextBox.TabIndex = 4;
             // 
             // productosBindingSource
             // 
@@ -142,14 +149,14 @@
             // codProductoComboBox
             // 
             this.codProductoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "codProducto", true));
-            this.codProductoComboBox.DataSource = this.productosBindingSource1;
+            this.codProductoComboBox.DataSource = this.productosBindingSource;
             this.codProductoComboBox.DisplayMember = "codProducto";
             this.codProductoComboBox.FormattingEnabled = true;
             this.codProductoComboBox.Location = new System.Drawing.Point(124, 332);
             this.codProductoComboBox.Name = "codProductoComboBox";
             this.codProductoComboBox.Size = new System.Drawing.Size(251, 21);
-            this.codProductoComboBox.TabIndex = 4;
-            this.codProductoComboBox.ValueMember = "codProducto";
+            this.codProductoComboBox.TabIndex = 3;
+            this.codProductoComboBox.SelectedIndexChanged += new System.EventHandler(this.codProductoComboBox_SelectedIndexChanged);
             // 
             // productosBindingSource1
             // 
@@ -185,7 +192,7 @@
             this.btnAgProm.Location = new System.Drawing.Point(29, 490);
             this.btnAgProm.Name = "btnAgProm";
             this.btnAgProm.Size = new System.Drawing.Size(576, 62);
-            this.btnAgProm.TabIndex = 9;
+            this.btnAgProm.TabIndex = 8;
             this.btnAgProm.Text = "Agregar promoción";
             this.btnAgProm.UseVisualStyleBackColor = false;
             this.btnAgProm.Click += new System.EventHandler(this.BtnAgProm_Click);
@@ -202,7 +209,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(419, 398);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(186, 62);
-            this.btnEliminar.TabIndex = 8;
+            this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
@@ -219,7 +226,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(419, 308);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(186, 62);
-            this.btnAgregar.TabIndex = 7;
+            this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
@@ -229,7 +236,7 @@
             this.txtTotal.Location = new System.Drawing.Point(124, 278);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(251, 20);
-            this.txtTotal.TabIndex = 3;
+            this.txtTotal.TabIndex = 2;
             // 
             // label2
             // 
@@ -257,15 +264,53 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Schoolbook", 9.75F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeight = 25;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codProducto,
             this.descrProd,
             this.cantidadProd});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dataGridView1.Location = new System.Drawing.Point(647, 0);
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.Color.White;
+            this.dataGridView1.Location = new System.Drawing.Point(697, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(433, 612);
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Schoolbook", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.Size = new System.Drawing.Size(383, 612);
             this.dataGridView1.TabIndex = 0;
             // 
             // codProducto
@@ -298,6 +343,23 @@
             this.tableAdapterManager.tipoProductoTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = capavista.KioscoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.ventasTableAdapter = null;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscar.AutoSize = true;
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(419, 227);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(186, 62);
+            this.btnBuscar.TabIndex = 74;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.button1_Click);
             // 
             // nuevapromocion
             // 
@@ -342,5 +404,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadProd;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.BindingSource productosBindingSource1;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

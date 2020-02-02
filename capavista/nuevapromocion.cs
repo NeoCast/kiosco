@@ -18,11 +18,20 @@ namespace capavista
         {
             InitializeComponent();
         }
+    
 
         private lnpromocion promocionLN = new lnpromocion();
         private lndetallepromo detallepromoLN = new lndetallepromo();
+        private lnpromocion PromcomboLN = new lnpromocion();
         private DataGridViewRow fila = new DataGridViewRow();
 
+        private void nuevapromocion_Load(object sender, EventArgs e)
+
+        {       
+            codProductoComboBox.DisplayMember = "codProd";
+            codProductoComboBox.ValueMember = "descripcion";
+
+        }
         private void promociones_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'kioscoDataSet.productos' Puede moverla o quitarla según sea necesario.
@@ -44,11 +53,7 @@ namespace capavista
                     {
                         cant = Convert.ToInt32(textBox1.Text);
                         codProd = Convert.ToInt32(codProductoComboBox.Text);
-
-
-
                         dataGridView1.Rows.Add(codProd, descripcionTextBox.Text, cant);
-
                     }
                    
 
@@ -137,6 +142,17 @@ namespace capavista
         private void Panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void codProductoComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            buscarArtPromo form = new buscarArtPromo();
+            form.ShowDialog();
         }
     }
 }
