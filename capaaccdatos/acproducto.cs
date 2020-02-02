@@ -176,7 +176,6 @@ namespace capaaccdatos
                 comando.Parameters.AddWithValue("@stock", stock);
                 comando.Parameters.AddWithValue("@stockMin", stockMin);
                 comando.Parameters.AddWithValue("@costos", costos);
-
                 comando.ExecuteNonQuery();
 
 
@@ -190,10 +189,37 @@ namespace capaaccdatos
             finally
             {
 
-
                 conexion.cerrarcn();
 
+            }
+        }
 
+        public DataTable buscarPorTproducto(string tipoProd)
+        {
+            SqlCommand comando = new SqlCommand();
+            DataTable tabla = new DataTable();
+            SqlDataReader reader;
+            try
+            {
+
+                comando.Connection = conexion.abrircn();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "buscarProdTipo";
+                comando.Parameters.AddWithValue("buscarProdTipo", tipoProd);
+                reader = comando.ExecuteReader();
+                tabla.Load(reader);
+                comando.Connection = conexion.cerrarcn();
+                return tabla;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarcn();
             }
         }
 

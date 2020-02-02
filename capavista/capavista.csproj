@@ -113,12 +113,6 @@
     <Compile Include="consultaProducto.Designer.cs">
       <DependentUpon>consultaProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="consultaspromocion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="consultaspromocion.Designer.cs">
-      <DependentUpon>consultaspromocion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Facturacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,9 +173,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="consultaProducto.resx">
       <DependentUpon>consultaProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="consultaspromocion.resx">
-      <DependentUpon>consultaspromocion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion.resx">
       <DependentUpon>Facturacion.cs</DependentUpon>

@@ -28,9 +28,7 @@ namespace capavista
         private void nuevapromocion_Load(object sender, EventArgs e)
 
         {       
-            codProductoComboBox.DisplayMember = "codProd";
-            codProductoComboBox.ValueMember = "descripcion";
-
+          
         }
         private void promociones_Load(object sender, EventArgs e)
         {
@@ -47,13 +45,13 @@ namespace capavista
 
             if (textBox1.Text != "")
             {
-                if (codProductoComboBox.Text != "")
+                if (txtCodProd.Text != "")
                 {
-                    if (descripcionTextBox.Text != "")
+                    if (txtCodProd.Text != "")
                     {
                         cant = Convert.ToInt32(textBox1.Text);
-                        codProd = Convert.ToInt32(codProductoComboBox.Text);
-                        dataGridView1.Rows.Add(codProd, descripcionTextBox.Text, cant);
+                        codProd = Convert.ToInt32(txtCodProd.Text);
+                        dataGridView1.Rows.Add(codProd, txtCodProd.Text, cant);
                     }
                    
 
