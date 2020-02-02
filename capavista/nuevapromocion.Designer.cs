@@ -38,7 +38,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kioscoDataSet = new capavista.KioscoDataSet();
             this.codProductoComboBox = new System.Windows.Forms.ComboBox();
@@ -57,7 +56,11 @@
             this.cantidadProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productosTableAdapter = new capavista.KioscoDataSetTableAdapters.productosTableAdapter();
             this.tableAdapterManager = new capavista.KioscoDataSetTableAdapters.TableAdapterManager();
+
             this.btnBuscar = new System.Windows.Forms.Button();
+
+            this.descripcionTextBox = new System.Windows.Forms.TextBox();
+
             codProductoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -71,7 +74,7 @@
             // codProductoLabel
             // 
             codProductoLabel.AutoSize = true;
-            codProductoLabel.Location = new System.Drawing.Point(26, 340);
+            codProductoLabel.Location = new System.Drawing.Point(26, 339);
             codProductoLabel.Name = "codProductoLabel";
             codProductoLabel.Size = new System.Drawing.Size(75, 13);
             codProductoLabel.TabIndex = 70;
@@ -80,16 +83,16 @@
             // descripcionLabel
             // 
             descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(26, 394);
+            descripcionLabel.Location = new System.Drawing.Point(26, 393);
             descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionLabel.Size = new System.Drawing.Size(81, 13);
             descripcionLabel.TabIndex = 71;
-            descripcionLabel.Text = "Descripcion:";
+            descripcionLabel.Text = "Descripcion art:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(26, 447);
+            label3.Location = new System.Drawing.Point(26, 446);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(67, 13);
             label3.TabIndex = 73;
@@ -99,10 +102,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
             this.panel1.Controls.Add(this.btnBuscar);
+            this.panel1.Controls.Add(this.descripcionTextBox);
             this.panel1.Controls.Add(label3);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(descripcionLabel);
-            this.panel1.Controls.Add(this.descripcionTextBox);
             this.panel1.Controls.Add(codProductoLabel);
             this.panel1.Controls.Add(this.codProductoComboBox);
             this.panel1.Controls.Add(this.txtDescr);
@@ -128,6 +131,7 @@
             this.textBox1.Size = new System.Drawing.Size(251, 20);
             this.textBox1.TabIndex = 5;
             // 
+
             // descripcionTextBox
             // 
             this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "descripcion", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -136,6 +140,7 @@
             this.descripcionTextBox.Size = new System.Drawing.Size(251, 20);
             this.descripcionTextBox.TabIndex = 4;
             // 
+
             // productosBindingSource
             // 
             this.productosBindingSource.DataMember = "productos";
@@ -174,11 +179,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 227);
+            this.label6.Location = new System.Drawing.Point(26, 226);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 13);
+            this.label6.Size = new System.Drawing.Size(80, 13);
             this.label6.TabIndex = 69;
-            this.label6.Text = "Descripcion";
+            this.label6.Text = "Nombre Promo:";
             // 
             // btnAgProm
             // 
@@ -241,7 +246,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 285);
+            this.label2.Location = new System.Drawing.Point(26, 284);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 57;
@@ -360,6 +365,12 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.button1_Click);
+            // descripcionTextBox
+            // 
+            this.descripcionTextBox.Location = new System.Drawing.Point(124, 393);
+            this.descripcionTextBox.Name = "descripcionTextBox";
+            this.descripcionTextBox.Size = new System.Drawing.Size(251, 20);
+            this.descripcionTextBox.TabIndex = 74;
             // 
             // nuevapromocion
             // 
@@ -396,7 +407,6 @@
         private KioscoDataSet kioscoDataSet;
         private System.Windows.Forms.BindingSource productosBindingSource;
         private KioscoDataSetTableAdapters.productosTableAdapter productosTableAdapter;
-        private System.Windows.Forms.TextBox descripcionTextBox;
         private System.Windows.Forms.ComboBox codProductoComboBox;
         private KioscoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridViewTextBoxColumn codProducto;
@@ -405,5 +415,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.BindingSource productosBindingSource1;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox descripcionTextBox;
     }
 }

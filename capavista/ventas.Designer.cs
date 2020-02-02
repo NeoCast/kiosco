@@ -31,13 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ventas));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gridDetalles = new System.Windows.Forms.DataGridView();
-            this.btnbuscar = new System.Windows.Forms.PictureBox();
-            this.txbBuscar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnVender = new System.Windows.Forms.Button();
-            this.ventaTot = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.codProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codPromo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +38,14 @@
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnbuscar = new System.Windows.Forms.PictureBox();
+            this.txbBuscar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnVender = new System.Windows.Forms.Button();
+            this.ventaTot = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnEliminarDetalle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDetalles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnbuscar)).BeginInit();
@@ -81,6 +82,47 @@
             this.gridDetalles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridDetalles.Size = new System.Drawing.Size(437, 420);
             this.gridDetalles.TabIndex = 1;
+            // 
+            // codProd
+            // 
+            this.codProd.HeaderText = "Codigo";
+            this.codProd.Name = "codProd";
+            this.codProd.ReadOnly = true;
+            // 
+            // codPromo
+            // 
+            this.codPromo.HeaderText = "Cod Promo";
+            this.codPromo.Name = "codPromo";
+            this.codPromo.ReadOnly = true;
+            // 
+            // tProducto
+            // 
+            this.tProducto.HeaderText = "T-Producto";
+            this.tProducto.Name = "tProducto";
+            this.tProducto.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // valor
+            // 
+            this.valor.HeaderText = "Valor";
+            this.valor.Name = "valor";
+            this.valor.ReadOnly = true;
+            // 
+            // valorTotal
+            // 
+            this.valorTotal.HeaderText = "Valor Total";
+            this.valorTotal.Name = "valorTotal";
             // 
             // btnbuscar
             // 
@@ -161,46 +203,22 @@
             this.label3.TabIndex = 32;
             this.label3.Text = "label3";
             // 
-            // codProd
+            // btnEliminarDetalle
             // 
-            this.codProd.HeaderText = "Codigo";
-            this.codProd.Name = "codProd";
-            this.codProd.ReadOnly = true;
-            // 
-            // codPromo
-            // 
-            this.codPromo.HeaderText = "Cod Promo";
-            this.codPromo.Name = "codPromo";
-            this.codPromo.ReadOnly = true;
-            // 
-            // tProducto
-            // 
-            this.tProducto.HeaderText = "T-Producto";
-            this.tProducto.Name = "tProducto";
-            this.tProducto.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // valor
-            // 
-            this.valor.HeaderText = "Valor";
-            this.valor.Name = "valor";
-            this.valor.ReadOnly = true;
-            // 
-            // valorTotal
-            // 
-            this.valorTotal.HeaderText = "Valor Total";
-            this.valorTotal.Name = "valorTotal";
+            this.btnEliminarDetalle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEliminarDetalle.AutoSize = true;
+            this.btnEliminarDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.btnEliminarDetalle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnEliminarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarDetalle.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarDetalle.Location = new System.Drawing.Point(362, 396);
+            this.btnEliminarDetalle.Name = "btnEliminarDetalle";
+            this.btnEliminarDetalle.Size = new System.Drawing.Size(194, 36);
+            this.btnEliminarDetalle.TabIndex = 33;
+            this.btnEliminarDetalle.Text = "Eliminar Detalle";
+            this.btnEliminarDetalle.UseVisualStyleBackColor = false;
+            this.btnEliminarDetalle.Click += new System.EventHandler(this.BtnEliminarDetalle_Click);
             // 
             // ventas
             // 
@@ -208,6 +226,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
             this.ClientSize = new System.Drawing.Size(1080, 612);
+            this.Controls.Add(this.btnEliminarDetalle);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ventaTot);
             this.Controls.Add(this.btnVender);
@@ -247,5 +266,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorTotal;
+        private System.Windows.Forms.Button btnEliminarDetalle;
     }
 }

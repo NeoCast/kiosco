@@ -125,6 +125,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(380, 612);
             this.panel1.TabIndex = 3;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
             // textBox6
             // 

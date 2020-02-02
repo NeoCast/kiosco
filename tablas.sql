@@ -74,6 +74,7 @@ ventaFecha datetime,
 CONSTRAINT pk_detalleVta PRIMARY KEY(codDetalleVta, idVenta, codProducto)
 );
 
+
 CREATE TABLE usuarios(
 idUsuario INT IDENTITY (1,1),
 tipoUsuario VARCHAR(40),
