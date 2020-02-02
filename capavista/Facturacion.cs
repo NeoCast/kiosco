@@ -47,6 +47,26 @@ namespace capavista
 
         private void BtnCalcular_Click(object sender, EventArgs e)
         {
+            double cantidad = 0;
+            try
+            {
+                foreach (DataGridViewRow fila in gridDetalles.Rows)
+                {
+                    cantidad = cantidad + Convert.ToDouble(fila.Cells[7].Value);
+
+                }
+
+                txtboxCalculo.Text = cantidad.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se ha podido realizar la accion. Error: " + ex.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+                throw ex;
+            }
+       
+
+
 
         }
 
