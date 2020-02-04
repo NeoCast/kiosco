@@ -219,6 +219,7 @@
             this.btnbuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnbuscar.TabIndex = 2;
             this.btnbuscar.TabStop = false;
+            this.btnbuscar.Click += new System.EventHandler(this.Btnbuscar_Click);
             // 
             // txbBuscar
             // 

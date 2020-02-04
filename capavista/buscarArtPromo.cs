@@ -24,6 +24,7 @@ namespace capavista
         {
             // TODO: esta línea de código carga datos en la tabla 'kioscoDataSet.tipoProducto' Puede moverla o quitarla según sea necesario.
             this.tipoProductoTableAdapter.Fill(this.kioscoDataSet.tipoProducto);
+            dataGridView1.DataSource = productoLN.mostrarTodos();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -43,16 +44,12 @@ namespace capavista
                 return;
                 throw ex;
             }
-           
-
         }
-
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            nuevapromocion form = new nuevapromocion();
-            form.txtCodProd.Text = addProd.Text;
-            form.txtDescripcion.Text = addDesc.Text;
-            form.textBox1.Text = addCant.Text;
+
+            nuevapromocion form = new nuevapromocion(addProd.Text, addDesc.Text, addCant.Text);
+           
             this.Close();
         }
     }

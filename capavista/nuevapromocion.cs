@@ -18,7 +18,14 @@ namespace capavista
         {
             InitializeComponent();
         }
-    
+        public nuevapromocion(string codProd, string descrip, string cant)
+        {
+            InitializeComponent();
+            txtCodProd.Text = codProd;
+            txtDescr.Text = descrip;
+            textBox1.Text = cant;
+        }
+
 
         private lnpromocion promocionLN = new lnpromocion();
         private lndetallepromo detallepromoLN = new lndetallepromo();
@@ -43,19 +50,11 @@ namespace capavista
         {
             int cant, codProd;
 
-            if (textBox1.Text != "")
+            if (textBox1.Text != "" && txtCodProd.Text != "" && txtCodProd.Text != "")
             {
-                if (txtCodProd.Text != "")
-                {
-                    if (txtCodProd.Text != "")
-                    {
                         cant = Convert.ToInt32(textBox1.Text);
                         codProd = Convert.ToInt32(txtCodProd.Text);
                         dataGridView1.Rows.Add(codProd, txtCodProd.Text, cant);
-                    }
-                   
-
-                }
             }   
            
           

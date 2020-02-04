@@ -47,6 +47,7 @@ namespace capavista
 
         private void BtnCalcular_Click(object sender, EventArgs e)
         {
+
             double cantidad = 0;
             try
             {

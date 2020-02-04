@@ -182,6 +182,21 @@ namespace capavista
 
 
         }
+
+        private void Btnbuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridView1.DataSource = productoLN.mostrarProductos(txbBuscar.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se ha podido realizar la accion. Error: " + ex.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+                throw;
+            }
+           
+        }
     }
     
 }

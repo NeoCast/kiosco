@@ -161,7 +161,6 @@ namespace capaaccdatos
 
             SqlCommand comando = new SqlCommand();
 
-
             try
             {
 
@@ -177,7 +176,6 @@ namespace capaaccdatos
                 comando.Parameters.AddWithValue("@stockMin", stockMin);
                 comando.Parameters.AddWithValue("@costos", costos);
                 comando.ExecuteNonQuery();
-
 
             }
             catch (Exception ex)
@@ -205,7 +203,7 @@ namespace capaaccdatos
                 comando.Connection = conexion.abrircn();
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandText = "buscarProdTipo";
-                comando.Parameters.AddWithValue("buscarProdTipo", tipoProd);
+                comando.Parameters.AddWithValue("@tipoProd", tipoProd);
                 reader = comando.ExecuteReader();
                 tabla.Load(reader);
                 comando.Connection = conexion.cerrarcn();
