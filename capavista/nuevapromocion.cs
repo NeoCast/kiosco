@@ -56,7 +56,7 @@ namespace capavista
             {
                         cant = Convert.ToInt32(textBox1.Text);
                         codProd = Convert.ToInt32(txtCodProd.Text);
-                        dataGridView1.Rows.Add(codProd, txtCodProd.Text, cant);
+                        dataGridView1.Rows.Add(codProd, txtDescripcion.Text, cant);
             }   
            
           
@@ -99,7 +99,6 @@ namespace capavista
                     double total = Convert.ToDouble(txtTotal.Text);
                     int activo = 1;
                     promocionLN.nuevaPromo(txtDescr.Text, total, activo);
-                    MessageBox.Show("La nueva promocio se ha guardado con exito");
                 }
 
                 int cantfila = dataGridView1.Rows.Count;
@@ -116,6 +115,7 @@ namespace capavista
                             string descripcion = Convert.ToString(fila.Cells[1].Value.ToString());
                             int cantidad = Convert.ToInt32(fila.Cells[2].Value.ToString());
                             detallepromoLN.nuevoDetallePromo(codProd, descripcion, cantidad);
+
                         }
                     }
                     //else if (fila = -1)
@@ -126,7 +126,7 @@ namespace capavista
                 }
 
                 MessageBox.Show("La carga se realizo con exito");
-
+                dataGridView1.Rows.Clear();
             }
             catch (Exception ex)
             {
