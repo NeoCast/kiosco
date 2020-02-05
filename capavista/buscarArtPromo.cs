@@ -47,10 +47,20 @@ namespace capavista
         }
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
+            string codProd = addProd.Text.ToString();
+            string descrip = addDesc.Text.ToString();
+            string cant = addCant.Text.ToString();
+            nuevapromocion form = Owner as nuevapromocion;
+            form.txtCodProd.Text = codProd;
+            form.txtDescripcion.Text = descrip;
+            form.textBox1.Text = cant;
+            this.Close(); 
+            //Mando las variables como texto porque se pasan a un
+            // textbox 
 
-            nuevapromocion form = new nuevapromocion(addProd.Text, addDesc.Text, addCant.Text);
-           
-            this.Close();
+       
+
+
         }
     }
 }

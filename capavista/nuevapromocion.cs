@@ -18,13 +18,15 @@ namespace capavista
         {
             InitializeComponent();
         }
-        public nuevapromocion(string codProd, string descrip, string cant)
-        {
-            InitializeComponent();
-            txtCodProd.Text = codProd;
-            txtDescr.Text = descrip;
-            textBox1.Text = cant;
-        }
+        //public nuevapromocion(string codProd, string descrip, string cant)
+        //{
+
+        //    InitializeComponent();
+        //    txtCodProd.Text = codProd.ToString();
+        //    txtDescr.Text = descrip.ToString();
+        //    textBox1.Text = cant.ToString();
+
+        //}
 
 
         private lnpromocion promocionLN = new lnpromocion();
@@ -149,6 +151,7 @@ namespace capavista
         private void button1_Click(object sender, EventArgs e)
         {
             buscarArtPromo form = new buscarArtPromo();
+            AddOwnedForm(form);
             form.ShowDialog();
         }
     }
