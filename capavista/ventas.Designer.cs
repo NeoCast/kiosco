@@ -224,7 +224,6 @@
             // 
             // txbBuscar
             // 
-            this.txbBuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txbBuscar.Location = new System.Drawing.Point(211, 104);
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.Size = new System.Drawing.Size(236, 20);
