@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using capasoporte.Cache;
+using capalnegocio;
 
 namespace capavista
 {
@@ -12,6 +13,9 @@ namespace capavista
             InitializeComponent();
             Customizar();
         }
+
+     
+
         private void Customizar()
         {
             panelPromocion.Visible = false;
@@ -213,11 +217,6 @@ namespace capavista
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void panel9_Paint_1(object sender, PaintEventArgs e)
         {
 
@@ -274,7 +273,6 @@ namespace capavista
         {
             AbrirFormP(new consultaProducto());
         }
-
     
         private void btnConfig_Click_1(object sender, EventArgs e)
         {

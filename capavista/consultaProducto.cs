@@ -143,6 +143,17 @@ namespace capavista
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            string descripcion = Convert.ToString(textBox1.Text);
+            dataGridView1.DataSource = productoln.mostrarProductos(descripcion);
+        }
     }
 }
 
