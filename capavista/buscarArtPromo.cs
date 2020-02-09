@@ -8,11 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using capalnegocio;
+using System.Runtime.InteropServices;
 
 namespace capavista
 {
+
     public partial class buscarArtPromo : Form
     {
+        #region Dlls para poder hacer el movimiento del Form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        #endregion
         public buscarArtPromo()
         {
             InitializeComponent();
@@ -61,6 +71,12 @@ namespace capavista
        
 
 
+        }
+
+        private void panelTitle_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

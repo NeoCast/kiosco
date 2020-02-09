@@ -15,7 +15,13 @@ namespace capavista
 
         private void Menu2_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource= promocion.buscarPromos();
+            dataGridView1.DataSource = promocion.buscarPromos();
+        }
+
+        private void btnMasDetalles_Click(object sender, EventArgs e)
+        {
+         masProm prom = new masProm();
+            prom.Show();
         }
     }
 }

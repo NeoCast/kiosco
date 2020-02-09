@@ -107,9 +107,10 @@
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(508, 163);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridView1_CellMouseDoubleClick);
+            this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
             // 
             // gridDetalles
             // 
@@ -167,7 +168,7 @@
             this.gridDetalles.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.gridDetalles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridDetalles.Size = new System.Drawing.Size(437, 420);
-            this.gridDetalles.TabIndex = 1;
+            this.gridDetalles.TabIndex = 4;
             // 
             // codProd
             // 
@@ -227,7 +228,10 @@
             this.txbBuscar.Location = new System.Drawing.Point(211, 104);
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.Size = new System.Drawing.Size(236, 20);
-            this.txbBuscar.TabIndex = 4;
+            this.txbBuscar.TabIndex = 1;
+            this.txbBuscar.TextChanged += new System.EventHandler(this.txbBuscar_TextChanged);
+            this.txbBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbBuscar_KeyPress);
+            this.txbBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbBuscar_KeyUp);
             // 
             // label1
             // 
@@ -261,7 +265,7 @@
             this.btnVender.Location = new System.Drawing.Point(716, 514);
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(258, 65);
-            this.btnVender.TabIndex = 30;
+            this.btnVender.TabIndex = 5;
             this.btnVender.Text = "Vender";
             this.btnVender.UseVisualStyleBackColor = false;
             this.btnVender.Click += new System.EventHandler(this.BtnGuardar_Click);
@@ -302,7 +306,7 @@
             this.btnEliminarDetalle.Location = new System.Drawing.Point(362, 396);
             this.btnEliminarDetalle.Name = "btnEliminarDetalle";
             this.btnEliminarDetalle.Size = new System.Drawing.Size(194, 36);
-            this.btnEliminarDetalle.TabIndex = 33;
+            this.btnEliminarDetalle.TabIndex = 3;
             this.btnEliminarDetalle.Text = "Eliminar Detalle";
             this.btnEliminarDetalle.UseVisualStyleBackColor = false;
             this.btnEliminarDetalle.Click += new System.EventHandler(this.BtnEliminarDetalle_Click);
