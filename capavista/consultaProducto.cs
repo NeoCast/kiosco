@@ -44,12 +44,18 @@ namespace capavista
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-
             try
             {
+               
                 int idProd, stock, stockmin;
                 string tproducto, descripcion;
-                double precio, costos;
+                double precio, costos=0;
+
+                if (textBox6.Text != "")
+                {
+                    costos = Convert.ToDouble(textBox6.Text);
+                }
+
 
                 idProd = Convert.ToInt32(txtidproducto.Text);
                 stock = Convert.ToInt32(textBox3.Text);

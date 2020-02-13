@@ -46,14 +46,18 @@ namespace capavista
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-
+            Double costos = 0;
             try
             {
 
          
-            if (txtstock.Text != "" && txtprecio.Text != "" && txtminimo.Text != "" && txtCostos.Text != "" && txtdescripcion.Text != "")
+            if (txtstock.Text != "" && txtprecio.Text != "" && txtminimo.Text != "" && txtdescripcion.Text != "")
             {
-                  productoLN.altaProducto(comboBox1.Text, txtdescripcion.Text, Convert.ToDouble(txtprecio.Text), Convert.ToInt32(txtstock.Text), Convert.ToInt32(txtminimo.Text), dateTimePicker1.Value, dateTimePicker2.Value, Convert.ToDouble(txtCostos.Text));
+                    if (txtCostos.Text != "")
+                    {
+                        costos = Convert.ToDouble(txtCostos.Text);
+                    } 
+                  productoLN.altaProducto(comboBox1.Text, txtdescripcion.Text, Convert.ToDouble(txtprecio.Text), Convert.ToInt32(txtstock.Text), Convert.ToInt32(txtminimo.Text), dateTimePicker1.Value, dateTimePicker2.Value,costos);
                   MessageBox.Show("Producto guardado de manera exitosa");
                   dataGridView1.DataSource = productoLN.mostrarTodos();
                   txtdescripcion.Clear();
