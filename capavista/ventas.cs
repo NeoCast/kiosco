@@ -65,6 +65,8 @@ namespace capavista
 
                                         codPromo = 0;
 
+
+
                                     }
                                     else
                                     {
@@ -112,7 +114,7 @@ namespace capavista
             }
             else
             {
-                MessageBox.Show("Por favor ingrese algun producto antes de realizar la venta");
+                MessageBox.Show("Por favor, ingrese algun producto antes de realizar la venta");
             }
 
 
@@ -149,6 +151,7 @@ namespace capavista
 
                 try
                 {
+
                     //fila.DataGridView.SelectedRows[] = dataGridView1.SelectedRows[e.RowIndex];
                     precio = Convert.ToDouble(fila.Cells[6].Value.ToString());
                     totalProd = precio * cantidad;
@@ -185,12 +188,33 @@ namespace capavista
         private void BtnEliminarDetalle_Click(object sender, EventArgs e)
         {
             DataGridViewRow fila = new DataGridViewRow();
+            double total = 0, precio;
+            int cantfilas;
 
-            fila = gridDetalles.CurrentRow;
+            cantfilas = gridDetalles.Rows.Count;
+            if ( cantfilas > 1 )
+            {
+                fila = gridDetalles.CurrentRow;
+                precio = Convert.ToDouble(fila.Cells[6].Value);
+                gridDetalles.Rows.Remove(fila);
 
-            gridDetalles.Rows.Remove(fila);
+                //cantfilas = gridDetalles.Rows.Count;
+                //foreach (DataGridViewRow fila2 in gridDetalles.Rows)
+                //{
+                //    if (fila2.Index < cantfilas)
+                //    {
+                //        total = total + Convert.ToDouble(fila2.Cells[6].Value.ToString());
+                //    }
 
 
+                //}
+              
+                total = Convert.ToDouble(label3.Text);
+                total = total - precio;
+                MessageBox.Show("Se ha eliminado con exito");
+                label3.Text = total.ToString();
+            }
+         
         }
 
         private void Btnbuscar_Click(object sender, EventArgs e)
@@ -238,6 +262,7 @@ namespace capavista
 
                     try
                     {
+
                         //fila.DataGridView.SelectedRows[] = dataGridView1.SelectedRows[e.RowIndex];
                         precio = Convert.ToDouble(fila.Cells[6].Value.ToString());
                         totalProd = precio * cantidad;
@@ -253,6 +278,7 @@ namespace capavista
                         fila2.Cells[6].Value = totalProd.ToString();
 
                         gridDetalles.Rows.Add(fila2);
+
 
 
                         //gridDetalles = new DataGridView();
