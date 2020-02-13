@@ -37,7 +37,6 @@ namespace capavista
             try
             {
 
-         
             if (txtstock.Text != "" && txtprecio.Text != "" && txtminimo.Text != "" && txtCostos.Text != "" && txtdescripcion.Text != "")
             {
                   productoLN.altaProducto(comboBox1.Text, txtdescripcion.Text, Convert.ToDouble(txtprecio.Text), Convert.ToInt32(txtstock.Text), Convert.ToInt32(txtminimo.Text), dateTimePicker1.Value, dateTimePicker2.Value, Convert.ToDouble(txtCostos.Text));

@@ -42,8 +42,9 @@ namespace capavista
                 double precio;
                 double total = Convert.ToDouble(label3.Text);
 
-                int cantfila = dataGridView1.Rows.Count;
-                if (cantfila > 0)
+                int cantfila = gridDetalles.Rows.Count;
+                int cantfilaControl = gridDetalles.Rows.Count - 1;
+                if (cantfilaControl > 0)
                 {
                     try
                     {
@@ -51,11 +52,14 @@ namespace capavista
                         //fila = null
                         foreach (DataGridViewRow fila in gridDetalles.Rows)
                         {
-
+                            //  && cantfila != 4
                             if (fila != null)
                             {
-                                if (fila.Index < cantfila - 1 && cantfila != 4)
+                                if (fila.Index < cantfila - 1)
                                 {
+
+
+
                                     if (fila.Cells[1].Value.ToString() == "" || fila.Cells[1].Value == null)
                                     {
 
@@ -89,13 +93,17 @@ namespace capavista
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("No se ha podido realizar la accion. Error: " + ex.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                        throw;
+                        //  MessageBox.Show("No se ha podido realizar la accion. Error: " + ex.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        //    return;
+                        throw ex;
                     }
 
 
 
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, agregue un producto antes de vender");
                 }
 
                 MessageBox.Show("La venta se realizo con exito");
