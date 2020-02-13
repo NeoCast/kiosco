@@ -61,8 +61,7 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -213,6 +212,7 @@
             // 
             // btnbuscar
             // 
+            this.btnbuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnbuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnbuscar.Image")));
             this.btnbuscar.Location = new System.Drawing.Point(453, 82);
             this.btnbuscar.Name = "btnbuscar";
@@ -224,6 +224,7 @@
             // 
             // txbBuscar
             // 
+            this.txbBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txbBuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txbBuscar.Location = new System.Drawing.Point(211, 104);
             this.txbBuscar.Name = "txbBuscar";
@@ -235,6 +236,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(42, 111);
             this.label1.Name = "label1";
@@ -244,6 +246,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Schoolbook", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
@@ -255,7 +258,7 @@
             // 
             // btnVender
             // 
-            this.btnVender.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnVender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnVender.AutoSize = true;
             this.btnVender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
             this.btnVender.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen;
@@ -272,7 +275,7 @@
             // 
             // ventaTot
             // 
-            this.ventaTot.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ventaTot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ventaTot.AutoSize = true;
             this.ventaTot.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ventaTot.Location = new System.Drawing.Point(817, 463);
@@ -283,7 +286,7 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -296,7 +299,7 @@
             // 
             // btnEliminarDetalle
             // 
-            this.btnEliminarDetalle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEliminarDetalle.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnEliminarDetalle.AutoSize = true;
             this.btnEliminarDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
             this.btnEliminarDetalle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen;

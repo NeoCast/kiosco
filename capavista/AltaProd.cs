@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using capalnegocio;
+using capasoporte.Cache;
 
 namespace capavista
 {
@@ -27,6 +28,18 @@ namespace capavista
             dateTimePicker2.Value = System.DateTime.Now;
             dataGridView1.DataSource = productoLN.mostrarTodos();
             txtdescripcion.Focus();
+
+            if (uCache.cargo == cargos.empleado)
+            {
+                dataGridView1.Columns[9].Visible = false;
+                txtCostos.Visible = false;
+                label10.Visible = false;
+
+            }
+            if (uCache.cargo == cargos.administrador)
+            {
+                //codigo
+            }
 
 
         }

@@ -1,6 +1,7 @@
 ﻿using capalnegocio;
 using System;
 using System.Windows.Forms;
+using capasoporte.Cache;
 
 namespace capavista
 {
@@ -21,6 +22,19 @@ namespace capavista
 
             dataGridView1.DataSource = productoln.mostrarTodos();
             textBox1.Focus();
+
+
+            if (uCache.cargo == cargos.empleado)
+            {
+                dataGridView1.Columns[9].Visible = false;
+                textBox6.Visible= false;
+                label6.Visible = false;
+            }
+            if (uCache.cargo == cargos.administrador)
+            {
+                //codigo
+            }
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
