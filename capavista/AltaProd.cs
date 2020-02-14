@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using capalnegocio;
+using capasoporte.Cache;
 
 namespace capavista
 {
@@ -28,26 +29,44 @@ namespace capavista
             dataGridView1.DataSource = productoLN.mostrarTodos();
             txtdescripcion.Focus();
 
+            if (uCache.cargo == cargos.empleado)
+            {
+                dataGridView1.Columns[9].Visible = false;
+                txtCostos.Visible = false;
+                label10.Visible = false;
+
+            }
+            if (uCache.cargo == cargos.administrador)
+            {
+                //codigo
+            }
+
 
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-
+            Double costos = 0;
             try
             {
 
-            if (txtstock.Text != "" && txtprecio.Text != "" && txtminimo.Text != "" && txtCostos.Text != "" && txtdescripcion.Text != "")
+         
+            if (txtstock.Text != "" && txtprecio.Text != "" && txtminimo.Text != "" && txtdescripcion.Text != "")
+
             {
-                  productoLN.altaProducto(comboBox1.Text, txtdescripcion.Text, Convert.ToDouble(txtprecio.Text), Convert.ToInt32(txtstock.Text), Convert.ToInt32(txtminimo.Text), dateTimePicker1.Value, dateTimePicker2.Value, Convert.ToDouble(txtCostos.Text));
-                  MessageBox.Show("Producto guardado de manera exitosa");
-                  dataGridView1.DataSource = productoLN.mostrarTodos();
-                  txtdescripcion.Clear();
-                  txtstock.Clear();
-                  txtprecio.Clear();
-                  txtminimo.Clear();
-                  txtCostos.Clear();
-                  txtdescripcion.Clear();
+                  if (txtCostos.Text != "")
+                  {
+                        costos = Convert.ToDouble(txtCostos.Text);
+                  } 
+                      productoLN.altaProducto(comboBox1.Text, txtdescripcion.Text, Convert.ToDouble(txtprecio.Text), Convert.ToInt32(txtstock.Text), Convert.ToInt32(txtminimo.Text), dateTimePicker1.Value, dateTimePicker2.Value,costos);
+                      MessageBox.Show("Producto guardado de manera exitosa");
+                      dataGridView1.DataSource = productoLN.mostrarTodos();
+                      txtdescripcion.Clear();
+                      txtstock.Clear();
+                      txtprecio.Clear();
+                      txtminimo.Clear();
+                      txtCostos.Clear();
+                      txtdescripcion.Clear();
             }
             
             else

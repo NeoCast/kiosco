@@ -70,6 +70,7 @@
             // 
             // codProductoLabel
             // 
+            codProductoLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             codProductoLabel.AutoSize = true;
             codProductoLabel.Location = new System.Drawing.Point(26, 339);
             codProductoLabel.Name = "codProductoLabel";
@@ -79,6 +80,7 @@
             // 
             // descripcionLabel
             // 
+            descripcionLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             descripcionLabel.AutoSize = true;
             descripcionLabel.Location = new System.Drawing.Point(26, 393);
             descripcionLabel.Name = "descripcionLabel";
@@ -88,6 +90,7 @@
             // 
             // label3
             // 
+            label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             label3.AutoSize = true;
             label3.Location = new System.Drawing.Point(26, 446);
             label3.Name = "label3";
@@ -123,6 +126,7 @@
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDescripcion.Location = new System.Drawing.Point(124, 386);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(251, 20);
@@ -130,6 +134,7 @@
             // 
             // txtCodProd
             // 
+            this.txtCodProd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCodProd.Location = new System.Drawing.Point(124, 332);
             this.txtCodProd.Name = "txtCodProd";
             this.txtCodProd.Size = new System.Drawing.Size(251, 20);
@@ -137,7 +142,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnBuscar.AutoSize = true;
             this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
             this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue;
@@ -154,6 +159,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox1.Location = new System.Drawing.Point(124, 440);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(251, 20);
@@ -161,6 +167,7 @@
             // 
             // txtDescr
             // 
+            this.txtDescr.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDescr.Location = new System.Drawing.Point(124, 139);
             this.txtDescr.Name = "txtDescr";
             this.txtDescr.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -169,6 +176,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(26, 145);
             this.label6.Name = "label6";
@@ -178,7 +186,7 @@
             // 
             // btnAgProm
             // 
-            this.btnAgProm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgProm.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAgProm.AutoSize = true;
             this.btnAgProm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
             this.btnAgProm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue;
@@ -195,7 +203,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEliminar.AutoSize = true;
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleVioletRed;
@@ -212,7 +220,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAgregar.AutoSize = true;
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
             this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue;
@@ -229,6 +237,7 @@
             // 
             // txtTotal
             // 
+            this.txtTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTotal.Location = new System.Drawing.Point(124, 194);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(251, 20);
@@ -236,6 +245,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(26, 200);
             this.label2.Name = "label2";
@@ -245,7 +255,7 @@
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

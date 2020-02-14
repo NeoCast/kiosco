@@ -92,11 +92,18 @@ namespace capavista
                                 MessageBox.Show("la fila es nula");
                             }
                         }
+
+
+                        MessageBox.Show("La venta se realizo con exito");
+                        gridDetalles.Rows.Clear();
+                        label3.Text = "0";
+                        dataGridView1.DataSource = productoLN.mostrarTodos();
+                        txbBuscar.Focus();
                     }
                     catch (Exception ex)
                     {
-                        //  MessageBox.Show("No se ha podido realizar la accion. Error: " + ex.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        //    return;
+                        MessageBox.Show("No se ha podido realizar la accion. Error: " + ex.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
                         throw ex;
                     }
 
@@ -108,8 +115,6 @@ namespace capavista
                     MessageBox.Show("Por favor, agregue un producto antes de vender");
                 }
 
-                MessageBox.Show("La venta se realizo con exito");
-                gridDetalles.Rows.Clear();
 
             }
             else
@@ -188,32 +193,37 @@ namespace capavista
         private void BtnEliminarDetalle_Click(object sender, EventArgs e)
         {
             DataGridViewRow fila = new DataGridViewRow();
-            double total = 0, precio;
+            double total = 0, precio = 0;
             int cantfilas;
-
             cantfilas = gridDetalles.Rows.Count;
-            if ( cantfilas > 1 )
+
+            try
             {
-                fila = gridDetalles.CurrentRow;
-                precio = Convert.ToDouble(fila.Cells[6].Value);
-                gridDetalles.Rows.Remove(fila);
+                if (cantfilas > 0)
+                {
+                    if (fila != null)
+                    {
+                        fila = gridDetalles.CurrentRow;
+                        precio = Convert.ToDouble(fila.Cells[6].Value);
+                        gridDetalles.Rows.Remove(fila);
+                    }
+                     
 
-                //cantfilas = gridDetalles.Rows.Count;
-                //foreach (DataGridViewRow fila2 in gridDetalles.Rows)
-                //{
-                //    if (fila2.Index < cantfilas)
-                //    {
-                //        total = total + Convert.ToDouble(fila2.Cells[6].Value.ToString());
-                //    }
-
-
-                //}
-              
-                total = Convert.ToDouble(label3.Text);
-                total = total - precio;
-                MessageBox.Show("Se ha eliminado con exito");
-                label3.Text = total.ToString();
+                    total = Convert.ToDouble(label3.Text);
+                    total = total - precio;
+                    MessageBox.Show("Se ha eliminado con exito");
+                    label3.Text = total.ToString();
+                }
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("No se ha podido realizar la accion. Error: " + ex.ToString(), "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+                throw;
+            }
+
+     
          
         }
 
@@ -345,5 +355,11 @@ namespace capavista
                  }
         }
 
+        private void Btnlimpiar_Click(object sender, EventArgs e)
+        {
+            gridDetalles.Rows.Clear();
+            label3.Text = "0";
+            dataGridView1.DataSource = productoLN.mostrarTodos();
+        }
     }
  }

@@ -1,6 +1,7 @@
 ﻿using capalnegocio;
 using System;
 using System.Windows.Forms;
+using capasoporte.Cache;
 
 namespace capavista
 {
@@ -21,6 +22,19 @@ namespace capavista
 
             dataGridView1.DataSource = productoln.mostrarTodos();
             textBox1.Focus();
+
+
+            if (uCache.cargo == cargos.empleado)
+            {
+                dataGridView1.Columns[9].Visible = false;
+                textBox6.Visible= false;
+                label6.Visible = false;
+            }
+            if (uCache.cargo == cargos.administrador)
+            {
+                //codigo
+            }
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -30,12 +44,18 @@ namespace capavista
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-
             try
             {
+               
                 int idProd, stock, stockmin;
                 string tproducto, descripcion;
-                double precio, costos;
+                double precio, costos=0;
+
+                if (textBox6.Text != "")
+                {
+                    costos = Convert.ToDouble(textBox6.Text);
+                }
+
 
                 idProd = Convert.ToInt32(txtidproducto.Text);
                 stock = Convert.ToInt32(textBox3.Text);
@@ -43,7 +63,7 @@ namespace capavista
                 tproducto = Convert.ToString(comboBox1.SelectedValue);
                 descripcion = Convert.ToString(textBox2.Text);
                 precio = Convert.ToDouble(textBox4.Text);
-                costos = Convert.ToDouble(textBox6.Text);
+                //costos = Convert.ToDouble(textBox6.Text);
 
                 productoln.modificarProducto(idProd, tproducto, descripcion, precio, stock, stockmin, costos);
                 MessageBox.Show("se ha modificado con exito");

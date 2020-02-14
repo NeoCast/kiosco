@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using capalnegocio;
 using System.Runtime.InteropServices;
+using capasoporte.Cache;
 
 namespace capavista
 {
@@ -35,6 +36,17 @@ namespace capavista
             // TODO: esta línea de código carga datos en la tabla 'kioscoDataSet.tipoProducto' Puede moverla o quitarla según sea necesario.
             this.tipoProductoTableAdapter.Fill(this.kioscoDataSet.tipoProducto);
             dataGridView1.DataSource = productoLN.mostrarTodos();
+
+            if (uCache.cargo == cargos.empleado)
+            {
+                dataGridView1.Columns[9].Visible = false;
+
+            }
+            if (uCache.cargo == cargos.administrador)
+            {
+                //codigo
+            }
+
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

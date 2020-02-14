@@ -56,6 +56,8 @@
             // 
             // gridDetalles
             // 
+            this.gridDetalles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridDetalles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gridDetalles.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridDetalles.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -98,7 +100,7 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.gridDetalles.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.gridDetalles.Size = new System.Drawing.Size(590, 480);
+            this.gridDetalles.Size = new System.Drawing.Size(618, 480);
             this.gridDetalles.TabIndex = 0;
             // 
             // label1
@@ -162,9 +164,9 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(29, 404);
+            this.btnBuscar.Location = new System.Drawing.Point(29, 367);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(359, 42);
+            this.btnBuscar.Size = new System.Drawing.Size(359, 62);
             this.btnBuscar.TabIndex = 44;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -178,9 +180,9 @@
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalcular.ForeColor = System.Drawing.Color.White;
-            this.btnCalcular.Location = new System.Drawing.Point(29, 527);
+            this.btnCalcular.Location = new System.Drawing.Point(29, 482);
             this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(359, 41);
+            this.btnCalcular.Size = new System.Drawing.Size(359, 62);
             this.btnCalcular.TabIndex = 45;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = false;
@@ -188,13 +190,15 @@
             // 
             // txtboxCalculo
             // 
-            this.txtboxCalculo.Location = new System.Drawing.Point(811, 548);
+            this.txtboxCalculo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtboxCalculo.Location = new System.Drawing.Point(838, 547);
             this.txtboxCalculo.Name = "txtboxCalculo";
             this.txtboxCalculo.Size = new System.Drawing.Size(220, 20);
             this.txtboxCalculo.TabIndex = 46;
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.ForestGreen;
@@ -206,6 +210,7 @@
             // 
             // checkBox1
             // 
+            this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(287, 212);
             this.checkBox1.Name = "checkBox1";
@@ -217,6 +222,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.DataSource = this.tipoProductoBindingSource;
             this.comboBox1.DisplayMember = "codTipop";
             this.comboBox1.FormattingEnabled = true;
