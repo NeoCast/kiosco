@@ -73,6 +73,36 @@ namespace capaaccdatos
 
             }
         }
+        public DataTable masPromos()
+        {
 
-    }
+            SqlCommand comando = new SqlCommand();
+            DataTable tabla = new DataTable();
+            SqlDataReader reader;
+
+            try
+            {
+                comando.Connection = conexion.abrircn();
+                comando.CommandText = "buscarDetallePromocion";
+                comando.CommandType = CommandType.StoredProcedure;
+                reader = comando.ExecuteReader();
+                tabla.Load(reader);
+                return tabla;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+
+            }
+            finally
+            {
+
+                conexion.cerrarcn();
+
+            }
+        }
+
+        }
 }
