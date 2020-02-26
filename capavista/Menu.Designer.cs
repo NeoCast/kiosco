@@ -53,6 +53,7 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.Horafecha = new System.Windows.Forms.Timer(this.components);
             this.panelCont = new System.Windows.Forms.Panel();
+            this.elimProm = new System.Windows.Forms.Button();
             this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMint)).BeginInit();
@@ -153,6 +154,7 @@
             // 
             // btnConfig
             // 
+            this.btnConfig.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.btnConfig.FlatAppearance.BorderSize = 0;
             this.btnConfig.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
@@ -194,13 +196,14 @@
             // 
             // panelsubm
             // 
+            this.panelsubm.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelsubm.Controls.Add(this.panelProductos);
             this.panelsubm.Controls.Add(this.btnProd);
             this.panelsubm.Controls.Add(this.panelPromocion);
             this.panelsubm.Controls.Add(this.btnpromocion);
             this.panelsubm.Location = new System.Drawing.Point(1, 360);
             this.panelsubm.Name = "panelsubm";
-            this.panelsubm.Size = new System.Drawing.Size(220, 176);
+            this.panelsubm.Size = new System.Drawing.Size(220, 185);
             this.panelsubm.TabIndex = 15;
             // 
             // panelProductos
@@ -208,7 +211,7 @@
             this.panelProductos.Controls.Add(this.btnConsProd);
             this.panelProductos.Controls.Add(this.btnAltaProd);
             this.panelProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelProductos.Location = new System.Drawing.Point(0, 120);
+            this.panelProductos.Location = new System.Drawing.Point(0, 149);
             this.panelProductos.Name = "panelProductos";
             this.panelProductos.Size = new System.Drawing.Size(220, 97);
             this.panelProductos.TabIndex = 4;
@@ -255,7 +258,7 @@
             this.btnProd.ForeColor = System.Drawing.Color.White;
             this.btnProd.Image = ((System.Drawing.Image)(resources.GetObject("btnProd.Image")));
             this.btnProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProd.Location = new System.Drawing.Point(0, 79);
+            this.btnProd.Location = new System.Drawing.Point(0, 108);
             this.btnProd.Name = "btnProd";
             this.btnProd.Size = new System.Drawing.Size(220, 41);
             this.btnProd.TabIndex = 3;
@@ -265,11 +268,12 @@
             // 
             // panelPromocion
             // 
+            this.panelPromocion.Controls.Add(this.elimProm);
             this.panelPromocion.Controls.Add(this.btnAltaProm);
             this.panelPromocion.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPromocion.Location = new System.Drawing.Point(0, 41);
             this.panelPromocion.Name = "panelPromocion";
-            this.panelPromocion.Size = new System.Drawing.Size(220, 38);
+            this.panelPromocion.Size = new System.Drawing.Size(220, 67);
             this.panelPromocion.TabIndex = 1;
             // 
             // btnAltaProm
@@ -323,6 +327,7 @@
             // 
             // btnFacturacion
             // 
+            this.btnFacturacion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnFacturacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.btnFacturacion.FlatAppearance.BorderSize = 0;
             this.btnFacturacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
@@ -341,6 +346,7 @@
             // 
             // btnVentas
             // 
+            this.btnVentas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.btnVentas.FlatAppearance.BorderSize = 0;
             this.btnVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
@@ -359,6 +365,7 @@
             // 
             // btnMenu
             // 
+            this.btnMenu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.btnMenu.FlatAppearance.BorderSize = 0;
             this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
@@ -390,6 +397,23 @@
             this.panelCont.Size = new System.Drawing.Size(1080, 612);
             this.panelCont.TabIndex = 2;
             this.panelCont.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint_1);
+            // 
+            // elimProm
+            // 
+            this.elimProm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.elimProm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.elimProm.FlatAppearance.BorderSize = 0;
+            this.elimProm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
+            this.elimProm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.elimProm.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.elimProm.ForeColor = System.Drawing.Color.White;
+            this.elimProm.Location = new System.Drawing.Point(0, 30);
+            this.elimProm.Name = "elimProm";
+            this.elimProm.Size = new System.Drawing.Size(220, 30);
+            this.elimProm.TabIndex = 2;
+            this.elimProm.Text = "Eliminar promoción";
+            this.elimProm.UseVisualStyleBackColor = false;
+            this.elimProm.Click += new System.EventHandler(this.elimProm_Click);
             // 
             // Menu
             // 
@@ -444,5 +468,6 @@
         private System.Windows.Forms.Button btnAltaProm;
         private System.Windows.Forms.Button btnpromocion;
         private System.Windows.Forms.Button btnConfig;
+        private System.Windows.Forms.Button elimProm;
     }
 }

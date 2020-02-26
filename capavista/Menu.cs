@@ -279,5 +279,11 @@ namespace capavista
             hideSubMenu();
             AbrirFormP(new Configuracion());
         }
+
+        private void elimProm_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            AbrirFormP(new elimProm());
+        }
     }
 }
