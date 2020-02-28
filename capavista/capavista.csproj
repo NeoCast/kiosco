@@ -22,8 +22,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>3</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -114,6 +114,12 @@
     <Compile Include="consultaProducto.Designer.cs">
       <DependentUpon>consultaProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="elimProm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="elimProm.Designer.cs">
+      <DependentUpon>elimProm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Facturacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="masProm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masProm.Designer.cs">
+      <DependentUpon>masProm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,7 +152,7 @@
     <Compile Include="Menu2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu2.Designer.cs">
+    <Compile Include="Menu2.designer.cs">
       <DependentUpon>Menu2.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -175,11 +187,17 @@
     <EmbeddedResource Include="consultaProducto.resx">
       <DependentUpon>consultaProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="elimProm.resx">
+      <DependentUpon>elimProm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Facturacion.resx">
       <DependentUpon>Facturacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masProm.resx">
+      <DependentUpon>masProm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

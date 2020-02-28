@@ -16,7 +16,7 @@ namespace capalnegocio
             {
 
                 tabla = null;
-                descripcion = tproducto + "-" + descripcion;
+                //descripcion = tproducto + "-" + descripcion;
                 producdatos.nuevoproducto(tproducto, descripcion, precio, stock, stockMin, inFecha, outFecha,costos);
 
             }

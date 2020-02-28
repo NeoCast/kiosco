@@ -8,11 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using capalnegocio;
+using System.Runtime.InteropServices;
+using capasoporte.Cache;
 
 namespace capavista
 {
+
     public partial class buscarArtPromo : Form
     {
+        #region Dlls para poder hacer el movimiento del Form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        #endregion
         public buscarArtPromo()
         {
             InitializeComponent();
@@ -25,6 +36,17 @@ namespace capavista
             // TODO: esta línea de código carga datos en la tabla 'kioscoDataSet.tipoProducto' Puede moverla o quitarla según sea necesario.
             this.tipoProductoTableAdapter.Fill(this.kioscoDataSet.tipoProducto);
             dataGridView1.DataSource = productoLN.mostrarTodos();
+
+            if (uCache.cargo == cargos.empleado)
+            {
+                dataGridView1.Columns[9].Visible = false;
+
+            }
+            if (uCache.cargo == cargos.administrador)
+            {
+                //codigo
+            }
+
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -61,6 +83,12 @@ namespace capavista
        
 
 
+        }
+
+        private void panelTitle_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

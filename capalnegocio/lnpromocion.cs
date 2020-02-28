@@ -40,7 +40,27 @@ namespace capalnegocio
 
                 throw ex;
             }
-           
+
+
         }
+
+        public DataTable buscarDetallepromo()
+        {
+            try
+            {
+                tabla = null;
+                tabla = promocion.masPromos();
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+        }
+
     }
 }
+   
