@@ -48,6 +48,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tipoProductoTableAdapter = new capavista.KioscoDataSetTableAdapters.tipoProductoTableAdapter();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtBarra = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).BeginInit();
@@ -82,7 +85,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 171);
+            this.label1.Location = new System.Drawing.Point(24, 197);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 2;
@@ -91,7 +94,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 218);
+            this.label2.Location = new System.Drawing.Point(23, 239);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 3;
@@ -100,7 +103,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 261);
+            this.label3.Location = new System.Drawing.Point(24, 282);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 4;
@@ -108,34 +111,34 @@
             // 
             // addProd
             // 
-            this.addProd.Location = new System.Drawing.Point(120, 171);
+            this.addProd.Location = new System.Drawing.Point(128, 195);
             this.addProd.Name = "addProd";
-            this.addProd.Size = new System.Drawing.Size(169, 20);
-            this.addProd.TabIndex = 5;
+            this.addProd.Size = new System.Drawing.Size(161, 20);
+            this.addProd.TabIndex = 1;
             // 
             // addDesc
             // 
-            this.addDesc.Location = new System.Drawing.Point(120, 210);
+            this.addDesc.Location = new System.Drawing.Point(128, 234);
             this.addDesc.Name = "addDesc";
-            this.addDesc.Size = new System.Drawing.Size(169, 20);
-            this.addDesc.TabIndex = 6;
+            this.addDesc.Size = new System.Drawing.Size(161, 20);
+            this.addDesc.TabIndex = 2;
             // 
             // addCant
             // 
-            this.addCant.Location = new System.Drawing.Point(120, 253);
+            this.addCant.Location = new System.Drawing.Point(128, 275);
             this.addCant.Name = "addCant";
-            this.addCant.Size = new System.Drawing.Size(169, 20);
-            this.addCant.TabIndex = 7;
+            this.addCant.Size = new System.Drawing.Size(161, 20);
+            this.addCant.TabIndex = 3;
             // 
             // comboBox1
             // 
             this.comboBox1.DataSource = this.tipoProductoBindingSource;
             this.comboBox1.DisplayMember = "codTipop";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(406, 70);
+            this.comboBox1.Location = new System.Drawing.Point(325, 70);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(305, 21);
-            this.comboBox1.TabIndex = 8;
+            this.comboBox1.Size = new System.Drawing.Size(274, 21);
+            this.comboBox1.TabIndex = 7;
             this.comboBox1.ValueMember = "codTipop";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
@@ -155,7 +158,8 @@
             this.dataGridView1.Location = new System.Drawing.Point(325, 118);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(463, 307);
-            this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
             // btnAgregar
             // 
@@ -166,10 +170,10 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(26, 328);
+            this.btnAgregar.Location = new System.Drawing.Point(27, 344);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(263, 62);
-            this.btnAgregar.TabIndex = 10;
+            this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
@@ -220,12 +224,43 @@
             // 
             this.tipoProductoTableAdapter.ClearBeforeFill = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(23, 154);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 13);
+            this.label4.TabIndex = 60;
+            this.label4.Text = "Código de barras:";
+            // 
+            // txtBarra
+            // 
+            this.txtBarra.Location = new System.Drawing.Point(128, 152);
+            this.txtBarra.Name = "txtBarra";
+            this.txtBarra.Size = new System.Drawing.Size(161, 20);
+            this.txtBarra.TabIndex = 0;
+            this.txtBarra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBarra_KeyPress);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(631, 72);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(157, 17);
+            this.checkBox1.TabIndex = 6;
+            this.checkBox1.Text = "Buscar por tipo de producto";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
+            // 
             // buscarArtPromo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.txtBarra);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -275,5 +310,8 @@
         public System.Windows.Forms.TextBox addProd;
         public System.Windows.Forms.TextBox addDesc;
         public System.Windows.Forms.TextBox addCant;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtBarra;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

@@ -27,7 +27,7 @@ namespace capavista
             dateTimePicker1.Value = System.DateTime.Now;
             dateTimePicker2.Value = System.DateTime.Now;
             dataGridView1.DataSource = productoLN.mostrarTodos();
-            txtdescripcion.Focus();
+            txtBarra.Focus();
 
             if (uCache.cargo == cargos.empleado)
             {
@@ -58,7 +58,7 @@ namespace capavista
                   {
                         costos = Convert.ToDouble(txtCostos.Text);
                   } 
-                      productoLN.altaProducto(comboBox1.Text, txtdescripcion.Text, Convert.ToDouble(txtprecio.Text), Convert.ToInt32(txtstock.Text), Convert.ToInt32(txtminimo.Text), dateTimePicker1.Value, dateTimePicker2.Value,costos);
+                      productoLN.altaProducto(txtBarra.Text,comboBox1.Text, txtdescripcion.Text, Convert.ToDouble(txtprecio.Text), Convert.ToInt32(txtstock.Text), Convert.ToInt32(txtminimo.Text), dateTimePicker1.Value, dateTimePicker2.Value,costos);
                       MessageBox.Show("Producto guardado de manera exitosa");
                       dataGridView1.DataSource = productoLN.mostrarTodos();
                       txtdescripcion.Clear();
@@ -67,6 +67,7 @@ namespace capavista
                       txtminimo.Clear();
                       txtCostos.Clear();
                       txtdescripcion.Clear();
+                      txtBarra.Clear();
             }
             
             else
@@ -89,6 +90,19 @@ namespace capavista
         }
 
         private void Panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtBarra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+
+            }
+        }
+
+        private void txtBarra_TextChanged(object sender, EventArgs e)
         {
 
         }

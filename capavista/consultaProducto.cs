@@ -48,7 +48,7 @@ namespace capavista
             {
                
                 int idProd, stock, stockmin;
-                string tproducto, descripcion;
+                string tproducto, descripcion,codBarra;
                 double precio, costos=0;
 
                 if (textBox6.Text != "")
@@ -58,14 +58,15 @@ namespace capavista
 
 
                 idProd = Convert.ToInt32(txtidproducto.Text);
+                codBarra = Convert.ToString(txtBarra.Text);
                 stock = Convert.ToInt32(textBox3.Text);
                 stockmin = Convert.ToInt32(textBox5.Text);
                 tproducto = Convert.ToString(comboBox1.SelectedValue);
                 descripcion = Convert.ToString(textBox2.Text);
                 precio = Convert.ToDouble(textBox4.Text);
-                //costos = Convert.ToDouble(textBox6.Text);
+                costos = Convert.ToDouble(textBox6.Text);
 
-                productoln.modificarProducto(idProd, tproducto, descripcion, precio, stock, stockmin, costos);
+                productoln.modificarProducto(idProd,codBarra, tproducto, descripcion, precio, stock, stockmin, costos);
                 MessageBox.Show("se ha modificado con exito");
                 dataGridView1.DataSource = productoln.mostrarTodos();
                 txtidproducto.Clear();
@@ -145,12 +146,13 @@ namespace capavista
 
 
             txtidproducto.Text = fila.Cells[0].Value.ToString();
-            comboBox1.SelectedItem = fila.Cells[2].Value.ToString().Trim();
-            textBox2.Text = fila.Cells[3].Value.ToString();
-            textBox3.Text = fila.Cells[4].Value.ToString();
-            textBox5.Text = fila.Cells[5].Value.ToString();
-            textBox4.Text = fila.Cells[6].Value.ToString();
-            textBox6.Text = fila.Cells[9].Value.ToString();
+            txtBarra.Text = fila.Cells[1].Value.ToString();
+            comboBox1.Text = fila.Cells[3].Value.ToString();
+            textBox2.Text = fila.Cells[4].Value.ToString();
+            textBox3.Text = fila.Cells[5].Value.ToString();
+            textBox5.Text = fila.Cells[6].Value.ToString();
+            textBox4.Text = fila.Cells[7].Value.ToString();
+            textBox6.Text = fila.Cells[10].Value.ToString();
 
 
           

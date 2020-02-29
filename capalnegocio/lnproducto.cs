@@ -10,14 +10,14 @@ namespace capalnegocio
         private acproducto producdatos = new acproducto();
         private DataTable tabla = new DataTable();
 
-        public void altaProducto(String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin, DateTime inFecha, DateTime outFecha,Double costos)
+        public void altaProducto(String codBarra, String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin, DateTime inFecha, DateTime outFecha, Double costos)
         {
             try
             {
 
                 tabla = null;
-                //descripcion = tproducto + "-" + descripcion;
-                producdatos.nuevoproducto(tproducto, descripcion, precio, stock, stockMin, inFecha, outFecha,costos);
+                descripcion = tproducto + "-" + descripcion;
+                producdatos.nuevoproducto(codBarra, tproducto, descripcion, precio, stock, stockMin, inFecha, outFecha, costos);
 
             }
             catch (Exception ex)
@@ -78,11 +78,11 @@ namespace capalnegocio
 
         }
 
-        public void modificarProducto(Int32 codProd, string tipoProd, string descripcion, double precio, Int32 stock, Int32 stockMin,double costos)
+        public void modificarProducto(Int32 codProd,string codBarra, string tipoProd, string descripcion, double precio, Int32 stock, Int32 stockMin,double costos)
         {
             try
             {
-                producdatos.modificarProducto(codProd, tipoProd, descripcion, precio, stock, stockMin,costos);
+                producdatos.modificarProducto(codProd,codBarra, tipoProd, descripcion, precio, stock, stockMin,costos);
 
             }
             catch (Exception ex)
@@ -100,6 +100,16 @@ namespace capalnegocio
             tabla = null;
             tabla =  producdatos.buscarPorTproducto(tipoProd);
             return tabla;
+        }
+
+        //Buscar cod barra
+        public DataTable mostrarProdBarra(string codBarra)
+        {
+            tabla = null;
+            codBarra = Convert.ToString(codBarra);
+            tabla = producdatos.buscarBarra(codBarra);
+            return tabla;
+
         }
 
     }

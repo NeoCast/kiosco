@@ -10,7 +10,7 @@ namespace capaaccdatos
 
 
         private conexionbd conexion = new conexionbd();
-        public void nuevoproducto(String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin, DateTime inFecha, DateTime outFecha,Double costos)
+        public void nuevoproducto(String codBarra, String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin, DateTime inFecha, DateTime outFecha, Double costos)
         {
 
             SqlCommand comando = new SqlCommand();
@@ -20,6 +20,7 @@ namespace capaaccdatos
                 comando.Connection = conexion.abrircn();
                 comando.CommandText = "altaProductos";
                 comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@codBarra", codBarra);
                 comando.Parameters.AddWithValue("@tipoProd", tproducto);
                 comando.Parameters.AddWithValue("@descripcion", descripcion);
                 comando.Parameters.AddWithValue("@precio", precio);
@@ -49,6 +50,7 @@ namespace capaaccdatos
 
 
         }
+
 
         public DataTable todosProductos()
         {
@@ -156,7 +158,7 @@ namespace capaaccdatos
 
         }
 
-        public void modificarProducto(Int32 codProducto, String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin,Double costos)
+        public void modificarProducto(Int32 codProducto,String codBarra, String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin,Double costos)
         {
 
             SqlCommand comando = new SqlCommand();
@@ -169,6 +171,7 @@ namespace capaaccdatos
                 comando.CommandText = "modificarProducto";
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@codProducto", codProducto);
+                comando.Parameters.AddWithValue("@codBarra", codBarra);
                 comando.Parameters.AddWithValue("@tipoProducto", tproducto);
                 comando.Parameters.AddWithValue("@descripcion", descripcion);
                 comando.Parameters.AddWithValue("@precio", precio);
@@ -220,6 +223,36 @@ namespace capaaccdatos
                 conexion.cerrarcn();
             }
         }
+
+        // busqueda por cod barras
+        public DataTable buscarBarra(String codBarra)
+        {
+            SqlCommand comando = new SqlCommand();
+            DataTable tabla = new DataTable();
+            SqlDataReader reader;
+            try
+            {
+                comando.Connection = conexion.abrircn();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "buscarBarra";
+                comando.Parameters.AddWithValue("codBarra", codBarra);
+                reader = comando.ExecuteReader();
+                tabla.Load(reader);
+                comando.Connection = conexion.cerrarcn();
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarcn();
+            }
+
+        }
+
 
     }
 }

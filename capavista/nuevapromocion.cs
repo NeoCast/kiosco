@@ -57,6 +57,11 @@ namespace capavista
                         cant = Convert.ToInt32(textBox1.Text);
                         codProd = Convert.ToInt32(txtCodProd.Text);
                         dataGridView1.Rows.Add(codProd, txtDescripcion.Text, cant);
+
+                txtCodProd.Clear();
+                txtDescripcion.Clear();
+                textBox1.Clear();
+
             }   
            
           
@@ -127,6 +132,11 @@ namespace capavista
 
                 MessageBox.Show("La carga se realizo con exito");
                 dataGridView1.Rows.Clear();
+                txtCodProd.Clear();
+                txtDescripcion.Clear();
+                textBox1.Clear();
+                txtDescr.Clear();
+                txtTotal.Clear();
             }
             catch (Exception ex)
             {

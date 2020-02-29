@@ -69,7 +69,6 @@ namespace capalnegocio
                 throw ex;
 
             }
-
         }
     }
 }

@@ -39,14 +39,14 @@ namespace capavista
 
             if (uCache.cargo == cargos.empleado)
             {
-                dataGridView1.Columns[9].Visible = false;
+                dataGridView1.Columns[10].Visible = false;
 
             }
             if (uCache.cargo == cargos.administrador)
             {
                 //codigo
             }
-
+            txtBarra.Focus();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -89,6 +89,33 @@ namespace capavista
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+   
+
+        private void txtBarra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+
+            string codBarra = Convert.ToString(txtBarra.Text);
+               dataGridView1.DataSource = productoLN.mostrarProdBarra(codBarra);
+
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow fila = dataGridView1.Rows[e.RowIndex];
+
+            addProd.Text = fila.Cells[0].Value.ToString();
+            addDesc.Text = fila.Cells[4].Value.ToString();
         }
     }
 }
