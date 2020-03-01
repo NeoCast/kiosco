@@ -49,6 +49,8 @@
             this.kioscoDataSet = new capavista.KioscoDataSet();
             this.label4 = new System.Windows.Forms.Label();
             this.tipoProductoTableAdapter = new capavista.KioscoDataSetTableAdapters.tipoProductoTableAdapter();
+            this.horaDesde = new System.Windows.Forms.DateTimePicker();
+            this.horaHasta = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.gridDetalles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kioscoDataSet)).BeginInit();
@@ -128,17 +130,20 @@
             // hastaFecha
             // 
             this.hastaFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.hastaFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.hastaFecha.Location = new System.Drawing.Point(122, 138);
             this.hastaFecha.Name = "hastaFecha";
-            this.hastaFecha.Size = new System.Drawing.Size(266, 20);
+            this.hastaFecha.Size = new System.Drawing.Size(98, 20);
             this.hastaFecha.TabIndex = 20;
             // 
             // desdeFecha
             // 
             this.desdeFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.desdeFecha.CustomFormat = "dd/mm/yyyy hh-mm";
+            this.desdeFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.desdeFecha.Location = new System.Drawing.Point(122, 84);
             this.desdeFecha.Name = "desdeFecha";
-            this.desdeFecha.Size = new System.Drawing.Size(266, 20);
+            this.desdeFecha.Size = new System.Drawing.Size(98, 20);
             this.desdeFecha.TabIndex = 21;
             // 
             // label9
@@ -257,12 +262,36 @@
             // 
             this.tipoProductoTableAdapter.ClearBeforeFill = true;
             // 
+            // horaDesde
+            // 
+            this.horaDesde.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.horaDesde.CustomFormat = "";
+            this.horaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.horaDesde.Location = new System.Drawing.Point(247, 84);
+            this.horaDesde.Name = "horaDesde";
+            this.horaDesde.ShowUpDown = true;
+            this.horaDesde.Size = new System.Drawing.Size(98, 20);
+            this.horaDesde.TabIndex = 51;
+            // 
+            // horaHasta
+            // 
+            this.horaHasta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.horaHasta.CustomFormat = "dd/mm/yyyy hh-mm";
+            this.horaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.horaHasta.Location = new System.Drawing.Point(247, 138);
+            this.horaHasta.Name = "horaHasta";
+            this.horaHasta.ShowUpDown = true;
+            this.horaHasta.Size = new System.Drawing.Size(98, 20);
+            this.horaHasta.TabIndex = 52;
+            // 
             // Facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
             this.ClientSize = new System.Drawing.Size(1080, 612);
+            this.Controls.Add(this.horaHasta);
+            this.Controls.Add(this.horaDesde);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.checkBox1);
@@ -306,5 +335,7 @@
         private KioscoDataSet kioscoDataSet;
         private System.Windows.Forms.BindingSource tipoProductoBindingSource;
         private KioscoDataSetTableAdapters.tipoProductoTableAdapter tipoProductoTableAdapter;
+        private System.Windows.Forms.DateTimePicker horaDesde;
+        private System.Windows.Forms.DateTimePicker horaHasta;
     }
 }
