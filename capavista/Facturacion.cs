@@ -18,20 +18,30 @@ namespace capavista
             this.tipoProductoTableAdapter.Fill(this.kioscoDataSet.tipoProducto);
             gridDetalles.DataSource = ventaLN.todoDetalleVta();
             comboBox1.Enabled = false;
-
-
+            horaDesde.Format = DateTimePickerFormat.Time;
+            horaHasta.Format = DateTimePickerFormat.Time;
+            horaDesde.Value = System.DateTime.Now;
+            horaHasta.Value = System.DateTime.Now;
         }
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
+            string fechaDesde;
+            string fechaHasta;
+
+            fechaDesde = desdeFecha.Value.ToShortDateString() + " " + horaDesde.Value.ToLongTimeString();
+            fechaHasta = hastaFecha.Value.ToShortDateString() + " " + horaHasta.Value.ToLongTimeString();
+
+
+
             try
-            {
+             {
                 if (comboBox1.Enabled == true)
                 {
                     gridDetalles.DataSource = ventaLN.buscarPorTipoProducto(comboBox1.Text);
                 }
                 else
                 {
-                    gridDetalles.DataSource = ventaLN.LNbuscarDetalle(desdeFecha.Value, hastaFecha.Value);
+                    gridDetalles.DataSource = ventaLN.LNbuscarDetalle( Convert.ToDateTime(fechaDesde), Convert.ToDateTime(hastaFecha.Value));
                 }
             }
             catch (Exception ex)
