@@ -104,7 +104,7 @@ namespace capaaccdatos
 
 
 
-        public DataTable buscarProducto(String descripcion)
+        public DataTable buscarProducto(String codBarra, String descripcion)
         {
             SqlCommand comando = new SqlCommand();
             DataTable tabla = new DataTable();
@@ -114,6 +114,7 @@ namespace capaaccdatos
                 comando.Connection = conexion.abrircn();
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.CommandText = "buscarProducto";
+                comando.Parameters.AddWithValue("codBarra", codBarra);
                 comando.Parameters.AddWithValue("descripcion", descripcion);
                 reader = comando.ExecuteReader();
                 tabla.Load(reader);
@@ -225,34 +226,5 @@ namespace capaaccdatos
         }
 
         // busqueda por cod barras
-        public DataTable buscarBarra(String codBarra)
-        {
-            SqlCommand comando = new SqlCommand();
-            DataTable tabla = new DataTable();
-            SqlDataReader reader;
-            try
-            {
-                comando.Connection = conexion.abrircn();
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.CommandText = "buscarBarra";
-                comando.Parameters.AddWithValue("codBarra", codBarra);
-                reader = comando.ExecuteReader();
-                tabla.Load(reader);
-                comando.Connection = conexion.cerrarcn();
-                return tabla;
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            finally
-            {
-                conexion.cerrarcn();
-            }
-
-        }
-
-
     }
 }

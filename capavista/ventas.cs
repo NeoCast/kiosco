@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using capalnegocio;
-
+using capasoporte.Cache;
 
 namespace capavista
 {
@@ -57,8 +57,6 @@ namespace capavista
                             {
                                 if (fila.Index < cantfila - 1)
                                 {
-
-
 
                                     if (fila.Cells[1].Value.ToString() == "" || fila.Cells[1].Value == null)
                                     {
@@ -136,6 +134,16 @@ namespace capavista
             label3.Text = "0";
             txbBuscar.Focus();
 
+            if (uCache.cargo == cargos.empleado)
+            {
+                dataGridView1.Columns[10].Visible = false;
+           
+            }
+            if (uCache.cargo == cargos.administrador)
+            {
+                //codigo
+            }
+
         }
 
         private void DataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -158,17 +166,16 @@ namespace capavista
                 {
 
                     //fila.DataGridView.SelectedRows[] = dataGridView1.SelectedRows[e.RowIndex];
-                    precio = Convert.ToDouble(fila.Cells[6].Value.ToString());
+                    precio = Convert.ToDouble(fila.Cells[7].Value.ToString());
                     totalProd = precio * cantidad;
 
                     fila2.CreateCells(gridDetalles);
-
                     fila2.Cells[0].Value = fila.Cells[0].Value.ToString();
-                    fila2.Cells[1].Value = fila.Cells[1].Value.ToString();
-                    fila2.Cells[2].Value = fila.Cells[2].Value.ToString();
-                    fila2.Cells[3].Value = fila.Cells[3].Value.ToString();
+                    fila2.Cells[1].Value = fila.Cells[2].Value.ToString();
+                    fila2.Cells[2].Value = fila.Cells[3].Value.ToString();
+                    fila2.Cells[3].Value = fila.Cells[4].Value.ToString();
                     fila2.Cells[4].Value = cantidad.ToString();
-                    fila2.Cells[5].Value = fila.Cells[6].Value.ToString();
+                    fila2.Cells[5].Value = fila.Cells[7].Value.ToString();
                     fila2.Cells[6].Value = totalProd.ToString();
 
                     gridDetalles.Rows.Add(fila2);
@@ -227,20 +234,20 @@ namespace capavista
          
         }
 
-        private void Btnbuscar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                dataGridView1.DataSource = productoLN.mostrarProductos(txbBuscar.Text);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se ha podido realizar la accion. Error: " + ex.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-                throw;
-            }
+       // private void Btnbuscar_Click(object sender, EventArgs e)
+        //{
+          //  try
+            //{
+              //  dataGridView1.DataSource = productoLN.mostrarProductos(txbBuscar.Text);
+            //}
+            //catch (Exception ex)
+            //{
+              //  MessageBox.Show("No se ha podido realizar la accion. Error: " + ex.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //return;
+                //throw;
+            //}
 
-        }
+//        }
 
         private void txbBuscar_TextChanged(object sender, EventArgs e)
         {
@@ -253,7 +260,8 @@ namespace capavista
         private void txbBuscar_KeyUp(object sender, KeyEventArgs e)
         {
             string descripcion = Convert.ToString(txbBuscar.Text);
-            dataGridView1.DataSource = productoLN.mostrarProductos(descripcion);
+            string codBarra = Convert.ToString(txbBuscar.Text);
+            dataGridView1.DataSource = productoLN.mostrarProductos(codBarra,descripcion);
         }
 
         private void txbBuscar_KeyPress(object sender, KeyPressEventArgs e)
@@ -306,54 +314,9 @@ namespace capavista
                 }
             }
         }
-        private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-                if (e.KeyChar == Convert.ToChar(Keys.Enter))
-                {
-                    DataGridViewRow fila2 = new DataGridViewRow();
-                    int cantidad;
-                    double precio, totalProd;
-                    string resultado = Microsoft.VisualBasic.Interaction.InputBox("ingrese la cantidad: ").ToString();
-                    DataGridViewRow fila = new DataGridViewRow();
-                    fila = dataGridView1.CurrentRow;
-                    if (resultado.Length > 0)
-                    {
-                        cantidad = Convert.ToInt32(resultado);
-
-                        try
-                        {
-                            //fila.DataGridView.SelectedRows[] = dataGridView1.SelectedRows[e.RowIndex];
-                            precio = Convert.ToDouble(fila.Cells[6].Value.ToString());
-                            totalProd = precio * cantidad;
-
-                            fila2.CreateCells(gridDetalles);
-
-                            fila2.Cells[0].Value = fila.Cells[0].Value.ToString();
-                            fila2.Cells[1].Value = fila.Cells[1].Value.ToString();
-                            fila2.Cells[2].Value = fila.Cells[2].Value.ToString();
-                            fila2.Cells[3].Value = fila.Cells[3].Value.ToString();
-                            fila2.Cells[4].Value = cantidad.ToString();
-                            fila2.Cells[5].Value = fila.Cells[6].Value.ToString();
-                            fila2.Cells[6].Value = totalProd.ToString();
-
-                            gridDetalles.Rows.Add(fila2);
-
-
-                            //gridDetalles = new DataGridView();
-                            //gridDetalles.Rows.Add(fila.Cells[0].RowIndex, fila.Cells[1].RowIndex, fila.Cells[2].RowIndex, cantidad, fila.Cells[3].RowIndex, fila.Cells[4].RowIndex, fila.Cells[6].RowIndex);
-
-                            label3.Text = Convert.ToString(Convert.ToDouble(label3.Text) + totalProd);
-                            txbBuscar.Clear();
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("selecciona una fila para realizar ésta accion");
-                            return;
-                            throw ex;
-                        }
-                    }
-                 }
-        }
+        //private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //}
 
         private void Btnlimpiar_Click(object sender, EventArgs e)
         {
@@ -361,5 +324,55 @@ namespace capavista
             label3.Text = "0";
             dataGridView1.DataSource = productoLN.mostrarTodos();
         }
+
+        //private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+
+        //    if (e.KeyChar == Convert.ToChar(Keys.Enter))
+        //    {
+        //        DataGridViewRow fila2 = new DataGridViewRow();
+        //        int cantidad;
+        //        double precio, totalProd;
+        //        string resultado = Microsoft.VisualBasic.Interaction.InputBox("ingrese la cantidad: ").ToString();
+        //        DataGridViewRow fila = new DataGridViewRow();
+        //        fila = dataGridView1.CurrentRow;
+        //        if (resultado.Length > 0)
+        //        {
+        //            cantidad = Convert.ToInt32(resultado);
+
+        //            try
+        //            {
+        //                //fila.DataGridView.SelectedRows[] = dataGridView1.SelectedRows[e.RowIndex];
+        //                precio = Convert.ToDouble(fila.Cells[6].Value.ToString());
+        //                totalProd = precio * cantidad;
+
+        //                fila2.CreateCells(gridDetalles);
+
+        //                fila2.Cells[0].Value = fila.Cells[0].Value.ToString();
+        //                fila2.Cells[1].Value = fila.Cells[1].Value.ToString();
+        //                fila2.Cells[2].Value = fila.Cells[2].Value.ToString();
+        //                fila2.Cells[3].Value = fila.Cells[3].Value.ToString();
+        //                fila2.Cells[4].Value = cantidad.ToString();
+        //                fila2.Cells[5].Value = fila.Cells[6].Value.ToString();
+        //                fila2.Cells[6].Value = totalProd.ToString();
+
+        //                gridDetalles.Rows.Add(fila2);
+
+
+        //                //gridDetalles = new DataGridView();
+        //                //gridDetalles.Rows.Add(fila.Cells[0].RowIndex, fila.Cells[1].RowIndex, fila.Cells[2].RowIndex, cantidad, fila.Cells[3].RowIndex, fila.Cells[4].RowIndex, fila.Cells[6].RowIndex);
+
+        //                label3.Text = Convert.ToString(Convert.ToDouble(label3.Text) + totalProd);
+        //                txbBuscar.Clear();
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                MessageBox.Show("selecciona una fila para realizar ésta accion");
+        //                return;
+        //                throw ex;
+        //            }
+        //        }
+         //    }
+       // }
     }
  }

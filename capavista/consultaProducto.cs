@@ -77,6 +77,7 @@ namespace capavista
                 textBox5.Clear();
                 textBox6.Clear();
                 textBox1.Clear();
+                txtBarra.Clear();
                 textBox1.Focus();
             }
             catch (Exception ex)
@@ -106,6 +107,7 @@ namespace capavista
                     textBox5.Clear();
                     textBox6.Clear();
                     textBox1.Clear();
+                    txtBarra.Clear();
                     textBox1.Focus();
                 }
                 catch (Exception ex)
@@ -129,7 +131,9 @@ namespace capavista
         private void Btnbuscar_Click(object sender, EventArgs e)
         {
             string descripcion = Convert.ToString(textBox1.Text);
-            dataGridView1.DataSource = productoln.mostrarProductos(descripcion);
+            string codBarra = Convert.ToString(textBox1.Text);
+            dataGridView1.DataSource = productoln.mostrarProductos(codBarra,descripcion);
+
         }
 
         private void DataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -174,7 +178,25 @@ namespace capavista
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
         {
             string descripcion = Convert.ToString(textBox1.Text);
-            dataGridView1.DataSource = productoln.mostrarProductos(descripcion);
+            string codBarra = Convert.ToString(textBox1.Text);
+            dataGridView1.DataSource = productoln.mostrarProductos(codBarra,descripcion);
+
+            // quiero poner lo de abrir con lo del click automatic
+
+            txtidproducto.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            txtBarra.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            comboBox1.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            textBox2.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            textBox3.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            textBox5.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            textBox4.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            textBox6.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+
+
+
+
+
+
         }
     }
 }

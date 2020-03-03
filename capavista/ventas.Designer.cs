@@ -36,7 +36,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ventas));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gridDetalles = new System.Windows.Forms.DataGridView();
             this.codProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +45,6 @@
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnbuscar = new System.Windows.Forms.PictureBox();
             this.txbBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,7 +55,6 @@
             this.btnlimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDetalles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnbuscar)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -110,7 +107,7 @@
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridView1_CellMouseDoubleClick);
-            this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
+           // this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
             // 
             // gridDetalles
             // 
@@ -212,25 +209,13 @@
             this.valorTotal.HeaderText = "Valor Total";
             this.valorTotal.Name = "valorTotal";
             // 
-            // btnbuscar
-            // 
-            this.btnbuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnbuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnbuscar.Image")));
-            this.btnbuscar.Location = new System.Drawing.Point(453, 82);
-            this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(66, 59);
-            this.btnbuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnbuscar.TabIndex = 2;
-            this.btnbuscar.TabStop = false;
-            this.btnbuscar.Click += new System.EventHandler(this.Btnbuscar_Click);
-            // 
             // txbBuscar
             // 
             this.txbBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txbBuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txbBuscar.Location = new System.Drawing.Point(211, 104);
+            this.txbBuscar.Location = new System.Drawing.Point(155, 104);
             this.txbBuscar.Name = "txbBuscar";
-            this.txbBuscar.Size = new System.Drawing.Size(236, 20);
+            this.txbBuscar.Size = new System.Drawing.Size(384, 20);
             this.txbBuscar.TabIndex = 1;
             this.txbBuscar.TextChanged += new System.EventHandler(this.txbBuscar_TextChanged);
             this.txbBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbBuscar_KeyPress);
@@ -242,9 +227,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(42, 111);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 13);
+            this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Buscar producto por descripción:";
+            this.label1.Text = "Buscar producto:";
             // 
             // label2
             // 
@@ -345,7 +330,6 @@
             this.Controls.Add(this.ventaTot);
             this.Controls.Add(this.btnVender);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnbuscar);
             this.Controls.Add(this.txbBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gridDetalles);
@@ -356,7 +340,6 @@
             this.Load += new System.EventHandler(this.Ventas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDetalles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnbuscar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,7 +349,6 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView gridDetalles;
-        private System.Windows.Forms.PictureBox btnbuscar;
         private System.Windows.Forms.TextBox txbBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

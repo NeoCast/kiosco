@@ -46,7 +46,6 @@ namespace capavista
             {
                 //codigo
             }
-            txtBarra.Focus();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -100,7 +99,8 @@ namespace capavista
             {
 
             string codBarra = Convert.ToString(txtBarra.Text);
-               dataGridView1.DataSource = productoLN.mostrarProdBarra(codBarra);
+                string descripcion = Convert.ToString(txtBarra.Text);
+                dataGridView1.DataSource = productoLN.mostrarProductos(codBarra,descripcion);
 
             }
         }
@@ -116,6 +116,17 @@ namespace capavista
 
             addProd.Text = fila.Cells[0].Value.ToString();
             addDesc.Text = fila.Cells[4].Value.ToString();
+        }
+
+        private void txtBarra_KeyUp(object sender, KeyEventArgs e)
+        {
+            string descripcion = Convert.ToString(txtBarra.Text);
+            string codBarra = Convert.ToString(txtBarra.Text);
+            dataGridView1.DataSource = productoLN.mostrarProductos(codBarra, descripcion);
+            // automatico pasa de grid a txb
+            addProd.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            addDesc.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+         
         }
     }
 }

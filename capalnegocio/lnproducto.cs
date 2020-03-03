@@ -30,14 +30,14 @@ namespace capalnegocio
 
         }
 
-        public DataTable mostrarProductos(string descripcion)
+        public DataTable mostrarProductos(string codBarra,string descripcion)
         {
             tabla = null;
-
-            descripcion = Convert.ToString(descripcion);
-
-            tabla = producdatos.buscarProducto(descripcion);
+            codBarra = Convert.ToString(codBarra);
+            codBarra = Convert.ToString(descripcion);
+            tabla = producdatos.buscarProducto(codBarra, descripcion);
             return tabla;
+
 
         }
 
@@ -100,16 +100,6 @@ namespace capalnegocio
             tabla = null;
             tabla =  producdatos.buscarPorTproducto(tipoProd);
             return tabla;
-        }
-
-        //Buscar cod barra
-        public DataTable mostrarProdBarra(string codBarra)
-        {
-            tabla = null;
-            codBarra = Convert.ToString(codBarra);
-            tabla = producdatos.buscarBarra(codBarra);
-            return tabla;
-
         }
 
     }
