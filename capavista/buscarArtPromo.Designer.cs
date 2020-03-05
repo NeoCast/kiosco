@@ -135,7 +135,7 @@
             this.comboBox1.DataSource = this.tipoProductoBindingSource;
             this.comboBox1.DisplayMember = "codTipop";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(325, 70);
+            this.comboBox1.Location = new System.Drawing.Point(416, 76);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(274, 21);
             this.comboBox1.TabIndex = 7;
@@ -246,7 +246,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(631, 72);
+            this.checkBox1.Location = new System.Drawing.Point(722, 78);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(157, 17);
             this.checkBox1.TabIndex = 6;
