@@ -10,6 +10,12 @@ namespace capalnegocio
         private acpromocion promocion = new acpromocion();
         private DataTable tabla = new DataTable();
 
+        /// <summary>
+        /// Alta de promocion
+        /// </summary>
+        /// <param name="descripcion"></param>
+        /// <param name="total"></param>
+        /// <param name="activa"></param>
         public void nuevaPromo(string descripcion, double total, int activa)
         {
             try
@@ -27,6 +33,12 @@ namespace capalnegocio
 
         }
 
+     
+
+        /// <summary>
+        /// Busca las promociones existentes
+        /// </summary>
+        /// <returns></returns>
         public DataTable buscarPromos()
         {
             try
@@ -44,6 +56,8 @@ namespace capalnegocio
 
         }
 
+
+        
         public DataTable buscarDetallepromo()
         {
             try

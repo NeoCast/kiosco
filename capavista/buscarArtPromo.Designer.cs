@@ -240,6 +240,7 @@
             this.txtBarra.Name = "txtBarra";
             this.txtBarra.Size = new System.Drawing.Size(168, 20);
             this.txtBarra.TabIndex = 0;
+            this.txtBarra.TextChanged += new System.EventHandler(this.TxtBarra_TextChanged);
             this.txtBarra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBarra_KeyPress);
             this.txtBarra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBarra_KeyUp);
             // 

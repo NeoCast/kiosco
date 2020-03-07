@@ -13,18 +13,25 @@ namespace capalnegocio
     {
         private DataTable tabla = new DataTable();
         private acventa ventaAC = new acventa();
-        public void LNdetalleVenta(int codProd, string tipoProd, int codPromo,int cantidad, string descripcion, double total, DateTime fecha)
+        public string LNdetalleVenta(int codProd, string tipoProd, int codPromo,int cantidad, string descripcion, double total, DateTime fecha)
         {
+
+            string resultado;
             try
             {
-                ventaAC.detalleVenta(codProd, tipoProd, codPromo, cantidad, descripcion, total, fecha);
+                
+
+                resultado = ventaAC.detalleVenta(codProd, tipoProd, codPromo, cantidad, descripcion, total, fecha);
+
+                
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
-         
+
+            return resultado;
         }
 
 

@@ -32,6 +32,8 @@ namespace capavista
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
+            string resultado = "";
+            
             if (label3.Text != "")
             {
                 int codProd;
@@ -81,7 +83,7 @@ namespace capavista
                                     double totalProd = Convert.ToDouble(fila.Cells[6].Value.ToString());
 
 
-                                    ventaLN.LNdetalleVenta(codProd, tipoProd, codPromo, cantidad, descripcion, totalProd, System.DateTime.Now);
+                                   resultado =  ventaLN.LNdetalleVenta(codProd, tipoProd, codPromo, cantidad, descripcion, totalProd, System.DateTime.Now);
                                     dataGridView1.DataSource = productoLN.mostrarTodos();
                                 }
                             }
@@ -92,7 +94,7 @@ namespace capavista
                         }
 
 
-                        MessageBox.Show("La venta se realizo con exito");
+                        MessageBox.Show(resultado);
                         gridDetalles.Rows.Clear();
                         label3.Text = "0";
                         dataGridView1.DataSource = productoLN.mostrarTodos();

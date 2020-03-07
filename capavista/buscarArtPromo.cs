@@ -71,6 +71,7 @@ namespace capavista
             string codProd = addProd.Text.ToString();
             string descrip = addDesc.Text.ToString();
             string cant = addCant.Text.ToString();
+           
             nuevapromocion form = Owner as nuevapromocion;
             form.txtCodProd.Text = codProd;
             form.txtDescripcion.Text = descrip;
@@ -78,9 +79,8 @@ namespace capavista
             this.Close(); 
             //Mando las variables como texto porque se pasan a un
             // textbox 
-
-       
-
+           
+  
 
         }
 
@@ -109,24 +109,45 @@ namespace capavista
         {
 
         }
-
+        
+        
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow fila = dataGridView1.Rows[e.RowIndex];
 
             addProd.Text = fila.Cells[0].Value.ToString();
             addDesc.Text = fila.Cells[4].Value.ToString();
+
+
         }
 
         private void txtBarra_KeyUp(object sender, KeyEventArgs e)
         {
+           
             string descripcion = Convert.ToString(txtBarra.Text);
             string codBarra = Convert.ToString(txtBarra.Text);
-            dataGridView1.DataSource = productoLN.mostrarProductos(codBarra, descripcion);
-            // automatico pasa de grid a txb
-            addProd.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            addDesc.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+
+            try
+            {
+                dataGridView1.DataSource = productoLN.mostrarProductos(codBarra, descripcion);
+                // automatico pasa de grid a txb
+                addProd.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                addDesc.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("No se ha encontrado el producto");
+
+            }
+           
+        
          
+        }
+
+        private void TxtBarra_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

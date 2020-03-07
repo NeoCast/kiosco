@@ -45,14 +45,16 @@ namespace capaaccdatos
             }
         }
 
-        public void detalleVenta(int codProd, string tipoProd, int codPromo,int cantidad, string descripcion, double total, DateTime fecha)
+        public string detalleVenta(int codProd, string tipoProd, int codPromo,int cantidad, string descripcion, double total, DateTime fecha)
         {
 
             SqlCommand comando = new SqlCommand();
             DataTable tabla = new DataTable();
-
+            string res_consulta;
             try
             {
+
+
                 comando.Connection = conexion.abrircn();
                 comando.CommandText = "nuevoDetalleVentas";
                 comando.CommandType = CommandType.StoredProcedure;
@@ -64,13 +66,13 @@ namespace capaaccdatos
                 comando.Parameters.AddWithValue("@descrip", descripcion);
                 comando.Parameters.AddWithValue("@ventaFecha", fecha);
                 comando.ExecuteNonQuery();
-
+                res_consulta = "Se ha vendido exitosamente";
             }
             catch (Exception ex)
             {
 
                 throw ex;
-
+                res_consulta = "No se ha podido realizar la venta";
             }
             finally
             {
@@ -78,6 +80,8 @@ namespace capaaccdatos
                 conexion.cerrarcn();
 
             }
+
+            return res_consulta;
 
         }
 
