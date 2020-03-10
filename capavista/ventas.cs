@@ -143,7 +143,7 @@ namespace capavista
 
 
             DataGridViewRow fila2 = new DataGridViewRow();
-            int cantidad;
+            int cantidad, stock, stockMin, stockRest;
             double precio, totalProd;
             string resultado = Microsoft.VisualBasic.Interaction.InputBox("ingrese la cantidad: ").ToString();
             DataGridViewRow fila = new DataGridViewRow();
@@ -170,8 +170,25 @@ namespace capavista
                     fila2.Cells[4].Value = cantidad.ToString();
                     fila2.Cells[5].Value = fila.Cells[6].Value.ToString();
                     fila2.Cells[6].Value = totalProd.ToString();
+                    stock = Convert.ToInt32(fila.Cells[4].Value.ToString());
+                    stockMin = Convert.ToInt32(fila.Cells[5].Value.ToString());
 
-                    gridDetalles.Rows.Add(fila2);
+                    stockRest = stock - cantidad;
+                    if (stockRest <= 0)
+                    {
+                        MessageBox.Show("No hay suficientes productos que vender D:");
+                        return;
+
+                    }
+                    else
+                    {
+                        gridDetalles.Rows.Add(fila2);
+                    }
+
+                    if (stock < stockMin)
+                    {
+                        MessageBox.Show("Por favor vuelva a llenar el stock o comuniquese con su proveedor de confianza :D",  "Bajo stock :c", MessageBoxButtons.OK);
+                    }
 
 
                     //gridDetalles = new DataGridView();
@@ -185,6 +202,8 @@ namespace capavista
                     MessageBox.Show("selecciona una fila para realizar ésta accion");
                     return;
                     throw ex;
+
+                  
                 }
             }
 
