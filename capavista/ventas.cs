@@ -380,5 +380,15 @@ namespace capavista
             label3.Text = "0";
             dataGridView1.DataSource = productoLN.mostrarTodos();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridDetalles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
  }

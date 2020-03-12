@@ -31,9 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panelTitle = new System.Windows.Forms.Panel();
-            this.btnMin = new System.Windows.Forms.PictureBox();
-            this.btnMint = new System.Windows.Forms.PictureBox();
             this.btnMax = new System.Windows.Forms.PictureBox();
+            this.btnMin = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panelBtn = new System.Windows.Forms.Panel();
             this.btnConfig = new System.Windows.Forms.Button();
@@ -45,6 +44,7 @@
             this.btnAltaProd = new System.Windows.Forms.Button();
             this.btnProd = new System.Windows.Forms.Button();
             this.panelPromocion = new System.Windows.Forms.Panel();
+            this.elimProm = new System.Windows.Forms.Button();
             this.btnAltaProm = new System.Windows.Forms.Button();
             this.btnpromocion = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -53,11 +53,9 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.Horafecha = new System.Windows.Forms.Timer(this.components);
             this.panelCont = new System.Windows.Forms.Panel();
-            this.elimProm = new System.Windows.Forms.Button();
             this.panelTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBtn.SuspendLayout();
             this.panelsubm.SuspendLayout();
@@ -69,51 +67,23 @@
             // panelTitle
             // 
             this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.panelTitle.Controls.Add(this.btnMin);
-            this.panelTitle.Controls.Add(this.btnMint);
             this.panelTitle.Controls.Add(this.btnMax);
+            this.panelTitle.Controls.Add(this.btnMin);
             this.panelTitle.Controls.Add(this.btnCerrar);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(0, 0);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(1300, 38);
+            this.panelTitle.Size = new System.Drawing.Size(1366, 38);
             this.panelTitle.TabIndex = 0;
             this.panelTitle.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTitle_Paint);
             this.panelTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseDown);
-            // 
-            // btnMin
-            // 
-            this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
-            this.btnMin.Location = new System.Drawing.Point(1180, 7);
-            this.btnMin.Name = "btnMin";
-            this.btnMin.Size = new System.Drawing.Size(25, 25);
-            this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMin.TabIndex = 6;
-            this.btnMin.TabStop = false;
-            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
-            // 
-            // btnMint
-            // 
-            this.btnMint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMint.Image = ((System.Drawing.Image)(resources.GetObject("btnMint.Image")));
-            this.btnMint.Location = new System.Drawing.Point(1221, 7);
-            this.btnMint.Name = "btnMint";
-            this.btnMint.Size = new System.Drawing.Size(25, 25);
-            this.btnMint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMint.TabIndex = 5;
-            this.btnMint.TabStop = false;
-            this.btnMint.Visible = false;
-            this.btnMint.Click += new System.EventHandler(this.btnMint_Click);
             // 
             // btnMax
             // 
             this.btnMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMax.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
-            this.btnMax.Location = new System.Drawing.Point(1221, 7);
+            this.btnMax.Location = new System.Drawing.Point(1286, 7);
             this.btnMax.Name = "btnMax";
             this.btnMax.Size = new System.Drawing.Size(25, 25);
             this.btnMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -121,12 +91,25 @@
             this.btnMax.TabStop = false;
             this.btnMax.Click += new System.EventHandler(this.btnMax_Click);
             // 
+            // btnMin
+            // 
+            this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
+            this.btnMin.Location = new System.Drawing.Point(1246, 7);
+            this.btnMin.Name = "btnMin";
+            this.btnMin.Size = new System.Drawing.Size(25, 25);
+            this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMin.TabIndex = 6;
+            this.btnMin.TabStop = false;
+            this.btnMin.Click += new System.EventHandler(this.btnMin_Click_1);
+            // 
             // btnCerrar
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1263, 7);
+            this.btnCerrar.Location = new System.Drawing.Point(1329, 7);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(25, 25);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -148,7 +131,7 @@
             this.panelBtn.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelBtn.Location = new System.Drawing.Point(0, 38);
             this.panelBtn.Name = "panelBtn";
-            this.panelBtn.Size = new System.Drawing.Size(220, 612);
+            this.panelBtn.Size = new System.Drawing.Size(220, 730);
             this.panelBtn.TabIndex = 1;
             this.panelBtn.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBtn_Paint);
             // 
@@ -163,7 +146,7 @@
             this.btnConfig.ForeColor = System.Drawing.Color.White;
             this.btnConfig.Image = ((System.Drawing.Image)(resources.GetObject("btnConfig.Image")));
             this.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfig.Location = new System.Drawing.Point(0, 319);
+            this.btnConfig.Location = new System.Drawing.Point(1, 381);
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(221, 41);
             this.btnConfig.TabIndex = 16;
@@ -176,7 +159,7 @@
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblHora.Location = new System.Drawing.Point(12, 58);
+            this.lblHora.Location = new System.Drawing.Point(8, 73);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(125, 54);
             this.lblHora.TabIndex = 0;
@@ -187,7 +170,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.LightGray;
-            this.lblFecha.Location = new System.Drawing.Point(73, 123);
+            this.lblFecha.Location = new System.Drawing.Point(69, 137);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(64, 24);
             this.lblFecha.TabIndex = 2;
@@ -201,7 +184,7 @@
             this.panelsubm.Controls.Add(this.btnProd);
             this.panelsubm.Controls.Add(this.panelPromocion);
             this.panelsubm.Controls.Add(this.btnpromocion);
-            this.panelsubm.Location = new System.Drawing.Point(1, 360);
+            this.panelsubm.Location = new System.Drawing.Point(2, 422);
             this.panelsubm.Name = "panelsubm";
             this.panelsubm.Size = new System.Drawing.Size(220, 185);
             this.panelsubm.TabIndex = 15;
@@ -276,6 +259,23 @@
             this.panelPromocion.Size = new System.Drawing.Size(220, 67);
             this.panelPromocion.TabIndex = 1;
             // 
+            // elimProm
+            // 
+            this.elimProm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.elimProm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.elimProm.FlatAppearance.BorderSize = 0;
+            this.elimProm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
+            this.elimProm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.elimProm.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.elimProm.ForeColor = System.Drawing.Color.White;
+            this.elimProm.Location = new System.Drawing.Point(0, 30);
+            this.elimProm.Name = "elimProm";
+            this.elimProm.Size = new System.Drawing.Size(220, 30);
+            this.elimProm.TabIndex = 2;
+            this.elimProm.Text = "Eliminar promoción";
+            this.elimProm.UseVisualStyleBackColor = false;
+            this.elimProm.Click += new System.EventHandler(this.elimProm_Click);
+            // 
             // btnAltaProm
             // 
             this.btnAltaProm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
@@ -317,7 +317,7 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 551);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 669);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(221, 61);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -336,7 +336,7 @@
             this.btnFacturacion.ForeColor = System.Drawing.Color.White;
             this.btnFacturacion.Image = ((System.Drawing.Image)(resources.GetObject("btnFacturacion.Image")));
             this.btnFacturacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFacturacion.Location = new System.Drawing.Point(0, 278);
+            this.btnFacturacion.Location = new System.Drawing.Point(1, 340);
             this.btnFacturacion.Name = "btnFacturacion";
             this.btnFacturacion.Size = new System.Drawing.Size(221, 41);
             this.btnFacturacion.TabIndex = 5;
@@ -355,7 +355,7 @@
             this.btnVentas.ForeColor = System.Drawing.Color.White;
             this.btnVentas.Image = ((System.Drawing.Image)(resources.GetObject("btnVentas.Image")));
             this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(0, 237);
+            this.btnVentas.Location = new System.Drawing.Point(1, 299);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(221, 41);
             this.btnVentas.TabIndex = 3;
@@ -374,7 +374,7 @@
             this.btnMenu.ForeColor = System.Drawing.Color.White;
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
             this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenu.Location = new System.Drawing.Point(0, 196);
+            this.btnMenu.Location = new System.Drawing.Point(1, 258);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(220, 41);
             this.btnMenu.TabIndex = 1;
@@ -394,32 +394,15 @@
             this.panelCont.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCont.Location = new System.Drawing.Point(220, 38);
             this.panelCont.Name = "panelCont";
-            this.panelCont.Size = new System.Drawing.Size(1080, 612);
+            this.panelCont.Size = new System.Drawing.Size(1146, 730);
             this.panelCont.TabIndex = 2;
             this.panelCont.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint_1);
-            // 
-            // elimProm
-            // 
-            this.elimProm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.elimProm.Dock = System.Windows.Forms.DockStyle.Top;
-            this.elimProm.FlatAppearance.BorderSize = 0;
-            this.elimProm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.elimProm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.elimProm.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.elimProm.ForeColor = System.Drawing.Color.White;
-            this.elimProm.Location = new System.Drawing.Point(0, 30);
-            this.elimProm.Name = "elimProm";
-            this.elimProm.Size = new System.Drawing.Size(220, 30);
-            this.elimProm.TabIndex = 2;
-            this.elimProm.Text = "Eliminar promoción";
-            this.elimProm.UseVisualStyleBackColor = false;
-            this.elimProm.Click += new System.EventHandler(this.elimProm_Click);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 650);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.panelCont);
             this.Controls.Add(this.panelBtn);
             this.Controls.Add(this.panelTitle);
@@ -429,9 +412,8 @@
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panelTitle.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.panelBtn.ResumeLayout(false);
             this.panelBtn.PerformLayout();
@@ -448,7 +430,6 @@
         private System.Windows.Forms.Panel panelTitle;
         private System.Windows.Forms.Panel panelBtn;
         private System.Windows.Forms.PictureBox btnCerrar;
-        private System.Windows.Forms.PictureBox btnMint;
         private System.Windows.Forms.PictureBox btnMax;
         private System.Windows.Forms.PictureBox btnMin;
         private System.Windows.Forms.Timer Horafecha;

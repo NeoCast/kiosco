@@ -52,22 +52,11 @@ namespace capavista
         private void btnMax_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            btnMax.Visible = false;
-            btnMint.Visible = true;
-        }
-
-        private void btnMint_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            btnMint.Visible = false;
             btnMax.Visible = true;
+
         }
 
-        private void btnMin_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
+  
         private void Horafecha_Tick(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
@@ -94,6 +83,8 @@ namespace capavista
             {
                 //codigo
             }
+
+         //   this.WindowState = FormWindowState.Maximized;
         }
 
         private void panel8_Paint(object sender, PaintEventArgs e)
@@ -284,6 +275,11 @@ namespace capavista
         {
             hideSubMenu();
             AbrirFormP(new elimProm());
+        }
+
+        private void btnMin_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
