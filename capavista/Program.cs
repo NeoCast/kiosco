@@ -13,7 +13,7 @@ namespace capavista
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new barra());
+            Application.Run(new Login());
         }
     }
 }
