@@ -31,7 +31,7 @@ namespace capavista
 
             if (uCache.cargo == cargos.empleado)
             {
-                dataGridView1.Columns[9].Visible = false;
+                dataGridView1.Columns[10].Visible = false;
                 txtCostos.Visible = false;
                 label10.Visible = false;
 

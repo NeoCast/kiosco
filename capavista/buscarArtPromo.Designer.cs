@@ -228,17 +228,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(14, 168);
+            this.label4.Location = new System.Drawing.Point(14, 150);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(205, 13);
             this.label4.TabIndex = 60;
             this.label4.Text = "Busqueda por lector o descripción:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtBarra
             // 
-            this.txtBarra.Location = new System.Drawing.Point(225, 165);
+            this.txtBarra.Location = new System.Drawing.Point(225, 146);
             this.txtBarra.Name = "txtBarra";
-            this.txtBarra.Size = new System.Drawing.Size(168, 20);
+            this.txtBarra.Size = new System.Drawing.Size(174, 20);
             this.txtBarra.TabIndex = 0;
             this.txtBarra.TextChanged += new System.EventHandler(this.TxtBarra_TextChanged);
             this.txtBarra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBarra_KeyPress);

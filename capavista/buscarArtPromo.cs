@@ -126,26 +126,32 @@ namespace capavista
            
             string descripcion = Convert.ToString(txtBarra.Text);
             string codBarra = Convert.ToString(txtBarra.Text);
-
-            try
+            if (txtBarra.Text != "")
             {
-                dataGridView1.DataSource = productoLN.mostrarProductos(codBarra, descripcion);
-                // automatico pasa de grid a txb
-                addProd.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                addDesc.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            }
-            catch (Exception ex)
-            {
+                try
+                {
+                    dataGridView1.DataSource = productoLN.mostrarProductos(codBarra, descripcion);
+                    // automatico pasa de grid a txb
+                    addProd.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    addDesc.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                }
+                catch (Exception ex)
+                {
 
-                MessageBox.Show("No se ha encontrado el producto");
+                    MessageBox.Show("No se ha encontrado el producto");
 
+                }
             }
-           
-        
-         
+            else { addDesc.Clear();
+                   addCant.Clear(); }
         }
 
         private void TxtBarra_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

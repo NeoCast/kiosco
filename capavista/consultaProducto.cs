@@ -26,7 +26,7 @@ namespace capavista
 
             if (uCache.cargo == cargos.empleado)
             {
-                dataGridView1.Columns[9].Visible = false;
+                dataGridView1.Columns[10].Visible = false;
                 textBox6.Visible= false;
                 label6.Visible = false;
             }
@@ -160,8 +160,7 @@ namespace capavista
 
 
           
-         
-
+        
           
         }
 
