@@ -104,5 +104,32 @@ namespace capaaccdatos
             }
         }
 
+        public void eliminarPromocion(int codPromo)
+        {
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                comando.Connection = conexion.abrircn();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "eliminarPromocion";
+                comando.Parameters.AddWithValue("codPromo", codPromo);
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarcn();
+            }
+
+
+
+
         }
+
+
+    }
 }

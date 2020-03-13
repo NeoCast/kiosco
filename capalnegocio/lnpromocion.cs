@@ -61,6 +61,24 @@ namespace capalnegocio
 
         }
 
+        public void eliminarPromocion(Int32 codPromo)
+        {
+            try
+            {
+
+                promocion.eliminarPromocion(codPromo);
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+
+            }
+
+        }
+
     }
 }
    

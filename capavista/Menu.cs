@@ -83,8 +83,6 @@ namespace capavista
             {
                 //codigo
             }
-
-         //   this.WindowState = FormWindowState.Maximized;
         }
 
         private void panel8_Paint(object sender, PaintEventArgs e)
