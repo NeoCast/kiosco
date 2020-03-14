@@ -58,21 +58,13 @@ namespace capavista
                                 if (fila.Index < cantfila - 1)
                                 {
 
-
-
                                     if (fila.Cells[1].Value.ToString() == "" || fila.Cells[1].Value == null)
                                     {
-
                                         codPromo = 0;
-
-
-
                                     }
                                     else
                                     {
-
                                         codPromo = Convert.ToInt32(fila.Cells[1].Value.ToString());
-
                                     }
 
                                     codProd = Convert.ToInt32(fila.Cells[0].Value.ToString());
@@ -107,8 +99,6 @@ namespace capavista
                         throw ex;
                     }
 
-
-
                 }
                 else
                 {
@@ -142,70 +132,70 @@ namespace capavista
         {
 
 
-            DataGridViewRow fila2 = new DataGridViewRow();
-            int cantidad, stock, stockMin, stockRest;
-            double precio, totalProd;
-            string resultado = Microsoft.VisualBasic.Interaction.InputBox("ingrese la cantidad: ").ToString();
-            DataGridViewRow fila = new DataGridViewRow();
-            fila = dataGridView1.CurrentRow;
-            if (resultado.Length > 0)
-            {
+            //DataGridViewRow fila2 = new DataGridViewRow();
+            //int cantidad, stock, stockMin, stockRest;
+            //double precio, totalProd;
+            //string resultado = Microsoft.VisualBasic.Interaction.InputBox("ingrese la cantidad: ").ToString();
+            //DataGridViewRow fila = new DataGridViewRow();
+            //fila = dataGridView1.CurrentRow;
+            //if (resultado.Length > 0)
+            //{
 
 
-                cantidad = Convert.ToInt32(resultado);
+            //    cantidad = Convert.ToInt32(resultado);
 
-                try
-                {
+            //    try
+            //    {
 
-                    //fila.DataGridView.SelectedRows[] = dataGridView1.SelectedRows[e.RowIndex];
-                    precio = Convert.ToDouble(fila.Cells[6].Value.ToString());
-                    totalProd = precio * cantidad;
+            //        //fila.DataGridView.SelectedRows[] = dataGridView1.SelectedRows[e.RowIndex];
+            //        precio = Convert.ToDouble(fila.Cells[6].Value.ToString());
+            //        totalProd = precio * cantidad;
 
-                    fila2.CreateCells(gridDetalles);
+            //        fila2.CreateCells(gridDetalles);
 
-                    fila2.Cells[0].Value = fila.Cells[0].Value.ToString();
-                    fila2.Cells[1].Value = fila.Cells[1].Value.ToString();
-                    fila2.Cells[2].Value = fila.Cells[2].Value.ToString();
-                    fila2.Cells[3].Value = fila.Cells[3].Value.ToString();
-                    fila2.Cells[4].Value = cantidad.ToString();
-                    fila2.Cells[5].Value = fila.Cells[6].Value.ToString();
-                    fila2.Cells[6].Value = totalProd.ToString();
-                    stock = Convert.ToInt32(fila.Cells[4].Value.ToString());
-                    stockMin = Convert.ToInt32(fila.Cells[5].Value.ToString());
+            //        fila2.Cells[0].Value = fila.Cells[0].Value.ToString();
+            //        fila2.Cells[1].Value = fila.Cells[1].Value.ToString();
+            //        fila2.Cells[2].Value = fila.Cells[2].Value.ToString();
+            //        fila2.Cells[3].Value = fila.Cells[3].Value.ToString();
+            //        fila2.Cells[4].Value = cantidad.ToString();
+            //        fila2.Cells[5].Value = fila.Cells[6].Value.ToString();
+            //        fila2.Cells[6].Value = totalProd.ToString();
+            //        stock = Convert.ToInt32(fila.Cells[4].Value.ToString());
+            //        stockMin = Convert.ToInt32(fila.Cells[5].Value.ToString());
 
-                    stockRest = stock - cantidad;
-                    if (stockRest <= 0)
-                    {
-                        MessageBox.Show("No hay suficientes productos que vender D:");
-                        return;
+            //        stockRest = stock - cantidad;
+            //        if (stockRest <= 0)
+            //        {
+            //            MessageBox.Show("No hay suficientes productos que vender D:");
+            //            return;
 
-                    }
-                    else
-                    {
-                        gridDetalles.Rows.Add(fila2);
-                    }
+            //        }
+            //        else
+            //        {
+            //            gridDetalles.Rows.Add(fila2);
+            //        }
 
-                    if (stock < stockMin)
-                    {
-                        MessageBox.Show("Por favor vuelva a llenar el stock o comuniquese con su proveedor de confianza :D",  "Bajo stock :c", MessageBoxButtons.OK);
-                    }
+            //        if (stock < stockMin)
+            //        {
+            //            MessageBox.Show("Por favor vuelva a llenar el stock o comuniquese con su proveedor de confianza :D",  "Bajo stock :c", MessageBoxButtons.OK);
+            //        }
 
 
-                    //gridDetalles = new DataGridView();
-                    //gridDetalles.Rows.Add(fila.Cells[0].RowIndex, fila.Cells[1].RowIndex, fila.Cells[2].RowIndex, cantidad, fila.Cells[3].RowIndex, fila.Cells[4].RowIndex, fila.Cells[6].RowIndex);
+            //        //gridDetalles = new DataGridView();
+            //        //gridDetalles.Rows.Add(fila.Cells[0].RowIndex, fila.Cells[1].RowIndex, fila.Cells[2].RowIndex, cantidad, fila.Cells[3].RowIndex, fila.Cells[4].RowIndex, fila.Cells[6].RowIndex);
 
-                    label3.Text = Convert.ToString(Convert.ToDouble(label3.Text) + totalProd);
-                    txbBuscar.Clear();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("selecciona una fila para realizar ésta accion");
-                    return;
-                    throw ex;
+            //        label3.Text = Convert.ToString(Convert.ToDouble(label3.Text) + totalProd);
+            //        txbBuscar.Clear();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("selecciona una fila para realizar ésta accion");
+            //        return;
+            //        throw ex;
 
                   
-                }
-            }
+            //    }
+            //}
 
         }
 
@@ -279,98 +269,103 @@ namespace capavista
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                DataGridViewRow fila2 = new DataGridViewRow();
-                int cantidad;
-                double precio, totalProd;
-                string resultado = Microsoft.VisualBasic.Interaction.InputBox("ingrese la cantidad: ").ToString();
-                DataGridViewRow fila = new DataGridViewRow();
-                fila = dataGridView1.CurrentRow;
-                if (resultado.Length > 0)
-                {
-                    cantidad = Convert.ToInt32(resultado);
 
-                    try
-                    {
+                cargarDatos();
+                //DataGridViewRow fila2 = new DataGridViewRow();
+                //int cantidad;
+                //double precio, totalProd;
+                //string resultado = Microsoft.VisualBasic.Interaction.InputBox("ingrese la cantidad: ").ToString();
+                //DataGridViewRow fila = new DataGridViewRow();
+                //fila = dataGridView1.CurrentRow;
+                //if (resultado.Length > 0)
+                //{
+                //    cantidad = Convert.ToInt32(resultado);
 
-                        //fila.DataGridView.SelectedRows[] = dataGridView1.SelectedRows[e.RowIndex];
-                        precio = Convert.ToDouble(fila.Cells[6].Value.ToString());
-                        totalProd = precio * cantidad;
+                //    try
+                //    {
 
-                        fila2.CreateCells(gridDetalles);
+                //        //fila.DataGridView.SelectedRows[] = dataGridView1.SelectedRows[e.RowIndex];
+                //        precio = Convert.ToDouble(fila.Cells[6].Value.ToString());
+                //        totalProd = precio * cantidad;
 
-                        fila2.Cells[0].Value = fila.Cells[0].Value.ToString();
-                        fila2.Cells[1].Value = fila.Cells[1].Value.ToString();
-                        fila2.Cells[2].Value = fila.Cells[2].Value.ToString();
-                        fila2.Cells[3].Value = fila.Cells[3].Value.ToString();
-                        fila2.Cells[4].Value = cantidad.ToString();
-                        fila2.Cells[5].Value = fila.Cells[6].Value.ToString();
-                        fila2.Cells[6].Value = totalProd.ToString();
+                //        fila2.CreateCells(gridDetalles);
 
-                        gridDetalles.Rows.Add(fila2);
+                //        fila2.Cells[0].Value = fila.Cells[0].Value.ToString();
+                //        fila2.Cells[1].Value = fila.Cells[1].Value.ToString();
+                //        fila2.Cells[2].Value = fila.Cells[2].Value.ToString();
+                //        fila2.Cells[3].Value = fila.Cells[3].Value.ToString();
+                //        fila2.Cells[4].Value = cantidad.ToString();
+                //        fila2.Cells[5].Value = fila.Cells[6].Value.ToString();
+                //        fila2.Cells[6].Value = totalProd.ToString();
+
+                //        gridDetalles.Rows.Add(fila2);
 
 
 
-                        //gridDetalles = new DataGridView();
-                        //gridDetalles.Rows.Add(fila.Cells[0].RowIndex, fila.Cells[1].RowIndex, fila.Cells[2].RowIndex, cantidad, fila.Cells[3].RowIndex, fila.Cells[4].RowIndex, fila.Cells[6].RowIndex);
+                //        //gridDetalles = new DataGridView();
+                //        //gridDetalles.Rows.Add(fila.Cells[0].RowIndex, fila.Cells[1].RowIndex, fila.Cells[2].RowIndex, cantidad, fila.Cells[3].RowIndex, fila.Cells[4].RowIndex, fila.Cells[6].RowIndex);
 
-                        label3.Text = Convert.ToString(Convert.ToDouble(label3.Text) + totalProd);
-                        txbBuscar.Clear();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("selecciona una fila para realizar ésta accion");
-                        return;
-                        throw ex;
-                    }
-                }
+                //        label3.Text = Convert.ToString(Convert.ToDouble(label3.Text) + totalProd);
+                //        txbBuscar.Clear();
+                //    }
+                //    catch (Exception ex)
+                //    {
+                //        MessageBox.Show("selecciona una fila para realizar ésta accion");
+                //        return;
+                //        throw ex;
+                //    }
+                //}
             }
         }
         private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
         {
                 if (e.KeyChar == Convert.ToChar(Keys.Enter))
                 {
-                    DataGridViewRow fila2 = new DataGridViewRow();
-                    int cantidad;
-                    double precio, totalProd;
-                    string resultado = Microsoft.VisualBasic.Interaction.InputBox("ingrese la cantidad: ").ToString();
-                    DataGridViewRow fila = new DataGridViewRow();
-                    fila = dataGridView1.CurrentRow;
-                    if (resultado.Length > 0)
-                    {
-                        cantidad = Convert.ToInt32(resultado);
-
-                        try
-                        {
-                            //fila.DataGridView.SelectedRows[] = dataGridView1.SelectedRows[e.RowIndex];
-                            precio = Convert.ToDouble(fila.Cells[6].Value.ToString());
-                            totalProd = precio * cantidad;
-
-                            fila2.CreateCells(gridDetalles);
-
-                            fila2.Cells[0].Value = fila.Cells[0].Value.ToString();
-                            fila2.Cells[1].Value = fila.Cells[1].Value.ToString();
-                            fila2.Cells[2].Value = fila.Cells[2].Value.ToString();
-                            fila2.Cells[3].Value = fila.Cells[3].Value.ToString();
-                            fila2.Cells[4].Value = cantidad.ToString();
-                            fila2.Cells[5].Value = fila.Cells[6].Value.ToString();
-                            fila2.Cells[6].Value = totalProd.ToString();
-
-                            gridDetalles.Rows.Add(fila2);
 
 
-                            //gridDetalles = new DataGridView();
-                            //gridDetalles.Rows.Add(fila.Cells[0].RowIndex, fila.Cells[1].RowIndex, fila.Cells[2].RowIndex, cantidad, fila.Cells[3].RowIndex, fila.Cells[4].RowIndex, fila.Cells[6].RowIndex);
+                cargarDatos();
+                    //DataGridViewRow fila2 = new DataGridViewRow();
+                    //int cantidad;
+                    //double precio, totalProd;
+                    //string resultado = Microsoft.VisualBasic.Interaction.InputBox("ingrese la cantidad: ").ToString();
+                    //DataGridViewRow fila = new DataGridViewRow();
+                    //fila = dataGridView1.CurrentRow;
+                    //if (resultado.Length > 0)
+                    //{
+                    //    cantidad = Convert.ToInt32(resultado);
 
-                            label3.Text = Convert.ToString(Convert.ToDouble(label3.Text) + totalProd);
-                            txbBuscar.Clear();
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("selecciona una fila para realizar ésta accion");
-                            return;
-                            throw ex;
-                        }
-                    }
+                    //    try
+                    //    {
+                    //        //fila.DataGridView.SelectedRows[] = dataGridView1.SelectedRows[e.RowIndex];
+                    //        precio = Convert.ToDouble(fila.Cells[6].Value.ToString());
+                    //        totalProd = precio * cantidad;
+
+                    //        fila2.CreateCells(gridDetalles);
+
+                    //        fila2.Cells[0].Value = fila.Cells[0].Value.ToString();
+                    //        fila2.Cells[1].Value = fila.Cells[1].Value.ToString();
+                    //        fila2.Cells[2].Value = fila.Cells[2].Value.ToString();
+                    //        fila2.Cells[3].Value = fila.Cells[3].Value.ToString();
+                    //        fila2.Cells[4].Value = cantidad.ToString();
+                    //        fila2.Cells[5].Value = fila.Cells[6].Value.ToString();
+                    //        fila2.Cells[6].Value = totalProd.ToString();
+
+                    //        gridDetalles.Rows.Add(fila2);
+
+
+                    //        //gridDetalles = new DataGridView();
+                    //        //gridDetalles.Rows.Add(fila.Cells[0].RowIndex, fila.Cells[1].RowIndex, fila.Cells[2].RowIndex, cantidad, fila.Cells[3].RowIndex, fila.Cells[4].RowIndex, fila.Cells[6].RowIndex);
+
+                    //        label3.Text = Convert.ToString(Convert.ToDouble(label3.Text) + totalProd);
+                    //        txbBuscar.Clear();
+                    //    }
+                    //    catch (Exception ex)
+                    //    {
+                    //        MessageBox.Show("selecciona una fila para realizar ésta accion");
+                    //        return;
+                    //        throw ex;
+                    //    }
+                    //}
                  }
         }
 
@@ -380,5 +375,120 @@ namespace capavista
             label3.Text = "0";
             dataGridView1.DataSource = productoLN.mostrarTodos();
         }
+
+          public void cargarDatos()
+        {
+
+
+            DataGridViewRow fila2 = new DataGridViewRow();
+            int cantidad, stock, stockMin, stockRest;
+            double precio, totalProd;
+            string resultado = Microsoft.VisualBasic.Interaction.InputBox("ingrese la cantidad: ").ToString();
+            DataGridViewRow fila = new DataGridViewRow();
+            fila = dataGridView1.CurrentRow;
+            if (resultado.Length > 0)
+            {
+
+
+                cantidad = Convert.ToInt32(resultado);
+
+                try
+                {
+
+                    //fila.DataGridView.SelectedRows[] = dataGridView1.SelectedRows[e.RowIndex];
+                    precio = Convert.ToDouble(fila.Cells[6].Value.ToString());
+                    totalProd = precio * cantidad;
+
+                    fila2.CreateCells(gridDetalles);
+
+                    fila2.Cells[0].Value = fila.Cells[0].Value.ToString();
+                    fila2.Cells[1].Value = fila.Cells[1].Value.ToString();
+                    fila2.Cells[2].Value = fila.Cells[2].Value.ToString();
+                    fila2.Cells[3].Value = fila.Cells[3].Value.ToString();
+                    fila2.Cells[4].Value = cantidad.ToString();
+                    fila2.Cells[5].Value = fila.Cells[6].Value.ToString();
+                    fila2.Cells[6].Value = totalProd.ToString();
+                    stock = Convert.ToInt32(fila.Cells[4].Value.ToString());
+                    stockMin = Convert.ToInt32(fila.Cells[5].Value.ToString());
+
+                    stockRest = stock - cantidad;
+                    if (stockRest <= 0)
+                    {
+                        MessageBox.Show("No hay suficientes productos que vender D:");
+                        return;
+
+                    }
+                    else
+                    {
+                        gridDetalles.Rows.Add(fila2);
+                    }
+
+                    if (stock < stockMin)
+                    {
+                        MessageBox.Show("Por favor vuelva a llenar el stock o comuniquese con su proveedor de confianza :D", "Bajo stock :c", MessageBoxButtons.OK);
+                    }
+
+
+                    //gridDetalles = new DataGridView();
+                    //gridDetalles.Rows.Add(fila.Cells[0].RowIndex, fila.Cells[1].RowIndex, fila.Cells[2].RowIndex, cantidad, fila.Cells[3].RowIndex, fila.Cells[4].RowIndex, fila.Cells[6].RowIndex);
+
+                    label3.Text = Convert.ToString(Convert.ToDouble(label3.Text) + totalProd);
+                    txbBuscar.Clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("selecciona una fila para realizar ésta accion");
+                    return;
+                    throw ex;
+
+
+                }
+            }
+            //DataGridViewRow fila2 = new DataGridViewRow();
+            //int cantidad;
+            //    double precio, totalProd;
+            //    string resultado = Microsoft.VisualBasic.Interaction.InputBox("ingrese la cantidad: ").ToString();
+            //    DataGridViewRow fila = new DataGridViewRow();
+            //    fila = dataGridView1.CurrentRow;
+            //    if (resultado.Length > 0)
+            //    {
+
+
+            //        cantidad = Convert.ToInt32(resultado);
+
+            //        try
+            //        {
+
+            //            //fila.DataGridView.SelectedRows[] = dataGridView1.SelectedRows[e.RowIndex];
+            //            precio = Convert.ToDouble(fila.Cells[7].Value.ToString());
+            //            totalProd = precio * cantidad;
+
+            //            fila2.CreateCells(gridDetalles);
+            //            fila2.Cells[0].Value = fila.Cells[0].Value.ToString();
+            //            fila2.Cells[1].Value = fila.Cells[2].Value.ToString();
+            //            fila2.Cells[2].Value = fila.Cells[3].Value.ToString();
+            //            fila2.Cells[3].Value = fila.Cells[4].Value.ToString();
+            //            fila2.Cells[4].Value = cantidad.ToString();
+            //            fila2.Cells[5].Value = fila.Cells[7].Value.ToString();
+            //            fila2.Cells[6].Value = totalProd.ToString();
+
+            //            gridDetalles.Rows.Add(fila2);
+
+
+            //            //gridDetalles = new DataGridView();
+            //            //gridDetalles.Rows.Add(fila.Cells[0].RowIndex, fila.Cells[1].RowIndex, fila.Cells[2].RowIndex, cantidad, fila.Cells[3].RowIndex, fila.Cells[4].RowIndex, fila.Cells[6].RowIndex);
+
+            //            label3.Text = Convert.ToString(Convert.ToDouble(label3.Text) + totalProd);
+            //            txbBuscar.Clear();
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            MessageBox.Show("selecciona una fila para realizar ésta accion");
+            //            return;
+            //            throw ex;
+            //        }
+            //    }
+        }
+
     }
  }
