@@ -50,7 +50,6 @@ namespace capaaccdatos
 
             SqlCommand comando = new SqlCommand();
             DataTable tabla = new DataTable();
-
             try
             {
                 comando.Connection = conexion.abrircn();

@@ -149,7 +149,7 @@
             this.gridDetalles.DefaultCellStyle = dataGridViewCellStyle6;
             this.gridDetalles.EnableHeadersVisualStyles = false;
             this.gridDetalles.GridColor = System.Drawing.Color.White;
-            this.gridDetalles.Location = new System.Drawing.Point(40, 453);
+            this.gridDetalles.Location = new System.Drawing.Point(337, 413);
             this.gridDetalles.Name = "gridDetalles";
             this.gridDetalles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -168,7 +168,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             this.gridDetalles.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.gridDetalles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridDetalles.Size = new System.Drawing.Size(739, 247);
+            this.gridDetalles.Size = new System.Drawing.Size(739, 281);
             this.gridDetalles.TabIndex = 4;
             this.gridDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDetalles_CellContentClick);
             // 
@@ -269,7 +269,7 @@
             this.btnVender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVender.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVender.ForeColor = System.Drawing.Color.White;
-            this.btnVender.Location = new System.Drawing.Point(824, 586);
+            this.btnVender.Location = new System.Drawing.Point(20, 545);
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(258, 65);
             this.btnVender.TabIndex = 5;
@@ -282,7 +282,7 @@
             this.ventaTot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ventaTot.AutoSize = true;
             this.ventaTot.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ventaTot.Location = new System.Drawing.Point(820, 481);
+            this.ventaTot.Location = new System.Drawing.Point(48, 651);
             this.ventaTot.Name = "ventaTot";
             this.ventaTot.Size = new System.Drawing.Size(70, 20);
             this.ventaTot.TabIndex = 31;
@@ -295,7 +295,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(958, 468);
+            this.label3.Location = new System.Drawing.Point(176, 638);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 37);
             this.label3.TabIndex = 32;
@@ -310,7 +310,7 @@
             this.btnEliminarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarDetalle.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarDetalle.Location = new System.Drawing.Point(301, 364);
+            this.btnEliminarDetalle.Location = new System.Drawing.Point(20, 474);
             this.btnEliminarDetalle.Name = "btnEliminarDetalle";
             this.btnEliminarDetalle.Size = new System.Drawing.Size(194, 36);
             this.btnEliminarDetalle.TabIndex = 3;
@@ -327,7 +327,7 @@
             this.btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnlimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnlimpiar.Location = new System.Drawing.Point(655, 364);
+            this.btnlimpiar.Location = new System.Drawing.Point(20, 413);
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.Size = new System.Drawing.Size(194, 36);
             this.btnlimpiar.TabIndex = 33;

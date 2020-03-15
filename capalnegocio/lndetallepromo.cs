@@ -13,7 +13,7 @@ namespace capalnegocio
         {
             detalle.nuevoDetallePromo(codProd, descrProd, cantidad);
         }
+      
 
-
-    }
+     }
 }

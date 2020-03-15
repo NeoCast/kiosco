@@ -39,7 +39,7 @@ namespace capavista
                 try
                 {
                     int codPromo = Convert.ToInt32(txtCodProm.Text);
-
+                   
                    promocionLN.eliminarPromocion(codPromo);
                     MessageBox.Show("Se ha eliminado con exito");
                     dataGridView1.DataSource = promocionLN.buscarPromos();

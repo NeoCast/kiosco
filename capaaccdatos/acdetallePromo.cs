@@ -38,6 +38,6 @@ namespace capaaccdatos
                 conexion.cerrarcn();
 
             }
-        }
+        }  
     }
 }
