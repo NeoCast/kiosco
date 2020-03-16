@@ -18,14 +18,12 @@ namespace capavista
 
         private void Customizar()
         {
-            panelPromocion.Visible = false;
+      
             panelProductos.Visible = false;
 
         }
         private void hideSubMenu()
         {
-            if (panelPromocion.Visible == true)
-                panelPromocion.Visible = false;
             if (panelProductos.Visible == true)
                 panelProductos.Visible = false;
         }
@@ -226,17 +224,6 @@ namespace capavista
             hideSubMenu();
         }
 
-        private void btnpromocion_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelPromocion);
-        }
-
-        private void btnAltaProm_Click(object sender, EventArgs e)
-        {
-            hideSubMenu();
-            AbrirFormP(new nuevapromocion());
-        }
-
         private void btnCprom_Click(object sender, EventArgs e)
         {
             hideSubMenu();
@@ -269,15 +256,16 @@ namespace capavista
             AbrirFormP(new Configuracion());
         }
 
-        private void elimProm_Click(object sender, EventArgs e)
-        {
-            hideSubMenu();
-            AbrirFormP(new elimProm());
-        }
 
         private void btnMin_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnpromocion_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            AbrirFormP(new nuevapromocion());
         }
     }
 }

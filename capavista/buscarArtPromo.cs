@@ -90,5 +90,20 @@ namespace capavista
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            string descripcion = Convert.ToString(textBox1.Text);
+            dataGridView1.DataSource = productoLN.mostrarProductos(descripcion);
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow fila = dataGridView1.Rows[e.RowIndex];
+            addProd.Text = fila.Cells[0].Value.ToString();
+            addDesc.Text = fila.Cells[3].Value.ToString();
+        }
+
+  
     }
 }

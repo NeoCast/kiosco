@@ -43,9 +43,6 @@
             this.btnConsProd = new System.Windows.Forms.Button();
             this.btnAltaProd = new System.Windows.Forms.Button();
             this.btnProd = new System.Windows.Forms.Button();
-            this.panelPromocion = new System.Windows.Forms.Panel();
-            this.elimProm = new System.Windows.Forms.Button();
-            this.btnAltaProm = new System.Windows.Forms.Button();
             this.btnpromocion = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnFacturacion = new System.Windows.Forms.Button();
@@ -60,7 +57,6 @@
             this.panelBtn.SuspendLayout();
             this.panelsubm.SuspendLayout();
             this.panelProductos.SuspendLayout();
-            this.panelPromocion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,7 +178,6 @@
             this.panelsubm.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelsubm.Controls.Add(this.panelProductos);
             this.panelsubm.Controls.Add(this.btnProd);
-            this.panelsubm.Controls.Add(this.panelPromocion);
             this.panelsubm.Controls.Add(this.btnpromocion);
             this.panelsubm.Location = new System.Drawing.Point(2, 422);
             this.panelsubm.Name = "panelsubm";
@@ -194,9 +189,9 @@
             this.panelProductos.Controls.Add(this.btnConsProd);
             this.panelProductos.Controls.Add(this.btnAltaProd);
             this.panelProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelProductos.Location = new System.Drawing.Point(0, 149);
+            this.panelProductos.Location = new System.Drawing.Point(0, 82);
             this.panelProductos.Name = "panelProductos";
-            this.panelProductos.Size = new System.Drawing.Size(220, 97);
+            this.panelProductos.Size = new System.Drawing.Size(220, 63);
             this.panelProductos.TabIndex = 4;
             // 
             // btnConsProd
@@ -241,57 +236,13 @@
             this.btnProd.ForeColor = System.Drawing.Color.White;
             this.btnProd.Image = ((System.Drawing.Image)(resources.GetObject("btnProd.Image")));
             this.btnProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProd.Location = new System.Drawing.Point(0, 108);
+            this.btnProd.Location = new System.Drawing.Point(0, 41);
             this.btnProd.Name = "btnProd";
             this.btnProd.Size = new System.Drawing.Size(220, 41);
             this.btnProd.TabIndex = 3;
             this.btnProd.Text = "Productos";
             this.btnProd.UseVisualStyleBackColor = true;
             this.btnProd.Click += new System.EventHandler(this.btnProd_Click);
-            // 
-            // panelPromocion
-            // 
-            this.panelPromocion.Controls.Add(this.elimProm);
-            this.panelPromocion.Controls.Add(this.btnAltaProm);
-            this.panelPromocion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPromocion.Location = new System.Drawing.Point(0, 41);
-            this.panelPromocion.Name = "panelPromocion";
-            this.panelPromocion.Size = new System.Drawing.Size(220, 67);
-            this.panelPromocion.TabIndex = 1;
-            // 
-            // elimProm
-            // 
-            this.elimProm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.elimProm.Dock = System.Windows.Forms.DockStyle.Top;
-            this.elimProm.FlatAppearance.BorderSize = 0;
-            this.elimProm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.elimProm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.elimProm.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.elimProm.ForeColor = System.Drawing.Color.White;
-            this.elimProm.Location = new System.Drawing.Point(0, 30);
-            this.elimProm.Name = "elimProm";
-            this.elimProm.Size = new System.Drawing.Size(220, 30);
-            this.elimProm.TabIndex = 2;
-            this.elimProm.Text = "Eliminar promoción";
-            this.elimProm.UseVisualStyleBackColor = false;
-            this.elimProm.Click += new System.EventHandler(this.elimProm_Click);
-            // 
-            // btnAltaProm
-            // 
-            this.btnAltaProm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.btnAltaProm.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAltaProm.FlatAppearance.BorderSize = 0;
-            this.btnAltaProm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.btnAltaProm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAltaProm.Font = new System.Drawing.Font("Century Schoolbook", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAltaProm.ForeColor = System.Drawing.Color.White;
-            this.btnAltaProm.Location = new System.Drawing.Point(0, 0);
-            this.btnAltaProm.Name = "btnAltaProm";
-            this.btnAltaProm.Size = new System.Drawing.Size(220, 30);
-            this.btnAltaProm.TabIndex = 1;
-            this.btnAltaProm.Text = "Agregar promocion";
-            this.btnAltaProm.UseVisualStyleBackColor = false;
-            this.btnAltaProm.Click += new System.EventHandler(this.btnAltaProm_Click);
             // 
             // btnpromocion
             // 
@@ -420,7 +371,6 @@
             this.panelBtn.PerformLayout();
             this.panelsubm.ResumeLayout(false);
             this.panelProductos.ResumeLayout(false);
-            this.panelPromocion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -446,10 +396,7 @@
         private System.Windows.Forms.Button btnConsProd;
         private System.Windows.Forms.Button btnAltaProd;
         private System.Windows.Forms.Button btnProd;
-        private System.Windows.Forms.Panel panelPromocion;
-        private System.Windows.Forms.Button btnAltaProm;
         private System.Windows.Forms.Button btnpromocion;
         private System.Windows.Forms.Button btnConfig;
-        private System.Windows.Forms.Button elimProm;
     }
 }

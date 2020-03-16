@@ -57,6 +57,9 @@ namespace capavista
                         cant = Convert.ToInt32(textBox1.Text);
                         codProd = Convert.ToInt32(txtCodProd.Text);
                         dataGridView1.Rows.Add(codProd, txtDescripcion.Text, cant);
+                txtCodProd.Clear();
+                txtDescripcion.Clear();
+                textBox1.Clear();
             }   
            
           
@@ -169,10 +172,16 @@ namespace capavista
         {
 
         }
-
+        
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            elimProm elim = new elimProm();
+            elim.ShowDialog();
         }
     }
 }
