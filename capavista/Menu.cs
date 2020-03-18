@@ -47,12 +47,7 @@ namespace capavista
             Application.Exit();
         }
 
-        private void btnMax_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            btnMax.Visible = true;
-
-        }
+   
 
   
         private void Horafecha_Tick(object sender, EventArgs e)
@@ -132,12 +127,6 @@ namespace capavista
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
 
         private extern static void SendMenssage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-        private void panelTitle_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMenssage(this.Handle, 0x112, 0xf012, 0);
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

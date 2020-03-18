@@ -97,13 +97,13 @@ namespace capavista
             dataGridView1.DataSource = productoLN.mostrarProductos(descripcion);
         }
 
+
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow fila = dataGridView1.Rows[e.RowIndex];
             addProd.Text = fila.Cells[0].Value.ToString();
             addDesc.Text = fila.Cells[3].Value.ToString();
-        }
 
-  
+        }
     }
 }

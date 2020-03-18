@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panelTitle = new System.Windows.Forms.Panel();
-            this.btnMax = new System.Windows.Forms.PictureBox();
             this.btnMin = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panelBtn = new System.Windows.Forms.Panel();
@@ -51,7 +50,6 @@
             this.Horafecha = new System.Windows.Forms.Timer(this.components);
             this.panelCont = new System.Windows.Forms.Panel();
             this.panelTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBtn.SuspendLayout();
@@ -63,7 +61,6 @@
             // panelTitle
             // 
             this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.panelTitle.Controls.Add(this.btnMax);
             this.panelTitle.Controls.Add(this.btnMin);
             this.panelTitle.Controls.Add(this.btnCerrar);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
@@ -72,27 +69,14 @@
             this.panelTitle.Size = new System.Drawing.Size(1366, 38);
             this.panelTitle.TabIndex = 0;
             this.panelTitle.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTitle_Paint);
-            this.panelTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseDown);
-            // 
-            // btnMax
-            // 
-            this.btnMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMax.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMax.Image = ((System.Drawing.Image)(resources.GetObject("btnMax.Image")));
-            this.btnMax.Location = new System.Drawing.Point(1286, 7);
-            this.btnMax.Name = "btnMax";
-            this.btnMax.Size = new System.Drawing.Size(25, 25);
-            this.btnMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMax.TabIndex = 4;
-            this.btnMax.TabStop = false;
-            this.btnMax.Click += new System.EventHandler(this.btnMax_Click);
+          
             // 
             // btnMin
             // 
             this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
-            this.btnMin.Location = new System.Drawing.Point(1246, 7);
+            this.btnMin.Location = new System.Drawing.Point(1286, 7);
             this.btnMin.Name = "btnMin";
             this.btnMin.Size = new System.Drawing.Size(25, 25);
             this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -364,7 +348,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panelTitle.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.panelBtn.ResumeLayout(false);
@@ -381,7 +364,6 @@
         private System.Windows.Forms.Panel panelTitle;
         private System.Windows.Forms.Panel panelBtn;
         private System.Windows.Forms.PictureBox btnCerrar;
-        private System.Windows.Forms.PictureBox btnMax;
         private System.Windows.Forms.PictureBox btnMin;
         private System.Windows.Forms.Timer Horafecha;
         private System.Windows.Forms.Label lblHora;

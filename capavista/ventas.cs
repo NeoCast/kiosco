@@ -148,9 +148,8 @@ namespace capavista
             string resultado = Microsoft.VisualBasic.Interaction.InputBox("ingrese la cantidad: ").ToString();
             DataGridViewRow fila = new DataGridViewRow();
             fila = dataGridView1.CurrentRow;
-            if (resultado.Length > 0)
+            if (resultado.Length > 0 || resultado != "")
             {
-
 
                 cantidad = Convert.ToInt32(resultado);
 
@@ -187,7 +186,7 @@ namespace capavista
 
                     if (stock < stockMin)
                     {
-                        MessageBox.Show("Por favor vuelva a llenar el stock o comuniquese con su proveedor de confianza :D",  "Bajo stock :c", MessageBoxButtons.OK);
+                        MessageBox.Show("Por favor vuelva a llenar el stock o comuniquese con su proveedor de confianza :D", "Bajo stock :c", MessageBoxButtons.OK);
                     }
 
 
@@ -203,11 +202,15 @@ namespace capavista
                     return;
                     throw ex;
 
-                  
+
                 }
             }
+            else
+            {
+                MessageBox.Show("Dato no valido");
+            }
 
-        }
+            }
 
         private void BtnEliminarDetalle_Click(object sender, EventArgs e)
         {

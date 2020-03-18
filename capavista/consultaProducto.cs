@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using capasoporte.Cache;
+using System.Drawing;
 
 namespace capavista
 {
@@ -35,9 +36,10 @@ namespace capavista
                 //codigo
             }
 
-        }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            }
+
+            private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -174,6 +176,33 @@ namespace capavista
             string descripcion = Convert.ToString(textBox1.Text);
             dataGridView1.DataSource = productoln.mostrarProductos(descripcion);
         }
+
+
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+
+            //    if (this.dataGridView1.Columns[e.ColumnIndex].Name == "outFecha")
+            //    {
+            //        DateTime outD = Convert.ToDateTime(dataGridView1.Columns["outFecha"]);
+            //        DateTime hoy = Convert.ToDateTime(DateTime.Now);
+            //        TimeSpan diff = hoy.Subtract(outD);
+            //        int res = Convert.ToInt32(diff);
+            //        // DateTime thisDay = Convert.ToDateTime(DateTime.Now);
+            //        // DateTime OUTFEC = Convert.ToDateTime(dataGridView1.Columns["outFecha"]);
+            //        //TimeSpan diferencia = thisDay.Subtract(OUTFEC);
+            //        // int res = Convert.ToInt1(diferencia);
+            //        if (res > 10)
+            //        {
+            //            e.CellStyle.ForeColor = Color.Red;
+            //            e.CellStyle.BackColor = Color.Orange;
+            //        }
+
+            //    }
+
+        }
+
+
     }
-}
+  }
 

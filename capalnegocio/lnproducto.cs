@@ -102,5 +102,14 @@ namespace capalnegocio
             return tabla;
         }
 
+        public DataTable mostrarPorVenc()
+        {
+
+            tabla = null;
+            tabla = producdatos.todosProductoPorVenc();
+            return tabla;
+
+        }
+
     }
 }
