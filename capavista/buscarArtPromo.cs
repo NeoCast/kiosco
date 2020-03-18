@@ -46,7 +46,7 @@ namespace capavista
             {
                 //codigo
             }
-
+            comboBox1.Enabled = false;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -104,6 +104,18 @@ namespace capavista
             addProd.Text = fila.Cells[0].Value.ToString();
             addDesc.Text = fila.Cells[3].Value.ToString();
 
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                comboBox1.Enabled = true;
+            }
+            else
+            {
+                comboBox1.Enabled = false;
+            }
         }
     }
 }
