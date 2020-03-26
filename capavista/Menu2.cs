@@ -36,19 +36,9 @@ namespace capavista
 
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
-        private void panelCont2_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

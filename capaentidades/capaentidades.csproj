@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{18F0E0D6-2895-4713-B0D4-E470782662AD}</ProjectGuid>
+    <ProjectGuid>{E6C1EE5B-17A9-4906-93DA-6A6A1AC09121}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>capaaccdatos</RootNamespace>
-    <AssemblyName>capaaccdatos</AssemblyName>
+    <RootNamespace>capaentidades</RootNamespace>
+    <AssemblyName>capaentidades</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,35 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="acdetallePromo.cs" />
-    <Compile Include="acproducto.cs" />
-    <Compile Include="acpromocion.cs" />
-    <Compile Include="acusuarios.cs" />
-    <Compile Include="acventa.cs" />
-    <Compile Include="conexionbd.cs" />
+    <Compile Include="detallePromocion.cs" />
+    <Compile Include="detalleVta.cs" />
+    <Compile Include="productos.cs" />
+    <Compile Include="promocion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\capaentidades\capaentidades.csproj">
-      <Project>{e6c1ee5b-17a9-4906-93da-6a6a1ac09121}</Project>
-      <Name>capaentidades</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\capasoporte\capasoporte.csproj">
-      <Project>{9c7528e6-b802-4e05-bd8e-e6f473b5f992}</Project>
-      <Name>capasoporte</Name>
-    </ProjectReference>
+    <Compile Include="ventas.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

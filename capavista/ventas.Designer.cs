@@ -118,7 +118,6 @@
             this.gridDetalles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridDetalles.Size = new System.Drawing.Size(739, 281);
             this.gridDetalles.TabIndex = 4;
-            this.gridDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDetalles_CellContentClick);
             // 
             // codProd
             // 
@@ -206,7 +205,6 @@
             this.label2.Size = new System.Drawing.Size(89, 28);
             this.label2.TabIndex = 5;
             this.label2.Text = "Ventas";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnVender
             // 

@@ -217,6 +217,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ventas.resx">
       <DependentUpon>ventas.cs</DependentUpon>
@@ -259,10 +260,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\capaaccdatos\capaaccdatos.csproj">
-      <Project>{18f0e0d6-2895-4713-b0d4-e470782662ad}</Project>
-      <Name>capaaccdatos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\capalnegocio\capalnegocio.csproj">
       <Project>{0eef7b4a-34c2-4ee0-8a9d-f24fdcee4b52}</Project>
       <Name>capalnegocio</Name>
@@ -271,6 +268,12 @@
       <Project>{9c7528e6-b802-4e05-bd8e-e6f473b5f992}</Project>
       <Name>capasoporte</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resource\check2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resource\check1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using capaentidades;
 
 namespace capaaccdatos
 {
@@ -10,7 +11,7 @@ namespace capaaccdatos
 
 
         private conexionbd conexion = new conexionbd();
-        public void nuevoproducto(String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin, DateTime inFecha, DateTime outFecha,Double costos)
+        public void nuevoproducto(productos producto)
         {
 
             SqlCommand comando = new SqlCommand();
@@ -20,14 +21,14 @@ namespace capaaccdatos
                 comando.Connection = conexion.abrircn();
                 comando.CommandText = "altaProductos";
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@tipoProd", tproducto);
-                comando.Parameters.AddWithValue("@descripcion", descripcion);
-                comando.Parameters.AddWithValue("@precio", precio);
-                comando.Parameters.AddWithValue("@stock", stock);
-                comando.Parameters.AddWithValue("@stockMin", stockMin);
-                comando.Parameters.AddWithValue("@inFecha", inFecha);
-                comando.Parameters.AddWithValue("@outFecha", outFecha);
-                comando.Parameters.AddWithValue("@costos", costos);
+                comando.Parameters.AddWithValue("@tipoProd", producto.tipoProducto);
+                comando.Parameters.AddWithValue("@descripcion", producto.descripcion);
+                comando.Parameters.AddWithValue("@precio", producto.precio);
+                comando.Parameters.AddWithValue("@stock", producto.stock);
+                comando.Parameters.AddWithValue("@stockMin", producto.stockMin);
+                comando.Parameters.AddWithValue("@inFecha", producto.inFecha);
+                comando.Parameters.AddWithValue("@outFecha", producto.outFecha);
+                comando.Parameters.AddWithValue("@costos", producto.costos);
                 comando.ExecuteNonQuery();
 
 

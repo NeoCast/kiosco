@@ -1,6 +1,7 @@
 ﻿using capaaccdatos;
 using System;
 using System.Data;
+using capaentidades;
 
 
 namespace capalnegocio
@@ -14,10 +15,22 @@ namespace capalnegocio
         {
             try
             {
-
+                productos producto = new productos();
                 tabla = null;
+
+                
+                producto.tipoProducto = tproducto;
+                producto.descripcion = descripcion;
+                producto.precio = precio;
+                producto.stock = stock;
+                producto.stockMin = stockMin;
+                producto.inFecha = inFecha;
+                producto.outFecha = outFecha;
+                producto.costos = costos;
+
+
                 //descripcion = tproducto + "-" + descripcion;
-                producdatos.nuevoproducto(tproducto, descripcion, precio, stock, stockMin, inFecha, outFecha,costos);
+                producdatos.nuevoproducto(producto);
 
             }
             catch (Exception ex)
