@@ -1,21 +1,32 @@
 ﻿using capaaccdatos;
 using System;
 using System.Data;
+using capaentidades;
 
 
 namespace capalnegocio
 {
     public class lnpromocion
     {
-        private acpromocion promocion = new acpromocion();
+        #region "variable de clase"
+
+        private acpromocion acPromo = new acpromocion();
         private DataTable tabla = new DataTable();
 
-        public void nuevaPromo(string descripcion, double total, int activa)
+
+        #endregion
+
+        /// <summary>
+        /// Cargar nueva promocion
+        /// </summary>
+        /// <param name="promo"></param>
+        public void nuevaPromo(promocion promo)
         {
             try
             {
+               // capaentidades.acPromo promo = new capaentidades.acPromo();
                 tabla = null;
-                promocion.nuevaPromo(descripcion, total, activa);
+                acPromo.nuevaPromo(promo);
 
             }
             catch (Exception ex)
@@ -32,7 +43,7 @@ namespace capalnegocio
             try
             {
                 tabla = null;
-                tabla = promocion.buscarPromos();
+                tabla = acPromo.buscarPromos();
                 return tabla;
             }
             catch (Exception ex)
@@ -49,7 +60,7 @@ namespace capalnegocio
             try
             {
                 tabla = null;
-                tabla = promocion.masPromos();
+                tabla = acPromo.masPromos();
                 return tabla;
             }
             catch (Exception ex)
@@ -66,7 +77,7 @@ namespace capalnegocio
             try
             {
 
-                promocion.eliminarPromocion(codPromo);
+                acPromo.eliminarPromocion(codPromo);
 
 
             }

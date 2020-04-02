@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace capaentidades
 {
-    class promocion
+     public class promocion
     {
 
         public int codPromo { get; set; }
@@ -15,6 +15,7 @@ namespace capaentidades
 
         public double total { get; set; }
 
+        public int activo { get; set; }
 
     }
 }

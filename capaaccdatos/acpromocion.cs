@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using capaentidades;
 
 namespace capaaccdatos
 {
@@ -8,7 +9,7 @@ namespace capaaccdatos
     {
         private conexionbd conexion = new conexionbd();
 
-        public void nuevaPromo(string descripcion, double total, int activa)
+        public void nuevaPromo(promocion promo)
         {
 
 
@@ -22,9 +23,9 @@ namespace capaaccdatos
                 comando.Connection = conexion.abrircn();
                 comando.CommandText = "nuevaPromo";
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@descripcion", descripcion);
-                comando.Parameters.AddWithValue("@total", total);
-                comando.Parameters.AddWithValue("@activa", activa);
+                comando.Parameters.AddWithValue("@descripcion", promo.descrPromo);
+                comando.Parameters.AddWithValue("@total", promo.total);
+                comando.Parameters.AddWithValue("@activa", promo.activo);
                 comando.ExecuteNonQuery();
 
             }

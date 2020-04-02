@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using capaentidades;
 
 namespace capaaccdatos
 {
@@ -8,7 +9,7 @@ namespace capaaccdatos
     {
         private conexionbd conexion = new conexionbd();
 
-        public void nuevoDetallePromo( Int32 codProd, string descrProd, Int32 cantidad)
+        public void nuevoDetallePromo(detallePromocion dtPromo)
         {
             SqlCommand comando = new SqlCommand();
             DataTable tabla = new DataTable();
@@ -20,9 +21,9 @@ namespace capaaccdatos
                 comando.Connection = conexion.abrircn();
                 comando.CommandText = "sp_nuevoDetallePromo";
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@codProd", codProd);
-                comando.Parameters.AddWithValue("@descrProd", descrProd);
-                comando.Parameters.AddWithValue("@cantidad", cantidad);
+                comando.Parameters.AddWithValue("@codProd", dtPromo.codProd);
+                comando.Parameters.AddWithValue("@descrProd", dtPromo.descriProd);
+                comando.Parameters.AddWithValue("@cantidad", dtPromo.cantidad);
                 comando.ExecuteNonQuery();
 
             }

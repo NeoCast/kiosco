@@ -97,14 +97,24 @@ namespace capavista
 
             try
             {
+                capaentidades.promocion promo = new capaentidades.promocion();
+                capaentidades.detallePromocion dtPromo = new capaentidades.detallePromocion();
+                DataTable tabla = new DataTable();
+                tabla.Rows.Add(dataGridView1.Rows);
+                if (tabla.Rows != null || tabla.Rows.Count > 0)
+                {
+
+                }
                 if (txtDescr.Text != "" && txtTotal.Text != "")
                 {
-                    double total = Convert.ToDouble(txtTotal.Text);
-                    int activo = 1;
-                    promocionLN.nuevaPromo(txtDescr.Text, total, activo);
+                    promo.descrPromo = txtDescr.Text;
+                    promo.total = Convert.ToDouble(txtTotal.Text);
+                    promo.activo = 1;
+                    promocionLN.nuevaPromo(promo);
                 }
-
+                //              TOMO LA CANTIDAD DE FILAS PARA RECORRER DATAGRIDVIEW
                 int cantfila = dataGridView1.Rows.Count;
+                //              RECORRO LAS FILAS
                 foreach (DataGridViewRow fila in dataGridView1.Rows)
                 {
 
@@ -114,22 +124,21 @@ namespace capavista
                     {
                         if (fila.Index < cantfila-1)
                         {
-                            int codProd = Convert.ToInt32(fila.Cells[0].Value.ToString());
-                            string descripcion = Convert.ToString(fila.Cells[1].Value.ToString());
-                            int cantidad = Convert.ToInt32(fila.Cells[2].Value.ToString());
-                            detallepromoLN.nuevoDetallePromo(codProd, descripcion, cantidad);
+                            //cargo la entidad con sus datos
+                            //para su posterior envio
+                            dtPromo.codProd = Convert.ToInt32(fila.Cells[0].Value.ToString());
+                            dtPromo.descriProd = Convert.ToString(fila.Cells[1].Value.ToString());
+                            dtPromo.cantidad = Convert.ToInt32(fila.Cells[2].Value.ToString());
+                            detallepromoLN.nuevoDetallePromo(dtPromo);
 
                         }
                     }
-                    //else if (fila = -1)
-                    //{
-
-                    //}
-
+               
                 }
 
                 MessageBox.Show("La carga se realizo con exito");
                 dataGridView1.Rows.Clear();
+
             }
             catch (Exception ex)
             {

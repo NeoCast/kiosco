@@ -260,6 +260,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\capaentidades\capaentidades.csproj">
+      <Project>{e6c1ee5b-17a9-4906-93da-6a6a1ac09121}</Project>
+      <Name>capaentidades</Name>
+    </ProjectReference>
     <ProjectReference Include="..\capalnegocio\capalnegocio.csproj">
       <Project>{0eef7b4a-34c2-4ee0-8a9d-f24fdcee4b52}</Project>
       <Name>capalnegocio</Name>

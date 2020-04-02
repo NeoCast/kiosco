@@ -1,4 +1,5 @@
 ﻿using capaaccdatos;
+using capaentidades;
 using System;
 using System.Data;
 
@@ -9,9 +10,20 @@ namespace capalnegocio
         private acdetallePromo detalle = new acdetallePromo();
         private DataTable tabla = new DataTable();
 
-        public void nuevoDetallePromo(Int32 codProd, string descrProd,Int32 cantidad)
+        public void nuevoDetallePromo(detallePromocion dtPromo)
         {
-            detalle.nuevoDetallePromo(codProd, descrProd, cantidad);
+            try
+            {
+                detalle.nuevoDetallePromo(dtPromo);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
+
+
         }
       
 

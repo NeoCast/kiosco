@@ -11,22 +11,22 @@ namespace capalnegocio
         private acproducto producdatos = new acproducto();
         private DataTable tabla = new DataTable();
 
-        public void altaProducto(String tproducto, String descripcion, Double precio, Int32 stock, Int32 stockMin, DateTime inFecha, DateTime outFecha,Double costos)
+        public void altaProducto(productos producto)
         {
             try
             {
-                productos producto = new productos();
+                //productos producto = new productos();
                 tabla = null;
 
                 
-                producto.tipoProducto = tproducto;
-                producto.descripcion = descripcion;
-                producto.precio = precio;
-                producto.stock = stock;
-                producto.stockMin = stockMin;
-                producto.inFecha = inFecha;
-                producto.outFecha = outFecha;
-                producto.costos = costos;
+                //producto.tipoProducto = tproducto;
+                //producto.descripcion = descripcion;
+                //producto.precio = precio;
+                //producto.stock = stock;
+                //producto.stockMin = stockMin;
+                //producto.inFecha = inFecha;
+                //producto.outFecha = outFecha;
+                //producto.costos = costos;
 
 
                 //descripcion = tproducto + "-" + descripcion;

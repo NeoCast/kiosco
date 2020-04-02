@@ -49,7 +49,7 @@ namespace capavista
             Double costos = 0;
             try
             {
-
+                capaentidades.productos producto = new capaentidades.productos();
          
             if (txtstock.Text != "" && txtprecio.Text != "" && txtminimo.Text != "" && txtdescripcion.Text != "")
 
@@ -57,8 +57,17 @@ namespace capavista
                   if (txtCostos.Text != "")
                   {
                         costos = Convert.ToDouble(txtCostos.Text);
-                  } 
-                      productoLN.altaProducto(comboBox1.Text, txtdescripcion.Text, Convert.ToDouble(txtprecio.Text), Convert.ToInt32(txtstock.Text), Convert.ToInt32(txtminimo.Text), dateTimePicker1.Value, dateTimePicker2.Value,costos);
+                  }
+
+                    producto.tipoProducto = comboBox1.Text;
+                    producto.descripcion = txtdescripcion.Text;
+                    producto.precio = Convert.ToDouble(txtprecio.Text);
+                    producto.stock = Convert.ToInt32(txtstock.Text);
+                    producto.stockMin = Convert.ToInt32(txtminimo.Text);
+                    producto.inFecha = dateTimePicker1.Value;
+                    producto.outFecha = dateTimePicker2.Value;
+                    producto.costos = costos;
+                    productoLN.altaProducto(producto);
                       MessageBox.Show("Producto guardado de manera exitosa");
                       dataGridView1.DataSource = productoLN.mostrarTodos();
                       txtdescripcion.Clear();
