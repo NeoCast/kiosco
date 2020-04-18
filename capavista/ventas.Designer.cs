@@ -164,7 +164,7 @@
             // 
             this.btnbuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnbuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnbuscar.Image")));
-            this.btnbuscar.Location = new System.Drawing.Point(556, 60);
+            this.btnbuscar.Location = new System.Drawing.Point(575, 63);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(25, 21);
             this.btnbuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -176,7 +176,7 @@
             // 
             this.txbBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txbBuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txbBuscar.Location = new System.Drawing.Point(231, 61);
+            this.txbBuscar.Location = new System.Drawing.Point(250, 64);
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.Size = new System.Drawing.Size(298, 20);
             this.txbBuscar.TabIndex = 1;
@@ -188,7 +188,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 68);
+            this.label1.Location = new System.Drawing.Point(58, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 13);
             this.label1.TabIndex = 3;
@@ -200,7 +200,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Schoolbook", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(46)))));
-            this.label2.Location = new System.Drawing.Point(987, 26);
+            this.label2.Location = new System.Drawing.Point(1006, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 28);
             this.label2.TabIndex = 5;
@@ -308,7 +308,7 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(40, 124);
+            this.dataGridView1.Location = new System.Drawing.Point(61, 125);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

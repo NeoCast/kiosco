@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using capalnegocio;
+using capasoporte;
 using capasoporte.Cache;
 
 namespace capavista
@@ -22,24 +23,35 @@ namespace capavista
 
         private void AltaProd_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'kioscoDataSet.tipoProducto' Puede moverla o quitarla según sea necesario.
-            this.tipoProductoTableAdapter.Fill(this.kioscoDataSet.tipoProducto);
-            dateTimePicker1.Value = System.DateTime.Now;
-            dateTimePicker2.Value = System.DateTime.Now;
-            dataGridView1.DataSource = productoLN.mostrarTodos();
-            txtdescripcion.Focus();
 
-            if (uCache.cargo == cargos.empleado)
+            try
             {
-                dataGridView1.Columns[9].Visible = false;
-                txtCostos.Visible = false;
-                label10.Visible = false;
+                // TODO: esta línea de código carga datos en la tabla 'kioscoDataSet.tipoProducto' Puede moverla o quitarla según sea necesario.
+                this.tipoProductoTableAdapter.Fill(this.kioscoDataSet.tipoProducto);
+                dateTimePicker1.Value = System.DateTime.Now;
+                dateTimePicker2.Value = System.DateTime.Now;
+                dataGridView1.DataSource = productoLN.mostrarTodos();
+                txtdescripcion.Focus();
 
+                if (uCache.cargo == cargos.empleado)
+                {
+                    dataGridView1.Columns[9].Visible = false;
+                    txtCostos.Visible = false;
+                    label10.Visible = false;
+
+                }
+                if (uCache.cargo == cargos.administrador)
+                {
+                    //codigo
+                }
             }
-            if (uCache.cargo == cargos.administrador)
+            catch (Exception ex)
             {
-                //codigo
+
+                MessageBox.Show("No se ha podido realizar la accion. Error: " + ex.ToString(), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+   
 
 
         }
@@ -49,25 +61,29 @@ namespace capavista
             Double costos = 0;
             try
             {
-                capaentidades.productos producto = new capaentidades.productos();
+              
          
-            if (txtstock.Text != "" && txtprecio.Text != "" && txtminimo.Text != "" && txtdescripcion.Text != "")
+            if (txtstock.Text != String.Empty && txtprecio.Text != String.Empty && txtminimo.Text != String.Empty && txtdescripcion.Text != String.Empty)
 
             {
                   if (txtCostos.Text != "")
                   {
                         costos = Convert.ToDouble(txtCostos.Text);
                   }
+                  //Creo el objeto de la clase productos
+                  capaentidades.productos producto = new capaentidades.productos();
+                  //Cargo el objeto producto
+                  producto.tipoProducto = comboBox1.Text;
+                  producto.descripcion = txtdescripcion.Text;
+                  producto.precio = Convert.ToDouble(txtprecio.Text);
+                  producto.stock = Convert.ToInt32(txtstock.Text);
+                  producto.stockMin = Convert.ToInt32(txtminimo.Text);
+                  producto.inFecha = dateTimePicker1.Value;
+                  producto.outFecha = dateTimePicker2.Value;
+                  producto.costos = costos;
+                  //Mando el objeto al metodo para su proceso
+                  productoLN.altaProducto(producto);
 
-                    producto.tipoProducto = comboBox1.Text;
-                    producto.descripcion = txtdescripcion.Text;
-                    producto.precio = Convert.ToDouble(txtprecio.Text);
-                    producto.stock = Convert.ToInt32(txtstock.Text);
-                    producto.stockMin = Convert.ToInt32(txtminimo.Text);
-                    producto.inFecha = dateTimePicker1.Value;
-                    producto.outFecha = dateTimePicker2.Value;
-                    producto.costos = costos;
-                    productoLN.altaProducto(producto);
                       MessageBox.Show("Producto guardado de manera exitosa");
                       dataGridView1.DataSource = productoLN.mostrarTodos();
                       txtdescripcion.Clear();

@@ -8,12 +8,15 @@ namespace capaentidades
 {
     class ventas
     {
+        
 
         public int codVenta { get; set; }
 
         public DateTime fechaVta { get; set; }
 
         public double total { get; set; }
+
+        public detalleVta[] detalle { get; set; }
 
     }
 }

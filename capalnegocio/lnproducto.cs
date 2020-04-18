@@ -15,21 +15,9 @@ namespace capalnegocio
         {
             try
             {
-                //productos producto = new productos();
+   
                 tabla = null;
 
-                
-                //producto.tipoProducto = tproducto;
-                //producto.descripcion = descripcion;
-                //producto.precio = precio;
-                //producto.stock = stock;
-                //producto.stockMin = stockMin;
-                //producto.inFecha = inFecha;
-                //producto.outFecha = outFecha;
-                //producto.costos = costos;
-
-
-                //descripcion = tproducto + "-" + descripcion;
                 producdatos.nuevoproducto(producto);
 
             }
@@ -107,6 +95,8 @@ namespace capalnegocio
 
 
         }
+
+
 
         public DataTable buscarPorTproducto(string tipoProd)
         {

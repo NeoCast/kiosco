@@ -69,7 +69,6 @@
             this.panelTitle.Size = new System.Drawing.Size(1366, 38);
             this.panelTitle.TabIndex = 0;
             this.panelTitle.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTitle_Paint);
-          
             // 
             // btnMin
             // 

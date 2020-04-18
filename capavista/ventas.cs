@@ -30,10 +30,35 @@ namespace capavista
 
         }
 
+        private void Ventas_Load(object sender, EventArgs e)
+        {
+
+            dataGridView1.DataSource = productoLN.mostrarTodos();
+            label3.Text = "0";
+            txbBuscar.Focus();
+
+        }
+
+        private void DataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            try
+            {
+                cargarDatos();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             if (label3.Text != "")
             {
+
                 int codProd;
                 int codPromo;
                 string tipoProd;
@@ -114,32 +139,6 @@ namespace capavista
 
 
 
-
-        }
-
-
-
-        private void Ventas_Load(object sender, EventArgs e)
-        {
-
-            dataGridView1.DataSource = productoLN.mostrarTodos();
-            label3.Text = "0";
-            txbBuscar.Focus();
-
-        }
-
-        private void DataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
-            try
-            {
-                cargarDatos();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
 
         }
 
