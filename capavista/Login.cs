@@ -5,6 +5,7 @@ using System.IO;
 using capalnegocio;
 using System.Data;
 using Microsoft.VisualBasic;
+using capaentidades;
 
 
 namespace capavista
@@ -21,49 +22,50 @@ namespace capavista
         public bool compruebaSerial()
         {
             bool Verificado = false;
+            int esVerificado = 0;
+            parametro serialInfo = new parametro();
+            lnSerial serialLN = new lnSerial();
+            
 
-           
             string SerialGenerado;
             string SerialGuardado;
 
             vs.GetCpuID();
             vs.GetMacAddress();
             vs.GetMotherBoardID();
+            serialInfo = serialLN.comprobarInstall();
+            //Pregunta si existe controlador
+            //if (File.Exists("verificador.xml") == false)
+            //{
+            esVerificado = serialInfo.valorNum;
 
-
-            if (File.Exists("verificador.xml") == false)
+            switch (esVerificado)
             {
-                // File.Create("verificador.xml").Dispose()
+                case 1:
+                    // File.Create("verificador.xml").Dispose()
 
-                XmlWriterSettings settings = new XmlWriterSettings();
-                settings.Indent = true;
+                    SerialGenerado = lnSerial.GenerarSerial(vs.cpuInfo + vs.macaddress + vs.strMotherBoardID);
 
-                // Create XmlWriter.
-                using (XmlWriter writer = XmlWriter.Create("verificador.xml", settings))
-                {
-                    // Begin writing.
-                    writer.WriteStartDocument();
-                    writer.WriteStartElement("VerificadorSeriales"); // Root.
-
-                    writer.WriteStartElement("serialinfo");
-                    writer.WriteElementString("serial", "12345");
-                    writer.WriteEndElement();
-
-                    // End document.
-                    writer.WriteEndElement();
-                    writer.WriteEndDocument();
-                }
+                    break;
+                case 2:
+                    SerialGenerado = lnSerial.GenerarSerial(vs.cpuInfo + vs.macaddress + vs.strMotherBoardID);
+                    serialLN.modificarInstall(serialInfo);
+                    break;
+                default:
+                    MessageBox.Show("Por favor contactese con nosotros para renovar su suscripcion. /br Atentamente FastCheck");
+                    break;
             }
 
+                  
             string myXMLfile = "verificador.xml";
             System.IO.FileStream fsReadXml = new System.IO.FileStream(myXMLfile, System.IO.FileMode.Open);
 
             try
             {
                 DataSet ds = new DataSet();
-                ds.ReadXml(fsReadXml);
+                //ds.ReadXml(fsReadXml);
 
-                SerialGuardado = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                SerialGuardado = serialInfo.valorStr;
                 SerialGenerado = lnSerial.GenerarSerial(vs.cpuInfo + vs.macaddress + vs.strMotherBoardID);
 
                 fsReadXml.Close();
@@ -131,13 +133,14 @@ namespace capavista
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            if (!(compruebaSerial()) == false)
+            if (txtUsu.Text != "")
             {
-                if (txtUsu.Text != "")
+                if (txtCont.Text != "")
                 {
-                    if (txtCont.Text != "")
+                    if (!(compruebaSerial()) == false)
                     {
+                 
+                    
                         lnusuario lusuario = new lnusuario();
                         var loginvalido = lusuario.loginuser(txtUsu.Text, txtCont.Text);
                         if(loginvalido==true)
@@ -151,17 +154,20 @@ namespace capavista
                             msgError("Los valores ingresados son incorrectos");
                             txtUsu.Clear();
                             txtCont.Clear();
-                            txtUsu.Focus();
+                            txtUsu.Focus();  
                         }
 
                     }
-                    else msgError("Por favor ingrese su contraseña");
-                }
+                   
 
                 else msgError("Por favor ingrese su nombre de usuario");
 
+                }
+
+             else msgError("Por favor ingrese su contraseña");
+
             }
-          
+
         }
         private void msgError(string msg)
         {
@@ -191,13 +197,14 @@ namespace capavista
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-
+                //Comprueba el serial
                 if (!(compruebaSerial()) == false)
                 {
                     if (txtUsu.Text != "")
                     {
                         if (txtCont.Text != "")
                         {
+                            //Comprueba el usuario
                             lnusuario lusuario = new lnusuario();
                             var loginvalido = lusuario.loginuser(txtUsu.Text, txtCont.Text);
                             if (loginvalido == true)
@@ -219,16 +226,7 @@ namespace capavista
                     else msgError("Por favor ingrese su nombre de usuario");
 
                 }
-                //        If compruebaSerial() = False Then
-                //Else
-                //        If txtUsuario.Text = "admin" And txtClave.Text = "123" Then
-                //            Form1.Show()
-                //            Me.Hide()
-                //        Else
-                //            MsgBox("Usuario o Clave incorrecta")
-                //        End If
-
-                //    End If
+       
             }
 
         }

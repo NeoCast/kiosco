@@ -161,10 +161,8 @@ namespace capaaccdatos
         {
 
             SqlCommand comando = new SqlCommand();
-
             try
             {
-
 
                 comando.Connection = conexion.abrircn();
                 comando.CommandText = "modificarProducto";

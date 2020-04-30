@@ -5,23 +5,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.Management;
+using capaaccdatos;
+using capaentidades;
 
 namespace capalnegocio
 {
     public class lnSerial
     {
+
+        acSerial serialAc = new acSerial();
+
+        #region "Generar serial"
+      
+
         public string cpuInfo = "";
         public string macaddress;
         public string strMotherBoardID = string.Empty;
 
         private TripleDESCryptoServiceProvider des = new TripleDESCryptoServiceProvider(); // Algorithmo TripleDES
         private MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider(); // objeto md5
-        private string myKey = "MyKey2012"; // Clave secreta(puede alterarse)
+        private string myKey = "MyKey2020"; // Clave secreta(puede alterarse)
 
         public static string GenerarSerial(string inputString)
         {
             SHA512 sha512 = SHA512Managed.Create();
-            byte[] bytes = Encoding.UTF8.GetBytes(inputString);
+             byte[] bytes = Encoding.UTF8.GetBytes(inputString);
             byte[] hash = sha512.ComputeHash(bytes);
             StringBuilder stringBuilder = new StringBuilder();
             for (int i = 0; i <= hash.Length - 1; i++)
@@ -86,8 +94,7 @@ namespace capalnegocio
                 byte[] buff = UnicodeEncoding.ASCII.GetBytes(texto);
                return Encriptar(Convert.ToBase64String(encrypt.TransformFinalBlock(buff, 0, buff.Length)));
             }
-
-          
+        
         }
 
         // Funcion para el Desencriptado de Cadenas de Texto
@@ -105,6 +112,49 @@ namespace capalnegocio
             }
            
         }
+        #endregion
 
+
+        #region "Comprobar serial"
+
+        public parametro comprobarInstall()
+        {
+            try
+            {
+                parametro serialInfo = new parametro();
+                serialInfo = serialAc.consultaIsInstall();
+                return serialInfo;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+    
+        }
+
+        public void modificarInstall(parametro inParametro)
+        {
+            try
+            {
+                parametro serialInfo = new parametro();
+                DateTime fechaInicio, fechaFin;
+                fechaInicio = System.DateTime.Now;
+                fechaFin = fechaInicio.AddDays(30);
+               // fechaFin = fechaInicio.
+                serialInfo = inParametro;
+                serialInfo.valorFecha = fechaFin;
+                serialAc.modificarParametro(serialInfo);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+                
+        }
+
+        #endregion
+
+        
     }
 }

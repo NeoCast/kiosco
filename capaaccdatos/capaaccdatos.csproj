@@ -44,6 +44,7 @@
     <Compile Include="acdetallePromo.cs" />
     <Compile Include="acproducto.cs" />
     <Compile Include="acpromocion.cs" />
+    <Compile Include="acSerial.cs" />
     <Compile Include="acusuarios.cs" />
     <Compile Include="acventa.cs" />
     <Compile Include="conexionbd.cs" />
