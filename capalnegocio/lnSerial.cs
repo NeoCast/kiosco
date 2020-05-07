@@ -117,11 +117,11 @@ namespace capalnegocio
 
         #region "Comprobar serial"
 
-        public parametro comprobarInstall()
+        public psver comprobarInstall()
         {
             try
             {
-                parametro serialInfo = new parametro();
+                psver serialInfo = new psver();
                 serialInfo = serialAc.consultaIsInstall();
                 return serialInfo;
             }
@@ -133,18 +133,31 @@ namespace capalnegocio
     
         }
 
-        public void modificarInstall(parametro inParametro)
+        public void modificarInstall(psver inParametro, string valStr)
         {
             try
             {
-                parametro serialInfo = new parametro();
+                psver serialInfo = new psver();
+                if (inParametro.num_i == 12)
+                {
+                    serialInfo.valStr = valStr;
+                    serialAc.modificarParametro(serialInfo);
+                }
+                else
+                {
+
+                
                 DateTime fechaInicio, fechaFin;
                 fechaInicio = System.DateTime.Now;
                 fechaFin = fechaInicio.AddDays(30);
-               // fechaFin = fechaInicio.
+                //fechaFin = fechaInicio.
                 serialInfo = inParametro;
-                serialInfo.valorFecha = fechaFin;
+                serialInfo.valStr = valStr;
+                serialInfo.hFecha = fechaFin;
+                serialInfo.dFecha = fechaInicio;
+                serialInfo.num_i = 12;
                 serialAc.modificarParametro(serialInfo);
+                }
             }
             catch (Exception ex)
             {
@@ -153,8 +166,44 @@ namespace capalnegocio
                 
         }
 
+        public void modificarInstall(psver inParametro, int num_i, string valStr )
+        {
+            try
+            {
+
+                inParametro.num_i = num_i;
+                inParametro.hFecha = Convert.ToDateTime("30/08/1995");
+                
+                //fechaFin = fechaInicio.AddDays(30);
+                // fechaFin = fechaInicio.
+                
+                serialAc.modificarParametro(inParametro);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public psver comprobarFecha(psver inParametro)
+        {
+            if (inParametro.dFecha != inParametro.hFecha)
+            {
+                inParametro.dFecha.AddDays(1);
+               
+            }
+            else
+            {
+                inParametro.pvez = 0;
+                
+            }
+            return inParametro;
+
+        }
+
         #endregion
 
-        
+
     }
 }
