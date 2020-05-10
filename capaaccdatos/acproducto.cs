@@ -17,7 +17,8 @@ namespace capaaccdatos
             SqlCommand comando = new SqlCommand();
             DataTable tabla = new DataTable();
             try
-            {
+            {   
+
                 comando.Connection = conexion.abrircn();
                 comando.CommandText = "altaProductos";
                 comando.CommandType = CommandType.StoredProcedure;

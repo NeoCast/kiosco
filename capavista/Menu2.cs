@@ -17,7 +17,7 @@ namespace capavista
         private void Menu2_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = promocion.buscarPromos();
-           // dataGridView2.DataSource = producto.mostrarPorVenc();
+            dataGridView2.DataSource = producto.mostrarPorVenc();
         }
 
         private void btnMasDetalles_Click(object sender, EventArgs e)

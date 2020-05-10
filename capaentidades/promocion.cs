@@ -15,7 +15,8 @@ namespace capaentidades
 
         public double total { get; set; }
 
-        public int activo { get; set; }
+        public int cantidad { get; set; }
+
 
     }
 }

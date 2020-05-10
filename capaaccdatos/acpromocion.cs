@@ -25,7 +25,7 @@ namespace capaaccdatos
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@descripcion", promo.descrPromo);
                 comando.Parameters.AddWithValue("@total", promo.total);
-                comando.Parameters.AddWithValue("@activa", promo.activo);
+                comando.Parameters.AddWithValue("@cantidad", promo.cantidad);
                 comando.ExecuteNonQuery();
 
             }
